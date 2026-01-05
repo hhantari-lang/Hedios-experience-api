@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getDocument" doc:id="fe592d0c-3343-4b13-927b-d98a1988597c" >
+		<logger level="INFO" doc:name="START" doc:id="decfc074-d208-4d10-8a9e-a377334db7ac" message="---------- START GET DOCUMENT BY ID CONTACT ---------- " />
+		<http:request method="GET" doc:name="getDocumentById" doc:id="d90e51e8-f70e-487a-9636-7767e953f15e" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/services/{idDocument}/documents">
+			<http:uri-params ><![CDATA[#[{
+	idDocument: attributes.uriParams.'idDocument'
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="Display PDF" doc:id="7ea75d96-07b7-458b-bb00-430e86f12629" message="#[payload]"/>
+		<logger level="INFO" doc:name="End Process" doc:id="876656b3-6e07-4ed5-b64a-e57562e1cc41" message="---------- END GET DOCUMENT BY ID CONTACT ---------- " />
+	</sub-flow>
+</mule>

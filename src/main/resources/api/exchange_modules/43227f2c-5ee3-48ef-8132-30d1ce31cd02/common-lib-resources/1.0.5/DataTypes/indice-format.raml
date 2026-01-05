@@ -1,0 +1,81 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'un Indice
+type: object
+properties:
+  id:
+    description: identifiant unique de l'Indice
+    type: string
+    example: a032p00001bFpDhAAK
+  nom:
+    description: Le nom de l'Indice
+    type: string
+    example: Euro Stoxx 50®
+  code:
+    description: Le code Morning Start de l'Indice
+    type: string
+    example: 221.10.SX5E
+  niveauActuel:
+    description: Le niveau actuel (valeur) de l'Indice
+    type: number
+    format: float
+    minimum: 0
+    example: 3421.84
+  dateNiveau:
+    description: La date du niveau actuel de l'Indice
+    type: date-only
+    example: 2022-07-06
+  niveauInitial:
+    description: Le niveau initial de l'Indice
+    type: number
+    format: float
+    minimum: 0
+    example: 3421.84
+  dateDebut:
+    description: La date de début de l'Indice
+    type: date-only
+    example: 2017-08-14
+  niveauDeclenchement?:
+    description: Le niveau de déclenchement de l'Indice
+    type: number
+    format: float
+    minimum: 0
+    example: 3821.84
+  barrierePercentage?:
+    description: La valeur de la barrière de protection en pourcentage de l'Indice
+    type: number
+    format: float
+    minimum: 0
+    example: 40.00
+  barriereBase100?:
+    description: La valeur de la barrière de protection en pourcentage de l'Indice en base 100
+    type: number
+    format: float
+    minimum: 0
+    example: 60.00
+  barriere?:
+    description: La valeur de la barrière de protection de l'Indice
+    type: number
+    format: float
+    minimum: 0
+    example: 583.61
+  evolution?:
+    description: L'évolution de la valeur de l'Indice
+    type: number
+    format: float
+    example: -2.8642513467944236542336636920672800
+  valeurPlusHaut:
+    description: Le niveau le plus haut connu de l'Indice
+    type: number
+    format: float
+    minimum: 0
+    example: 5456.67
+  dateValeurPlusHaut:
+    description: La date de la valeur le plus haut connu de l'Indice
+    type: date-only
+    example: 2000-03-06
+  distance:
+    description: La distance entre le niveau actuel et le niveau le plus haut connu de l'Indice (en pourcentage)
+    type: number
+    format: float
+    example: 59.69
+    multipleOf: 0.01

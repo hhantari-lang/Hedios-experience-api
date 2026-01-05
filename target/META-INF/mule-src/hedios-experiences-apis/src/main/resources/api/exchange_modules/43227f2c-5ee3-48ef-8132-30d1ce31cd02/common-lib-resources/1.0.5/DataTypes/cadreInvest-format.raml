@@ -1,0 +1,180 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un cadre d'investissement
+type: object
+properties:
+  id:
+    description: Identifiant unique de l'enregistrement
+    type: string
+  nom:
+    description: Le nom de l'enregistrement
+    type: string
+  sousCategorie:
+    description: La category du cadre d'investissement
+    type: string
+  souscritLe:
+    description: La date de souscription du cadre d'investissement
+    type: date-only
+  dateValo:
+    description: La date de valorisation du cadre d'investissement
+    type: date-only
+  refCtt:
+    description: Le numéro unique du cadre d'investissement
+    type: string
+  role:
+    description: Le role du cadre d'investissement
+    type: string
+  montant:
+    description: Le montant du cadre d'investissement
+    type: number
+    format: float
+  montantFE:
+    description: Le montant des fonds en euros du cadre d'investissement
+    type: number | nil
+  blocageSESuravenir:
+    description: Indique s'il y'a un blocage pour la signature électronique
+    type: boolean
+  typeGestion:
+    description: Le type de gestion du cadre d'investissement
+    type: string
+  haveMandat:
+    description: Indique s'il y'a un mandat Gammes H sur le cadre d'investissement
+    type: boolean
+  clauseDesignee:
+    description: Indique s'il y'a une clause bénéficiare désignée sur cadre d'investissement
+    type: boolean
+  clauseGenerale:
+    description: Indique s'il y'a une clause bénéficiare générale sur cadre d'investissement
+    type: boolean
+  clauseMineure:
+    description: Indique s'il y'a une clause bénéficiare de mineur sur cadre d'investissement
+    type: boolean
+  clauseLibre:
+    description: Indique s'il y'a une clause bénéficiare libre sur cadre d'investissement
+    type: boolean
+  clauseLibreTexte:
+    description: Le texte de la clause bénéficiaire
+    type: string
+  stopLossRelatif:
+    description: Indique s'il y'a une option de stop loss relatif
+    type: boolean
+  stopLoss:
+    description: Indique s'il y'a une option de stop loss
+    type: boolean
+  securisationPlusValues:
+    description: Indique s'il y'a une option de sécurisation des plus values
+    type: boolean
+  reequilibrageAutomatique:
+    description: Indique s'il y'a une option de rééquilibrage automatique
+    type: boolean
+  dynamisationPlusValues:
+    description: Indique s'il y'a une option de dynamisation des plus values
+    type: boolean
+  lazard:
+    description: Indique s'il y'a une option de mandat lazard sur le cadre d'investissement
+    type: boolean
+  statutContrat:
+    description: Le statut du cadre d'investissement
+    type: string
+  volgaContratId:
+    description: L'identifiant unique dans volga du cadre d'investissement
+    type: string
+  valeurRachat:
+    description: La valeur de rachat du cadre d'investissement
+    type: number
+    format: float
+  totalVersementBrut:
+    description: Le total des versements brut du cadre d'investissement
+    type: number
+    format: float
+  totalRachatBrut:
+    description: Le total des rachats brut du cadre d'investissement
+    type: number
+    format: float
+  soldeAvance:
+    description: Le solde des avances du cadre d'investissement
+    type: number | nil
+  interetAvance:
+    description: Les intérêts des avances du cadre d'investissement
+    type: number | nil
+  totalRembPotentiel:
+    description: Le total des remboursements potentiels Gammes H
+    type: number
+  liquidites:
+    description: Le montant total des liquidités du contrat
+    type: number
+  coherence:
+    description: indique la cohérence entre les données du contrat
+    type: boolean
+  mandat?: 
+    type: !include mandatgh-format.raml
+  gammesh:
+    description: La liste des supports Gammes H du contrat
+    type: array
+    items: !include detailcontratviegammesh-format.raml
+  gammeshEnCoursDeRemb:
+    description: La liste des supports Gammes H en cours de remboursement
+    type: array
+    items: !include detailcontratviegammesh-format.raml
+  gammeshClotures:
+    description: La liste des supports Gammes H remboursés
+    type: array
+    items: !include detailcontratviegammesh-format.raml
+  fondsEuros:
+    description: La liste des supports fond en euro du contrat
+    type: array
+    items: !include detailcontratviefondeuro-format.raml
+  fondsEurosClotures:
+    description: La liste des supports fond en euro cloturés du contrat
+    type: array
+    items: !include detailcontratviefondeuro-format.raml
+  autresSupports:
+    description: La liste des autres supports (UC) du contrat
+    type: array
+    items: !include detailcontratvieuc-format.raml
+  autresSupportsClotures:
+    description: La liste des autres supports (UC) cloturés du contrat
+    type: array
+    items: !include detailcontratvieuc-format.raml
+  versementsProg:
+    description: La liste des versements programmés
+    type: array
+    items: !include versementprogramme-format.raml
+  operationsEnLigne:
+    description: Définition de la liste des opérations en ligne possibles
+    type: object
+    properties:
+      versement:
+        description: Opération de type Versement
+        type: object
+        properties:
+          active:
+            type: boolean
+          uri:
+            type: string
+      arbitrage:
+        description: Opération de type Arbitrage
+        type: object
+        properties:
+          active:
+            type: boolean
+            example: true
+          uri:
+            type: string
+      rachat:
+        description: Opération de type Rachat
+        type: object
+        properties:
+          active:
+            type: boolean
+            example: true
+          uri:
+            type: string
+  attributes:
+    type: object
+    properties:
+      type: 
+        description: Le nom API de l'objet
+        type: string
+      url: 
+        description: API URL pour le détail du cadre d'investissement 
+        type: string

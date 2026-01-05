@@ -1,0 +1,73 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un détail contrat vie de type unité de compte (UC)
+type: object
+properties:
+  id:
+    description: Identifiant unique d'un détail contrat vie de type unité de compte (UC)
+    example: a0v2p00000RJJikAAH
+    type: string
+  nom:
+    description: Le nom d'un détail contrat vie de type unité de compte (UC)
+    example: AXA AEDIFICANDI A (C)
+    type: string
+  isin:
+    description: Le code isin d'un détail contrat vie de type unité de compte (UC)
+    example: FR0000172041
+    type: string
+  category:
+    description: La categorie d'un détail contrat vie de type unité de compte (UC)
+    example: UC HORS GH
+    type: string
+  sousCategory:
+    description: La categorie d'un détail contrat vie de type unité de compte (UC)
+    example: AUTRES UC
+    type: string
+  MontantInvesti:
+    description: Le montant investi sur un détail contrat vie de type unité de compte (UC)
+    example: 61.52
+    type: number
+    format: float
+  InvestiLe:
+    description: La date d'investissement sur un détail contrat vie de type unité de compte (UC)
+    example: 2010-02-01
+    type: date-only
+  MontantDesinvesti:
+    description: Le montant désinvesti sur un détail contrat vie de type unité de compte (UC)
+    example: 0.00
+    type: number | nil
+  DesinvestiLe:
+    description: La date de désinvestissement sur un détail contrat vie de type unité de compte (UC)
+    example: 2015-02-01
+    type: date-only | nil
+  Gains:
+    description: Le gain sur un détail contrat vie de type unité de compte (UC)
+    example: 0.00
+    type: number | nil
+  solde:
+    description: Le solde estimé sur un détail contrat vie de type unité de compte (UC)
+    example: 104.34
+    type: number | nil
+  performance:
+    description: La performance d'un détail contrat vie de type unité de compte (UC)
+    example: 77.46
+    type: number | nil
+  vlPart:
+    description: La valeur liquidative de la part d'un détail contrat vie de type unité de compte (UC)
+    example: 624.79
+    type: number | nil
+  dateVL:
+    description: La date de la valeur liquidative d'un détail contrat vie de type unité de compte (UC)
+    example: 2022-03-17
+    type: date-only | nil
+  prixDeRevient:
+    description: Le prix de revient d'un détail contrat vie de type unité de compte (UC)
+    example: 352.10
+    type: number | nil
+  nombreParts:
+    description: Le nombre de part détenu d'un détail contrat vie de type unité de compte (UC)
+    example: 0.167000
+    type: number | nil
+  refCtt:
+    description: Le numéro de contrat d'un détail contrat vie de type Gammes H
+    example: I7 269658572
+    type: string

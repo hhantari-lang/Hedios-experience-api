@@ -1,0 +1,123 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'un Lead venant du formulaire de création de compte Hedios (drupal)
+type: object
+properties:
+  idFicheContact:
+    description: L'IDFC unique du prospect qui effectue la création de compte
+    type: integer
+    example: 184433
+  codeParrain:
+    description: Le code parrain du prospect qui effectue la création de compte
+    type: integer
+    example: 61
+  salutation:
+    description: La civilité du prospect qui effectue la création de compte
+    type: string
+    example: Monsieur
+    enum:
+      - Monsieur
+      - Madame
+  lastName:
+    description: Le nom de famille du prospect qui effectue la création de compte
+    type: string
+    example: DAMAS
+    minLength: 2
+    maxLength: 32
+  firstName:
+    description: Le prénom du prospect qui effectue la création de compte
+    type: string
+    example: Léon
+    minLength: 2
+    maxLength: 32
+  origin:
+    description: L'origine des informations du prospect qui effectue la création de compte
+    type: string
+    example: Création de compte
+    enum:
+      - Création de compte
+  mail:
+    description: L'adresse e-mail du prospect qui effectue la création de compte
+    type: string
+    example: leon.damas@gmail.com
+    minLength: 6
+    maxLength: 50
+  phone:
+    description: Le numéro de téléphone mobile du prospect qui effectue la création de compte
+    type: string
+    pattern: ((^0|\+)\d{4,20})
+    example: '+33600000001'
+  address:
+    description: L'adresse postale du prospect qui effectue la création de compte
+    type: string
+    example: 7 rue de la bourse
+    minLength: 0
+    maxLength: 32
+  additionalAddress?:
+    description: Complément de l'adresse postale du prospect qui effectue la création de compte
+    type: string
+    minLength: 2
+    maxLength: 32
+    example: 6 eme étage droite
+  country:
+    description: Le pays de l'adresse postale du prospect qui effectue la création de compte
+    type: string
+    example: FRANCE
+  city:
+    description: La ville de l'adresse postale du prospect qui effectue la création de compte
+    type: string
+    example: PARIS
+  postalCode?:
+    description: Le code postale de la ville du prospect qui effectue la création de compte
+    type: string
+    example: "75002"
+  inseeCode?:
+    description: Le code insee de la ville du prospect qui effectue la création de compte
+    type: string
+    example: "75102"
+  birthDate:
+    description: La date de naissance du prospect qui effectue la création de compte
+    type: date-only
+    example: 1980-06-16
+  birthCountry:
+    description: Le pays de naissance du prospect qui effectue la création de compte
+    type: string
+    example: FRANCE
+  birthCity:
+    description: La ville de naissance du prospect qui effectue la création de compte
+    type: string
+    example: PARIS
+  birthDepartment?:
+    description: Le département de naissance du prospect qui effectue la création de compte
+    type: string
+    example: "75"
+  birthPostalCode?:
+    description: Le code postale de la ville de naissance du prospect qui effectue la création de compte
+    type: string
+    example: "75002"
+  birthInseeCode?:
+    description: Le code insee de la ville de naissance du prospect qui effectue la création de compte
+    type: string
+    example: "75102"
+  source?:
+    description: La source (Comment avez-vous connu Hedios ?) du prospect qui effectue la création de compte
+    type: string
+    example: "word-of-mouth"
+    enum:
+      - word-of-mouth
+      - press-article
+      - internet-advertising
+      - press-advertising
+      - internet-search
+      - other
+  sourceOtherSpecify?:
+    description: Préciser la source si elle ne se trouve pas dans la liste
+    type: string
+    example: CGP
+  passwordCreationUrl:
+    description: L'url temporaire de création de mot de passe
+    type: string
+    example: "https://www.hedios.com/user/2000/edit?pass-reset-token=2z5c82em_wbfJvNO5OSWp6lE-S6yclryzMqnYclKZUQ"
+  uid:
+    description: Le UID du prospect dans drupal
+    type: integer
+    example: 1234

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getCoordonneesFlow" doc:id="d4c62ea5-e05e-4287-b857-070df9c91e5a" >
+		<logger level="INFO" doc:name="START" doc:id="e99250e4-5c78-469f-9007-05e68d6b823f" message="---------- START GET COORDONNEES ----------" />
+		<flow-ref doc:name="manageVarsFlow" doc:id="ab55b453-a6fe-4636-b351-9712eeb48cdf" name="manageVarsFlow" />
+		<set-variable value="#[attributes.uriParams.idfc]" doc:name="idfc" doc:id="8c7a50f2-2007-48af-9b26-4ad42c29ee07" variableName="idfc" />
+		<scatter-gather doc:name="Scatter-Gather" doc:id="5c94e2bd-3a73-4b9c-8a13-6c1d04f075ed" >
+			<route >
+				<http:request method="GET" doc:name="getAdressesByIDFC" doc:id="db85f282-5cd0-4758-8e88-ad24921f43cb" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/adresses" target="adresses" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"idfc" : vars.idfc,
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+				</http:request>
+			</route>
+			<route >
+				<http:request method="GET" doc:name="getEmailsByIDFC" doc:id="58e4e805-0e7a-4f4c-8541-718602f8d4c4" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails" target="emails" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"idfc" : vars.idfc,
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+				</http:request>
+			</route>
+			<route >
+				<http:request method="GET" doc:name="getTelephoneByIDFC" doc:id="cb458d33-739c-46f9-bf05-e5203ad99b39" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones" target="phones" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"idfc" : vars.idfc,
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+				</http:request>
+			</route>
+		</scatter-gather>
+		<ee:transform doc:name="Transform Message" doc:id="9ab9510a-c39e-4468-9556-f6fcc83244fb" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	adressesPostales: vars.adresses,
+	adressesEmails: vars.emails,
+	telephones: vars.phones
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="603bd09f-975d-40c7-a514-813a0e927794" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="9d12f01f-0f6e-4205-ae3a-5cd4961a8707" message="---------- END GET COORDONNEES ----------" />
+	</sub-flow>
+
+</mule>

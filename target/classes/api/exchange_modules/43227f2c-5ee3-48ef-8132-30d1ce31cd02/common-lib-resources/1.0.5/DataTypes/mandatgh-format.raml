@@ -1,0 +1,23 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'un Mandat Gammes H
+type: object
+properties:
+  unitaire:
+    description: Le montant unitaire du mandat Gammes H
+    type: number
+    format: float
+    example: 15000
+  reserve:
+    description: La réserve minimale du mandat Gammes H
+    type: number
+    format: float
+    example: 30000
+  enAttenteArbitrage:
+    description: Le montant en attente d'arbitrage du mandat Gammes H
+    type: number
+    format: float
+    example: 70000
+  souscritLe:
+    description: La date de souscription du mandat Gammes H
+    type: date-only
+    example: 2022-01-25

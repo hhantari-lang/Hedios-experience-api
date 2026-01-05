@@ -1,0 +1,113 @@
+#%RAML 1.0 DataType
+description: |
+  Définition de la structure d'une demande venant des  différents formlulaires Hedios
+  * Demande de documentation Support Gammes H
+  * Demande de brochure Gammes H
+  * Demande de contact
+type: object
+properties:
+  isAuthenticated:
+    description: L'utilisateur est authentifié ou anonyme
+    type: boolean
+    example: false
+  idFicheContact:
+    description: L'IDFC unique du client / prospect qui fait la demande
+    type: integer
+    example: 184433
+  codeParrain:
+    description: Le code parrain du client / prospect qui fait la demande
+    type: integer
+    example: 61
+  salutation:
+    description: La civilité du client / prospect qui fait la demande
+    type: string
+    example: Monsieur
+    enum:
+      - Monsieur
+      - Madame
+  lastName:
+    description: Le nom de famille du client / prospect qui fait la demande
+    type: string
+    example: DAMAS
+    minLength: 2
+    maxLength: 32
+  firstName:
+    description: Le prénom du client / prospect qui fait la demande
+    type: string
+    example: Léon
+    minLength: 2
+    maxLength: 32
+  mail:
+    description: L'adresse e-mail du client / prospect qui fait la demande
+    type: string
+    example: leon.damas@gmail.com
+    minLength: 6
+    maxLength: 50
+  phone:
+    description: Le numéro de téléphone du client / prospect qui fait la demande
+    type: string
+    pattern: ((^0|\+)\d{4,20})
+    example: '+33600000001'
+  address?:
+    description: L'adresse postale du client / prospect qui fait la demande
+    type: string
+    example: 7 rue de la bourse
+    minLength: 0
+    maxLength: 32
+  additionalAddress?:
+    description: Complément de l'adresse postale du client / prospect qui fait la demande
+    type: string
+    minLength: 0
+    maxLength: 32
+    example: 6 eme étage droite
+  country?:
+    description: Le pays de l'adresse postale du client / prospect qui fait la demande
+    type: string
+    example: FRANCE
+  city?:
+    description: La ville de l'adresse postale du client / prospect qui fait la demande
+    type: string
+    example: PARIS
+  postalCode?:
+    description: Le code postale de la ville du client / prospect qui fait la demande
+    type: string
+    example: "75002"
+  inseeCode?:
+    description: Le code insee de la ville du client / prospect qui fait la demande
+    type: string
+    example: "75102"
+  formCode:
+    description: Propiété technique définissant le formulaire
+    type: string
+    example: DEMANDE_BROCHURE_GH
+    enum:
+      - DEMANDE_BROCHURE_GH
+      - DEMANDE_BROCHURE_SUPPORT
+      - DEMANDE_CONTACT
+      - INTERET_FMGH
+  origin:
+    description: L'origine des informations de la demande
+    type: string
+    example: Demande de brochure GH
+    enum:
+      - Demande de brochure Support
+      - Demande de brochure GH
+      - Formulaire de contact
+      - Marque interet FMGH
+  object?:
+    description: L'objet de la demande
+    type: string
+    example: Laisser un message
+  isin?:
+    description: Le code ISIN du support Gammes H pour lequel le client / prospect effectue la demande
+    type: string
+    example: FR001400FTL5
+  message?:
+    description: Le message concernant la demande de contact
+    type: string
+    example: |
+      Bonjour,
+      Je n'arrive pas à me connecter sur votre site.
+      La modification de mot de passe ne fonctionne pas.
+      
+

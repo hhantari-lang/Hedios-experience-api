@@ -1,0 +1,106 @@
+[{
+  "id": "0012p00002ZN8ZYAA1",
+  "situationFamiliale": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "regimeMatrimonial": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "statutPro": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "csp": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "enfantsACharge": 2,
+  "capaciteJuridique": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "trancheRevenu": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "patrimoineFinancier": 100000,
+  "patrimoineImmobilier": 100000,
+  "patrimoineFoyer": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "partGlobalRisqueeAvecGH": 50000,
+  "partGlobalRisqueeHorsGH": 10000,
+  "typePlacementRecherche": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "horizonInvest": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "variationALaBaisse": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "souscritPlacementStructure": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "objectifs": {
+    "objectif4": {
+      "code": "1",
+      "lbelle": "libelle"
+    },
+    "principal": {
+      "code": "1",
+      "lbelle": "libelle"
+    },
+    "secondaire": {
+      "code": "1",
+      "lbelle": "libelle"
+    },
+    "objectif3": {
+      "code": "1",
+      "lbelle": "libelle"
+    },
+    "objectif5": {
+      "code": "1",
+      "lbelle": "libelle"
+    }
+  },
+  "representantsLegaux": [
+    {
+      "nom": "COPAIN",
+      "prenom": "Serge",
+      "adresse": "10 rue de l'exemple",
+      "departement": "94",
+      "pays": "FRANCE",
+      "villeEtrangere": "Londres",
+      "codePostal": ""
+    }
+  ],
+  "nvighp": 10000,
+  "nvihp": 10000,
+  "nvihr": 10000,
+  "nviha": 10000,
+  "nvihc": 10000,
+  "tvhp": 10000,
+  "vuihp": 10000,
+  "efhp": 10000,
+  "voc1": 10000,
+  "tvsi": 10000,
+  "vof": 10000,
+  "tvui": 10000,
+  "hc": 4,
+  "contact": "0012p00002ZN8ZYZZ1",
+  "tunnel": "0012p00002ZN8ZYZZ1",
+  "operation": "0012p00002ZN8ZYYY1",
+  "origine": {
+    "code": "1",
+    "lbelle": "libelle"
+  },
+  "typeEnreg": "Vous Connaître"
+}]

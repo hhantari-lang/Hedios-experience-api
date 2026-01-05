@@ -1,0 +1,788 @@
+#%RAML 1.0
+title: API Exeperience Hedios - Coordonnées, Demandes, VL GH, VC, Lead, Person Account, ...
+version: 1.0
+description: Hedios Experience API
+baseUri: https://api.hedios.com
+protocols:
+  - HTTPS
+mediaType:
+  - application/json
+
+uses:
+  libs: /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/resourcetypes-library/1.0.10/resourcetypes-library.raml
+
+types: 
+  cadreInvest: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/cadreInvest-format.raml
+  gammesh: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/detailcontratviegammesh-format.raml
+  contact: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/contact-format.raml
+  compte: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/compte-format.raml
+  cadreInvestCollection : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/cadreInvestCollection-format.raml
+  ghCollection : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/ghCollection-format.raml
+  compteCollection : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/compteCollection-format.raml
+  contactCollection : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/contactCollection-format.raml
+  adressePostale-format: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/adressePostale-format.raml
+  adresseEmail-format: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/adresseEmail-format.raml
+  telephone-format: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/telephone-format.raml
+  personAccount : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/personAccount-format.raml
+  demande : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/demande-format.raml
+  businessAccount : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/businessAccount-format.raml
+  leadCollection : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/leadCollection-format.raml
+  leadGet : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/leadgetbyidfcdatatype-format.raml
+  leadCreate : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/leadCreate-format.raml
+  leadPhone : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/leadPhone-format.raml
+  leadEmail : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/leadEmail-format.raml
+  leadPostalAddress : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/leadPostalAddress-format.raml
+  convertResult : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/convertResult-format.raml
+  mouvement : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/mouvement-format.raml
+  histoMouvements : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/histoMouvements-format.raml
+  vousConnaitreCollection : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/vousConnaitreCollection-format.raml
+  vlGhCollection : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/histocontratvlgh-format.raml
+  inAppNotification : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/inAppNotification-format.raml
+  operation : !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/operation-format.raml
+  tunnel: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/DataTypes/tunnel-format.raml
+
+  coordonnees:
+    properties:
+      adressesPostales:
+        description: Liste des adresses postales
+        type: adressePostale-format[]
+      adressesEmails:
+        description: Liste des adresses emails
+        type: adresseEmail-format[]
+      telephones:
+        description: Liste des numéros de téléphones
+        type: telephone-format[]
+
+  
+
+traits:
+  pagination: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/Traits/pagination.raml
+
+securitySchemes:
+  clientSecurity: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/hediossecurityscheme/1.0.2/hediossecurityscheme.raml
+
+
+# Document
+/v1/services:
+  /{idDocument}:
+    uriParameters:
+      idDocument:
+        type: string
+        required: true
+    /documents:
+      get:
+        securedBy: 
+          - clientSecurity
+        responses:
+          "200":
+            body:
+              application/json:
+
+############### START WEBSERVICE COORDONNEES ###############
+/v1/coordonnees:
+  /{idfc}:
+    securedBy:
+      - clientSecurity
+    description: Liste des coordonnées du contact
+    type: { libs.SingleGet: { item: coordonnees } }
+
+/v1/adresses:
+  securedBy:
+    - clientSecurity
+  description: Liste des adresses postales
+  type: { libs.Collection: { item: adressePostale-format, itemPost: adressePostale-format, itemPut: adressePostale-format } }
+  get:
+    queryParameters:
+      idfc:
+        required: false
+        type: number | nil
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique de l'adresse postale
+        type: string
+        example: a111X00000562JkQAI
+    type: { libs.Single: { item: adressePostale-format, itemPatch: adressePostale-format } }
+
+/v1/emails:
+  securedBy:
+    - clientSecurity
+  description: Liste des adresses mails
+  type: { libs.Collection: { item: adresseEmail-format, itemPost: adresseEmail-format, itemPut: adresseEmail-format } }
+  get:
+    queryParameters:
+      idfc:
+        required: false
+        type: number | nil
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique de l'adresse mail
+        type: string
+        example: a0z1X00000HytGiQAJ
+    type: { libs.Single: { item: adresseEmail-format, itemPatch: adresseEmail-format } }
+
+/v1/telephones:
+  securedBy:
+    - clientSecurity
+  description: Liste des numéros de téléphones
+  type: { libs.Collection: { item: telephone-format, itemPost: telephone-format, itemPut: telephone-format } }
+  get:
+    queryParameters:
+      idfc:
+        required: false
+        type: number | nil
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique du numéro de téléphone
+        type: string
+        example: a101X00000Bon8vQAB
+    type: { libs.Single: { item: telephone-format, itemPatch: telephone-format } }
+
+/v1/person-account:
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique du person account
+        type: string
+        example: 0012p00002ZN8ZYAA1
+    patch:
+      securedBy:
+        - clientSecurity
+      description: Permet de mettre à jour le numéro de téléphone d'un person account
+      body:
+        application/json:
+          type: personAccount
+      responses:
+        204:
+############### END WEBSERVICE COORDONNEES ###############
+
+############### START WEBSERVICE HEDIOS-FLOW-TRIGGER ###############
+/v1/demandes:
+  description: |
+    Gestion des demandes venant des  différents formlulaires Hedios
+    * Demande de documentation Support Gammes H
+    * Demande de brochure Gammes H
+    * Demande de contact
+  securedBy:
+    - clientSecurity
+  post:
+    body:
+      application/json:
+        type: demande
+    responses:
+      200:
+        body:
+          example: [
+            {
+              actionName: "MUL_AutoLaunch_APITrigger_Formulaires",
+              errors: null,
+              isSuccess: true,
+              outputValues: {
+                  Flow__InterviewStatus: "Finished"
+              },
+              version: 1
+            }
+          ]
+
+/v1/idfc:
+  securedBy:
+    - clientSecurity
+  description: Gestion des identifiants fiche contact
+  post:
+    responses:
+      200:
+        body:
+          example: {
+              "idfc": 188502,
+              "created_at": "2023-06-22T16:53:39.378091",
+              "code_parrain": 66,
+              "created_by": "TestHedioAPIPreprod"
+          }
+        
+/v1/business-account:
+  securedBy:
+    - clientSecurity
+  description: Création d'un Business Account
+  post:
+    body:
+      application/json:
+        type: businessAccount
+    responses:
+      201:
+        body:
+          example: [
+            {
+              actionName: "MUL_AutoLaunch_APITrigger_BusinessAccountCreation",
+              errors: null,
+              isSuccess: true,
+              outputValues: {
+                  Flow__InterviewStatus: "Finished"
+              },
+              version: 1
+            }
+          ]
+      400:
+        body:
+          example: [
+              {
+                  "actionName": "MUL_AutoLaunch_APITrigger_BusinessAccountCreation",
+                  "errors": [
+                      {
+                          "statusCode": "UNKNOWN_EXCEPTION",
+                          "message": "Le flux ne contient pas de variable portant le nom « DRUPAL_UID_Variable », ou la variable n'est pas disponible pour l'entrée.",
+                          "fields": []
+                      }
+                  ],
+                  "isSuccess": false,
+                  "outputValues": null,
+                  "version": 1
+              }
+          ]
+############### END WEBSERVICE HEDIOS-FLOW-TRIGGER ###############
+
+############### START WEBSERVICE LEAD ###############
+/v1/prospects:
+  securedBy:
+    - clientSecurity
+  description: Crétion d'un nouveau prospect - création de compte
+  get:
+    description: Permet de récupérer un ensemble de Lead
+    queryParameters:
+      idfc:
+        required: false
+        type: number | nil
+    responses:
+        200:
+          body:
+            application/json:
+              examples: 
+                type: leadCollection[] | leadGet[]
+  post:
+    body:
+      application/json:
+        type: leadCreate
+    responses:
+      200:
+        body:
+          example: [
+            {
+              actionName: "MUL_AutoLaunch_APITrigger_CreationCompte",
+              errors: null,
+              isSuccess: true,
+              outputValues: {
+                  Flow__InterviewStatus: "Finished"
+              },
+              version: 1
+            }
+          ]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique du numéro de téléphone
+        type: string
+        example: 00QMU000001Qt6j2AC
+    get:
+      description: Permet de récupérer un Lead via l'id salesforce
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/Examples/singleleadexample.json
+    /telephones:
+      securedBy:
+        - clientSecurity
+      description: Ajout et Modification de numéro de téléphone d'un Lead
+      put:
+        description: Permet de mettre à jour le numéro de téléphone d'un lead
+        body:
+          application/json:
+            type: leadPhone
+        responses:
+          204:
+          201:
+          200:
+    /emails:
+      securedBy:
+        - clientSecurity
+      description: Ajout et Modification de l'adresse e-mail d'un Lead
+      put:
+        description: Permet de mettre à jour l'adresse e-mail d'un lead
+        body:
+          application/json:
+            type: leadEmail
+        responses:
+          204:
+          201:
+          200:
+    /adresses:
+      securedBy:
+        - clientSecurity
+      description: Ajout et Modification de l'adresse postale d'un Lead
+      put:
+        description: Permet de mettre à jour l'adresse postale d'un lead
+        body:
+          application/json:
+            type: leadPostalAddress
+        responses:
+          204:
+    /convert:
+      securedBy:
+        - clientSecurity
+      description: Convertion d'un Lead vers un account
+      post:
+        description: Permet de convertir un lead en account
+        responses:
+          200:
+            body:
+              application/json:
+                type: convertResult
+############### END WEBSERVICE LEAD ###############
+
+############### START WEBSERVICE MOUVEMENTS VOLGA ###############
+
+############### START WEBSERVICE MKG-NOTIFICATIONS ###############
+/v1/notifications:
+  securedBy:
+    - clientSecurity
+  get:
+    responses:
+      200:
+        description: Liste des notifications In-App
+        body: inAppNotification[]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique du contact salesforce
+        type: string
+        example: 0032p00002ZQkPtAAL
+    get:
+      responses:
+        200:
+          description: Liste des notifications In-App
+          body: inAppNotification[]
+############### END WEBSERVICE MKG-NOTIFICATIONS ###############
+
+/mouvements:
+  /{refctt}:
+    securedBy:
+      - clientSecurity
+    is:
+      - pagination
+    uriParameters:
+      refctt:
+        description: Le numéro du contrat
+        example: 5E 266642446
+        type: string
+    get:
+      description: Historique des mouvements d'un contrat.
+      responses:
+        200:
+          body:
+            type: histoMouvements
+            examples: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/Examples/histoMouvements-example.raml
+/mouvements-du-mois:
+  /{refctt}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      refctt:
+        description: Le numéro du contrat
+        example: 5E 266642446
+        type: string
+    get:
+      description: Les mouvements des 30 derniers jours d'un contrat.
+      responses:
+        200:
+          body:
+            type: mouvement[]
+            examples: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/Examples/mouvement-example.raml
+
+############### END WEBSERVICE MOUVEMENTS VOLGA ###############
+
+############### START WEBSERVICE VOUS CONNAITRE ###############
+/vous-connaitre:
+  securedBy:
+    - clientSecurity
+  is:
+    - pagination
+  get:
+    queryParameters:
+      startDate:
+        required: false
+        type: date-only | nil
+      endDate:
+        required: false
+        type: date-only | nil
+      contact:
+        required: false
+        type: string
+      tunnel:
+        required: false
+        type: string
+      operation:
+        required: false
+        type: string
+    responses:
+      200:
+        body:
+          application/json:
+            type: vousConnaitreCollection[]
+
+  post:
+    body:
+      application/json: 
+    responses:
+      200:
+        body:
+          application/json:
+      
+  /{id}:
+    securedBy:
+      - clientSecurity
+    get:
+      securedBy:
+        - clientSecurity
+      responses:
+        200:
+          body:
+            application/json:
+              type: vousConnaitreCollection
+
+############### END WEBSERVICE VOUS CONNAITRE ###############
+
+############### START WEBSERVICE HISTO-CONTRAT-VL-GH ###############
+/histo-vl:
+  /{isin}:
+    securedBy:
+      - clientSecurity
+    is:
+      - pagination
+    get:
+      queryParameters:      
+        startDate:
+          required: false
+          type: date-only | nil
+        endDate:
+          required: false
+          type: date-only | nil
+        refctt:
+          required: false
+          type: string
+        contactId:
+          required: false
+          type: string
+      responses:
+        200:
+          body:
+            application/json:
+              type: vlGhCollection[]
+############### END WEBSERVICE HISTO-CONTRAT-VL-GH ###############
+
+
+############### START WEBSERVICE TUNNEL OPERATION ###############
+
+/v1/operations:
+  description: Gestion des opérations salesforce
+  securedBy:
+    - clientSecurity
+  is:
+    - pagination
+  get:
+    description: Permet de récupérer un ensemble d'opérations
+    queryParameters:
+      idfc:
+        description: L'identifiant fiche contact du compte
+        required: false
+        type: number | nil
+      etat:
+        description: Les états de l'opération
+        required: false
+        type: string | nil
+        example: 1,2,3,4,5,6
+      acte:
+        description: Le type d'acte de l'opération
+        required: false
+        type: string | nil
+        example: souscription
+    responses:
+        200:
+          body:
+            application/json:
+              type: operation[]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique salesforce de l'opération
+        type: string
+        example: a0yMU000000BVh4YAG
+    get:
+      description: Permet de récupérer une opération via l'id salesforce
+      responses:
+        200:
+          body:
+            application/json:
+              type: operation
+    patch:
+      description: Permet de modifier l'état d'une opération
+      body:
+        application/json:
+          type: object
+          properties:
+            etatSouscription:
+              description: Etat de la souscription
+              example: "7"
+              type: string
+              required: true
+              enum:
+                - "1"
+                - "2"
+                - "3"
+                - "4"
+                - "5"
+                - "6"
+                - "7"
+      responses:
+        204:
+
+/v1/tunnels:
+  description: Gestion des tunnels salesforce
+  securedBy:
+    - clientSecurity
+  is:
+    - pagination
+  get:
+    description: Permet de récupérer un ensemble de tunnels
+    queryParameters:
+      idfc:
+        description: L'identifiant fiche contact du compte
+        required: false
+        type: number | nil
+      status:
+        description: Le status du tunnel
+        required: false
+        type: string | nil
+        example: delete_bo
+        enum:
+          - delete_bo
+          - delete_ec
+          - finalise
+      acte:
+        description: Le type d'acte du tunnel
+        required: false
+        type: string | nil
+        example: souscription
+    responses:
+        200:
+          body:
+            application/json:
+              type: tunnel[]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique salesforce du tunnel
+        type: string
+        example: a0yMU000000BVh4YAG
+    get:
+      description: Permet de récupérer un tunnel via l'id salesforce
+      responses:
+        200:
+          body:
+            application/json:
+              type: tunnel
+    patch:
+      description: Permet de modifier l'état du tunnel
+      body:
+        application/json:
+          type: object
+          properties:
+            etatTunnel:
+              description: Etat du tunnel
+              example: Supprimé EC
+              type: string
+              required: true
+              enum:
+                - Supprimé EC
+                - Supprimé BO
+                - Supprimé
+                - Finalisé
+                - Interrompue
+                - A rappler
+      responses:
+        204:
+############### END WEBSERVICE TUNNEL OPERATION ###############
+
+/v1/cadres-invests:
+  description: Gestion des cadres d'investissement
+  is:
+    - pagination
+  securedBy:
+    - clientSecurity
+  get:
+    description: Permet de récupérer un ensemble de cadre d'investissement
+    queryParameters:
+      refctt?:
+        description: Le numéro de contrat du cadre d'investissement
+        type: string | nil
+      idfc?:
+        description: L'identifiant fiche contact du client
+        type: number | nil
+    responses:
+        200:
+          body:
+            application/json:
+              type: cadreInvestCollection[] | cadreInvest[]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique salesforce du cadre d'investissement
+        type: string
+        example: 00QMU000001Qt6j2AC
+    get:
+      description: Permet de récupérer un cadre d'investissement via l'id salesforce
+      responses:
+        200:
+          body:
+            application/json:
+              type: cadreInvest
+
+/v1/portefeuille-gammes-h:
+  description: Gestion des enregistrements Détail Contrat Vie Gammes H
+  is:
+    - pagination
+  securedBy:
+    - clientSecurity
+  get:
+    description: Permet de récupérer un ensemble d'enregistrement Détail Contrat Vie Gammes H'
+    queryParameters:
+      idfc?:
+        description: L'identifiant fiche contact du client
+        type: number | nil
+      type?:
+        description: Le type de l'enregistrements Détail Contrat Vie Gammes H
+        type: string | nil
+        enum:
+          - encours
+          - closed
+          - encoursderemb
+    responses:
+      200:
+        body:
+            application/json:
+              type: ghCollection[] | gammesh[]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique d'un enregistrements Détail Contrat Vie Gammes H
+        type: string
+        example: a0vMU0000006k5MYAQ
+    get:
+      description: Permet de récupérer un enregistrements Détail Contrat Vie Gammes H via l'id salesforce
+      responses:
+        200:
+          body:
+            application/json:
+              type: gammesh
+
+/v1/accounts:
+  description: Gestion des comptes salesforce
+  is:
+    - pagination
+  securedBy:
+    - clientSecurity
+  get:
+    description: Permet de récupérer un ensemble de comptes salesforce
+    queryParameters:
+      idfc?:
+        description: L'identifiant fiche contact du compte
+        type: number | nil
+    responses:
+        200:
+          body:
+            application/json:
+              type: compteCollection[] | compte[]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique salesforce du compte
+        type: string
+        example: 00QMU000001Qt6j2AC
+    get:
+      description: Permet de récupérer un compte via l'id salesforce
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/Examples/account.json
+/v1/contacts:
+  description: Gestion des contacts salesforce
+  is:
+    - pagination
+  securedBy:
+    - clientSecurity
+  get:
+    description: Permet de récupérer un ensemble de contacts salesforce
+    queryParameters:
+      idfc?:
+        description: L'identifiant fiche contact du contact salesforce
+        type: number | nil
+    responses:
+        200:
+          body:
+            application/json:
+              type: contactCollection[] | contact[]
+  /{id}:
+    securedBy:
+      - clientSecurity
+    uriParameters:
+      id:
+        description: L'identifiant unique salesforce du contact
+        type: string
+        example: 0032p00002Y594oAAB
+    get:
+      description: Permet de récupérer un contact via l'id salesforce
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/Examples/contact.json
+/{idfc}:
+  uriParameters:
+      idfc:
+        description: L'identifiant fiche contact unique du client / prospect
+        type: string
+        example: "184433"
+  /donnees-perso:
+    description: Gestion des données du client / prospect
+    securedBy:
+      - clientSecurity
+    get:
+      description: Permet de recupérer les informations d'un client / propsect
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/common-lib-resources/1.0.5/Examples/donnees-perso.json

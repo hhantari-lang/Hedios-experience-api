@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getMvtHistoriqueFlow" doc:id="3acab6c4-de7c-44e9-a294-41f1e0ce2e39" >
+		<logger level="INFO" doc:name="START" doc:id="23422478-dc40-489b-a5de-db95ba5e2fb4" message="---------- START GET HISTO MVTS ---------- " />
+		<flow-ref doc:name="manageVarsFlow" doc:id="473d155b-c563-4dae-8772-6805e06b0447" name="manageVarsFlow" />
+		<set-variable value="#[attributes.uriParams.refctt]" doc:name="refctt" doc:id="d24cb67f-2423-4456-89ac-93ff1a9c3eca" variableName="refctt" />
+		<http:request method="GET" doc:name="getMvtsByRefCtt" doc:id="4e6b8361-e7ba-4bcc-ba01-e472e6737dcc" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.heroku}:${http.private.port}/mouvements/{refctt}" >
+			<http:uri-params ><![CDATA[#[%dw 2.0
+import * from dw::core::URL
+output application/java
+---
+{
+	"refctt" : encodeURI(attributes.uriParams.refctt)
+}]]]></http:uri-params>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="7a36344f-07af-4708-bed2-a2c7f452967e" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="c8f9fee3-44a7-43e1-9093-cf98a448f5f9" message="---------- END GET HISTO MVTS ---------- " />
+	</sub-flow>
+	<sub-flow name="getMvtsDuMoisFlow" doc:id="82eeb59b-5993-4058-88ec-23ae0c194e8e" >
+		<logger level="INFO" doc:name="START" doc:id="85a9f267-e427-4735-b5db-5b6013a12d5b" message="---------- START GET MVTS DU MOIS  ---------- " />
+		<set-variable value="#[attributes.uriParams.refctt]" doc:name="refctt" doc:id="6e270694-0d63-4e1d-a920-c640da00642a" variableName="refctt" />
+		<http:request method="GET" doc:name="getMvtsDuMoisByRefCtt" doc:id="a50b498b-e7ca-495b-b896-19129c4337ec" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.heroku}:${http.private.port}/mouvements-du-mois/{refctt}" >
+			<http:uri-params ><![CDATA[#[%dw 2.0
+import * from dw::core::URL
+output application/java
+---
+{
+	"refctt" : encodeURI(attributes.uriParams.refctt)
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="caae75d8-f5e3-4b91-8dc7-964c24aae6e9" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="6f2e83e4-3319-4424-9c45-06752c766b09" message="---------- END GET MVTS DU MOIS  ---------- " />
+	</sub-flow>
+
+</mule>

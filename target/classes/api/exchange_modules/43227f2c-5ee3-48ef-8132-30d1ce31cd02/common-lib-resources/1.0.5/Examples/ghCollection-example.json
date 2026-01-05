@@ -1,0 +1,19 @@
+[
+  {
+    "id": "a0vMU000000GvtjYAC",
+    "idHedios": null,
+    "nom": "H PERFORMANCE 36",
+    "sousCategorie": "H PERFORMANCE",
+    "refctt": "5E 266155524",
+    "nbParts": 0.988,
+    "montantInvesti": 10000,
+    "isDeleted": false,
+    "isEnCours": true,
+    "isEnCoursDeRemb": false,
+    "isClosed": false,
+    "attributes": {
+      "type": "Detail_Contrat_Vie__c",
+      "url": "/v1/portefeuille-gammes-h/a0vMU000000GvtjYAC"
+    }
+  }
+]

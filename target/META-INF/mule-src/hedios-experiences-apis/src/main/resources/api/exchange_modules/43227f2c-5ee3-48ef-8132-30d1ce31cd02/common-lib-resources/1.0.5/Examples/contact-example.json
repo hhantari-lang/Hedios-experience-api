@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0012p00002ZN8ZYAA1",
+    "segment": "Client GH",
+    "civilite": "Monsieur",
+    "prenom": "Serge",
+    "nom": "COPAIN",
+    "nomDeNaissance": "COPAIN",
+    "name": "SERGE COPAIN",
+    "nationalite": "FRANCE",
+    "dateNaissance": "1983-07-03",
+    "villeNaissance": "PARIS",
+    "cpInseeNaissance": null,
+    "departementDeNaissance": "99",
+    "paysDeNaissance": "SENEGAL",
+    "accountId": "0012p00002W9mSAAAZ",
+    "idConnexion": "doucouredave@hotmail.com",
+    "idHedios": "doucouredave@hotmail.com",
+    "dcd": false,
+    "owner": "Cyril DUTARTRE",
+    "calendlyUrl": "https://calendly.com/cdutartre-hedios/rdv-cyril-dutartre?utm_source=ws",
+    "kyc": {
+      "gelule": "00",
+      "identifiantExterne": "84005471",
+      "dateCertification": "2022-03-31",
+      "regleDeConformite": ""
+    },
+    "totalGainGH": 13913.97807,
+    "trackRecord": 29.39389223363301,
+    "detentionGammesHMoyen": 0.878505132531234,
+    "nbrAppMobile": 3,
+    "popupAppMobile": true,
+    "isinGH3": "FR1459AB1744",
+    "popupGH3": true,
+    "isEligibleGH3": false,
+    "isDeleted": false,
+    "isPersonAccount": true,
+    "attributes": {
+      "type": "Account",
+      "recordType": "Business",
+      "url": "/v1/contacts/003AY000008p6d8YAA"
+    }
+ }
+]

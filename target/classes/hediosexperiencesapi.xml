@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
+    <flow name="hediosexperiencesapi-main">
+        <http:listener config-ref="hediosexperiencesapi-httpListenerConfig" path="/*">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <apikit:router config-ref="hediosexperiencesapi-config" />
+        <error-handler ref="global-error-handler" />
+    </flow>
+    <flow name="get:\vous-connaitre:hediosexperiencesapi-config">
+        <flow-ref doc:name="getVCCollectionFlow" doc:id="5ad2173a-4c7d-4f4f-a2c9-bb425839c7f6" name="getVCCollectionFlow" />
+    </flow>
+    <flow name="get:\vous-connaitre\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleVCFlow" doc:id="e5f337c9-4159-469f-8e1c-7b4f3329c5d7" name="getSingleVCFlow" />
+    </flow>
+    <flow name="post:\vous-connaitre:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="postVCFlow" doc:id="1d1006cf-c70d-4f94-b399-291acfd2770d" name="postVCFlow" />
+    </flow>
+    <flow name="get:\histo-vl\(isin):hediosexperiencesapi-config">
+        <flow-ref doc:name="getHistoContratVLFlow" doc:id="6ddfdac5-12ab-40f0-b3df-84d9337e251a" name="getHistoContratVLFlow" />
+    </flow>
+    <flow name="get:\mouvements-du-mois\(refctt):hediosexperiencesapi-config">
+        <flow-ref doc:name="getMvtsDuMoisFlow" doc:id="869183f3-224a-4e4c-811f-5c06b51745df" name="getMvtsDuMoisFlow" />
+    </flow>
+    <flow name="get:\mouvements\(refctt):hediosexperiencesapi-config">
+        <flow-ref doc:name="getMvtHistoriqueFlow" doc:id="3abccefe-6965-4cdd-ba3c-f2ec45a9f033" name="getMvtHistoriqueFlow" />
+    </flow>
+    <flow name="get:\v1\prospects:hediosexperiencesapi-config">
+        <flow-ref doc:name="getCollectionLeadFlow" doc:id="44ba2af9-560c-45a1-995f-899157d87820" name="getCollectionLeadFlow" />
+    </flow>
+    <flow name="get:\v1\prospects\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleLeadFlow" doc:id="408d6c74-2eea-4abe-96f9-ef7c8ae5cff1" name="getSingleLeadFlow" />
+    </flow>
+    <flow name="put:\v1\prospects\(id)\adresses:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="putLeadAdressePostaleFlow" doc:id="5761cd8c-ee91-4935-9fa7-297454a90f1a" name="putLeadAdresseFlow" />
+    </flow>
+    <flow name="put:\v1\prospects\(id)\emails:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="putLeadEmailFlow" doc:id="dbd18e37-d5dc-4853-bedf-0c9735e270f7" name="putLeadEmailFlow" />
+    </flow>
+    <flow name="put:\v1\prospects\(id)\telephones:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="putLeadTelephoneFlow" doc:id="eaffed7a-e017-4c8f-a727-0cd84c8c99db" name="putLeadTelephoneFlow" />
+    </flow>
+    <flow name="post:\v1\prospects:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="postLeadFlow" doc:id="3ab15f00-3a69-4ce9-9264-d40334be6c47" name="postLeadFlow" />
+    </flow>
+    <flow name="post:\v1\prospects\(id)\convert:hediosexperiencesapi-config">
+        <flow-ref doc:name="postLeadConvertFlow" doc:id="fdb0813e-edb6-4a3d-be04-0bee76488c32" name="postLeadConvertFlow" />
+    </flow>
+    <flow name="get:\v1\adresses:hediosexperiencesapi-config">
+        <flow-ref doc:name="getAdressesCollectionFlow" doc:id="ffda42b0-4c05-4621-b608-868f8a1be1c1" name="getAdressesCollectionFlow" />
+    </flow>
+    <flow name="get:\v1\adresses\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleAdresseFlow" doc:id="283268c2-7cfb-4925-98cb-383c06fbef8f" name="getSingleAdresseFlow" />
+    </flow>
+    <flow name="post:\v1\adresses:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="postAdressesFlow" doc:id="3e15bfba-b726-4d53-849e-9fc21b6e3519" name="postAdressesFlow" />
+    </flow>
+    <flow name="put:\v1\adresses:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="putAdresseFlow" doc:id="1301c5f4-56f9-45e7-b7a0-beba15f8fccb" name="putAdresseFlow" />
+    </flow>
+    <flow name="patch:\v1\adresses\(id):application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="patchAdresseFlow" doc:id="193b2fde-c48d-4645-8e74-48a77ab5e3f1" name="patchAdresseFlow" />
+    </flow>
+    <flow name="delete:\v1\adresses\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="deleteAdresseFlow" doc:id="7fa7ffe0-6a05-418f-bbb8-a6c579aa93c5" name="deleteAdresseFlow" />
+    </flow>
+    <flow name="get:\v1\emails:hediosexperiencesapi-config">
+        <flow-ref doc:name="getEmailsCollectionFlow" doc:id="ab6aff54-09ac-4e94-8b9d-b70f4c569114" name="getEmailsCollectionFlow" />
+    </flow>
+    <flow name="get:\v1\emails\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleEmailFlow" doc:id="4f2e836c-3b89-4354-ba8f-e707e20025c8" name="getSingleEmailFlow" />
+    </flow>
+    <flow name="post:\v1\emails:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="postEmailsFlow" doc:id="470cdda3-4098-4c95-a036-5a5b3cc51e9c" name="postEmailsFlow" />
+    </flow>
+    <flow name="put:\v1\emails:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="putEmailFlow" doc:id="6d0fc2ed-c3c7-4173-be34-777cea59730a" name="putEmailFlow" />
+    </flow>
+    <flow name="patch:\v1\emails\(id):application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="patchEmailFlow" doc:id="cb3a3136-b87d-47fa-9869-91a5d9b491ec" name="patchEmailFlow" />
+    </flow>
+    <flow name="delete:\v1\emails\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="deleteEmailFlow" doc:id="d16f7072-0067-4ada-b618-a30944765488" name="deleteEmailFlow" />
+    </flow>
+    <flow name="get:\v1\telephones:hediosexperiencesapi-config">
+        <flow-ref doc:name="getTelephonesCollectionFlow" doc:id="80a61c59-545f-41fc-b90f-18fcc113bb6d" name="getTelephonesCollectionFlow" />
+    </flow>
+    <flow name="get:\v1\telephones\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleTelephoneFlow" doc:id="827360d4-9bed-4736-b9c6-9ccd823c8988" name="getSingleTelephoneFlow" />
+    </flow>
+    <flow name="post:\v1\telephones:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="postTelephonesFlow" doc:id="18a271ba-dbfb-42d3-b799-be6e1d75d845" name="postTelephonesFlow" />
+    </flow>
+    <flow name="put:\v1\telephones:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="putTelephoneFlow" doc:id="ed45ab93-7397-4cf7-96be-acf8f03f37f2" name="putTelephoneFlow" />
+    </flow>
+    <flow name="patch:\v1\telephones\(id):application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="patchTelephoneFlow" doc:id="ddb9d2e5-1ba3-4742-9f83-6ea801aeaa15" name="patchTelephoneFlow" />
+    </flow>
+    <flow name="delete:\v1\telephones\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="deleteTelephoneFlow" doc:id="450232f7-7372-4aaf-9f9e-8ba9ac029089" name="deleteTelephoneFlow" />
+    </flow>
+    <flow name="get:\v1\coordonnees\(idfc):hediosexperiencesapi-config">
+        <flow-ref doc:name="getCoordonneesFlow" doc:id="ceb2b1ae-60ac-428a-97f4-0b28f125a9c4" name="getCoordonneesFlow" />
+    </flow>
+    <flow name="patch:\v1\person-account\(id):application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="patchPersonAccountFlow" doc:id="2e08c05f-e4e4-4f94-a2a0-153fbd5175fc" name="patchPersonAccountFlow" />
+    </flow>
+    <flow name="get:\v1\notifications:hediosexperiencesapi-config">
+        <flow-ref doc:name="getAllNotificationsFlow" doc:id="e43bc817-7eb1-4a42-9555-16a3dfc9a197" name="getAllNotificationsFlow" />
+    </flow>
+    <flow name="get:\v1\notifications\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getNotificationsByContactIdFlow" doc:id="3c2bc9a0-e247-43c0-a358-f2c38fdda9d4" name="getNotificationsByContactIdFlow" />
+    </flow>
+    <flow name="post:\v1\business-account:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="postBusinessAccountFlow" doc:id="a39a31bd-b12e-416c-808f-9cdc2e551664" name="postBusinessAccountFlow" />
+    </flow>
+    <flow name="post:\v1\demandes:application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="postDemandeFlow" doc:id="117539bc-cdab-4edc-b74b-4d0400f5795e" name="postDemandeFlow" />
+    </flow>
+    <flow name="post:\v1\idfc:hediosexperiencesapi-config">
+        <flow-ref doc:name="postIDFCFlow" doc:id="fc29fa66-14ba-4f7e-81cb-a9e750a71bab" name="postIDFCFlow" />
+    </flow>
+    <flow name="get:\v1\tunnels:hediosexperiencesapi-config">
+        <flow-ref doc:name="getTunnelCollectionFlow" doc:id="9298564f-18c0-4271-be5b-f82fec22df52" name="getTunnelCollectionFlow" />
+    </flow>
+    <flow name="get:\v1\tunnels\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getTunnelFlow" doc:id="620443e9-9ee1-42f6-b2dc-bb32529c8194" name="getTunnelFlow" />
+    </flow>
+    <flow name="patch:\v1\tunnels\(id):application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="patchTunnelFlow" doc:id="7656f154-b223-47ae-a8f1-d1aed3c4b5f4" name="patchTunnelFlow" />
+    </flow>
+    <flow name="get:\v1\operations:hediosexperiencesapi-config">
+        <flow-ref doc:name="getOperationCollectionFlow" doc:id="a5b94675-e137-4c2c-a732-00b9a83bd91e" name="getOperationCollectionFlow" />
+    </flow>
+    <flow name="get:\v1\operations\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getOperationFlow" doc:id="3c0ab924-d10f-420d-a833-71e2f8cebc35" name="getOperationFlow" />
+    </flow>
+    <flow name="patch:\v1\operations\(id):application\json:hediosexperiencesapi-config">
+        <flow-ref doc:name="patchOperationFlow" doc:id="55d8ad3c-9d61-412f-81b5-97aa4c75d6a8" name="patchOperationFlow" />
+    </flow>
+    <flow name="get:\v1\accounts:hediosexperiencesapi-config">
+        <flow-ref doc:name="getCollectionAccountFlow" doc:id="26030a3e-3996-4e26-80ee-89ab36c85a4b" name="getCollectionAccountFlow" />
+    </flow>
+    <flow name="get:\v1\accounts\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleAccountFlow" doc:id="847464c6-18dd-426b-bf3e-e76d4ecd6007" name="getSingleAccountFlow" />
+    </flow>
+    <flow name="get:\v1\contacts:hediosexperiencesapi-config">
+        <flow-ref doc:name="getCollectionContactFlow" doc:id="9312482b-61f2-4da0-b367-4d04952f06e8" name="getCollectionContactFlow" />
+    </flow>
+    <flow name="get:\v1\contacts\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleContactFlow" doc:id="dd6f80b6-0db9-4063-92b2-ad540ad0f5c7" name="getSingleContactFlow" />
+    </flow>
+    <flow name="get:\v1\cadres-invests:hediosexperiencesapi-config">
+        <flow-ref doc:name="getCollectionCadreInvestFlow" doc:id="e3c4b07f-df60-43c2-b0be-9299684f4fd9" name="getCollectionCadreInvestFlow" />
+    </flow>
+    <flow name="get:\v1\cadres-invests\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleCadreInvestFlow" doc:id="69c06f29-971b-43e5-aa73-ac5bd4fd80da" name="getSingleCadreInvestFlow" />
+    </flow>
+    <flow name="get:\v1\portefeuille-gammes-h:hediosexperiencesapi-config">
+        <flow-ref doc:name="getCollectionDCVGHFlow" doc:id="b85cbe9c-7246-441d-b45c-a6eb4f50d6eb" name="getCollectionDCVGHFlow" />
+    </flow>
+    <flow name="get:\v1\portefeuille-gammes-h\(id):hediosexperiencesapi-config">
+        <flow-ref doc:name="getSingleDCVFlow" doc:id="db5444e7-a3e5-42d5-92d8-17e362adb01f" name="getSingleDCVFlow" />
+    </flow>
+    <flow name="get:\(idfc)\donnees-perso:hediosexperiencesapi-config">
+        <flow-ref doc:name="getDonneesPersoFlow" doc:id="0e60fb3a-d96d-4bf0-829c-21cdb235fe50" name="getDonneesPersoFlow" />
+    </flow>
+    <flow name="get:\v1\services\(idDocument)\documents:hediosexperiencesapi-config">
+        <flow-ref doc:name="GetDocumentById" doc:id="ad4e37be-751e-4902-ac31-7cf3bd42811b" name="getDocument" />
+    </flow>
+</mule>

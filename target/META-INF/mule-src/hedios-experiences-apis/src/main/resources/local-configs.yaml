@@ -1,0 +1,19 @@
+sapi:
+  client_id: "![9GiuHma6IBtpawVvs3fYTRzEXSIQLPXFq5tSroADsgn6b/7oVwsnkplFltye1pah]"
+  client_secret: "![joj3CsxJfDJn6XHqAb5mPCR6c8GisikWRQhDFlX7egBbJjt5/bSZxD2Rj2trAsGw]"
+  
+request:
+  port: "![I8mWQJQ03PFAtmSn9UDvkQ==]"
+  host:
+    salesforcesapi: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    coordonnes: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    flowtrigger: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    mvts: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    histovl: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    notifications: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    
+    
+    #lead: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    #vc: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    #tunnel: "![E0p0nFZUdnWS2cskqn9aBA==]"
+    #operation: "![E0p0nFZUdnWS2cskqn9aBA==]"

@@ -1,0 +1,28 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'une date de constatation
+type: object
+properties:
+  id:
+    description: identifiant unique de la date de constatation
+    type: string
+    example: a032p00001bFpDhAAK
+  rang:
+    description: Le numéro de la date de constatation
+    type: number
+    example: 12
+  gainPossible:
+    description: Gain potentiel
+    type: number | nil
+    example: 102.00
+  dateRemboursement:
+    description: La date de remboursement
+    type: date-only
+    example: 2033-06-08
+  dateConst:
+    description: La date de constation
+    type: date-only
+    example: 2033-06-01
+  coupon:
+    description: Le coupon
+    type: string
+    example: "8.5"

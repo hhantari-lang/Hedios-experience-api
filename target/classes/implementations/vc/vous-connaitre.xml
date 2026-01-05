@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getVCCollectionFlow" doc:id="8f5acd9c-0299-4a39-98be-3d2f2468d6e5" >
+		<logger level="INFO" doc:name="START" doc:id="86c57368-722e-434c-9d72-a2493202f741" message="---------- START GET VC COLLECTION ---------- " />
+		<set-variable value="#[%dw 2.0&#10;output application/json&#10;&#10;---&#10;{&#10;	startDate: attributes.queryParams.startDate default '',&#10;	endDate: attributes.queryParams.endDate default '',&#10;	contact: attributes.queryParams.contact default '',&#10;	tunnel: attributes.queryParams.tunnel default '',&#10;	operation: attributes.queryParams.operation default '',&#10;	offset: attributes.queryParams.offset default 0,&#10;	limit: attributes.queryParams.limit default 10&#10;} filterObject((v, k) -&gt; v != '')]" doc:name="queryParamsVC" doc:id="f6a9169c-07d4-402c-a7c2-cdd8e18b2bae" variableName="queryParamsVC" />
+		<http:request method="GET" doc:name="getVCCollection" doc:id="a4c61f4f-6319-45e0-98ca-5754850625a8" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.vc}:${http.private.port}/vous-connaitre" >
+			<http:query-params ><![CDATA[#[output application/java
+---
+vars.queryParamsVC]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="ad29259d-309d-4bc4-bdc6-05af6a352d7d" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="faa25886-06e3-4297-9698-fe6686fe8e81" message="---------- END GET VC COLLECTION ---------- " />
+	</sub-flow>
+	<sub-flow name="getSingleVCFlow" doc:id="66c62bf0-f5cb-4ff3-bd4d-9c26c5f08ca5" >
+		<logger level="INFO" doc:name="START" doc:id="dc1a47ee-4da4-4bf5-80ee-1f21b940ec3f" message="---------- START GET VC  ---------- " />
+		<http:request method="GET" doc:name="getVC" doc:id="0bf2f3df-6fb9-454f-acec-87c826200bd7" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.vc}:${http.private.port}/vous-connaitre/{id}" >
+			<http:uri-params ><![CDATA[#[%dw 2.0
+import * from dw::core::URL
+output application/java
+---
+{
+	"id" : encodeURI(attributes.uriParams.id)
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="c9d8ca23-96c9-4015-81eb-c5e8136ea353" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="0b294049-a2ec-44f9-a330-6892f88e7a8e" message="---------- END GET VC ---------- " />
+	</sub-flow>
+	<sub-flow name="postVCFlow" doc:id="2946d897-31ce-4293-b229-9bb8b06d58fa" >
+		<logger level="INFO" doc:name="START" doc:id="c375f6af-798f-4451-b5f0-fa43414e537f" message="---------- START POST VC  ---------- " />
+		<http:request method="POST" doc:name="postVC" doc:id="d0001ce4-f4e2-4c41-b6cd-3377d174ad35" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.vc}:${http.private.port}/vous-connaitre" />
+		<ee:transform doc:name="Transform Message" doc:id="1ddf89cc-c2f4-4a9e-817c-73cd0a570938" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="httpStatus" ><![CDATA[201]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="6caf12e8-dfe3-4b2d-a8fd-937de7ba6098" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="bed7d333-f473-48de-863c-8c62fa0f2f01" message="---------- END POST VC ---------- " />
+	</sub-flow>
+
+</mule>

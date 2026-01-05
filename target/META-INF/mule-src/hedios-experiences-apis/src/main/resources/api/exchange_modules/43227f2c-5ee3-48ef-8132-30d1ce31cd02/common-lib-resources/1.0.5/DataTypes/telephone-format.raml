@@ -1,0 +1,92 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'un numéro de téléphone
+type: object
+properties:
+  id:
+    description: identifiant unique du numéro de téléphone
+    type: string
+    example: a102p00000h23t9AAA
+    required: false
+  nom:
+    description: Le nom du numéro de téléphone
+    type: string
+    example: TEL-38666809
+    required: false
+  type:
+    description: Le type de numéro de téléphone
+    type: string
+    example: TEL
+    enum:
+      - TEL
+      - GSM
+      - FAX
+  tel:
+    description: Le numéro de téléphone
+    type: string
+    pattern: ((^0|\+)\d{4,20})
+    example: '+33647026791'
+  isPrincipal:
+    description: Definit le numéro de téléphone principal
+    type: boolean
+    example: true
+  qualification:
+    description: La qualification du numéro de téléphone
+    type: string
+    example: Personnel
+    enum:
+      - Personnel
+      - Professionnel
+      - Conjoint
+    required: false
+  fauxNumero:
+    description: Indique si c'est un faux numéro
+    type: boolean
+    example: false
+    required: false
+  sms:
+    description: Indique si le client veut recevoir des sms sur ce numéro
+    type: boolean
+    example: true
+    required: false
+  repondeur:
+    description: Indique si le client veut recevoir des messages répondeurs sur ce numéro
+    type: boolean
+    example: true
+    required: false
+  appelsSortants:
+    description: Indique si le client veut recevoir des appels entrants sur ce numéro
+    type: boolean
+    example: true
+    required: false
+  source:
+    description: La source du numéro de téléphone
+    type: string
+    example: Marketing
+    enum:
+      - Marketing
+    required: false
+  contact:
+    description: identifiant unique du contact rattaché
+    type: string
+    example: 0032p00002ZQk7uAAD
+    required: false
+  compte:
+    description: identifiant unique du compte rattaché
+    type: string
+    example: 0012p00002ZN8ZYAA1
+    required: false
+  idHedios:
+    description: identifiant custom Hedios du numéro de téléphone
+    type: string
+    example: a112p00000WNp2IAAT
+    required: false
+  branche:
+    description: La branche de l'enregistrement
+    type: string
+    example: HEDFR
+    required: false
+  origin:
+    description: Source de création / modification de la donnée
+    type: string
+    example: KYC
+    required: false

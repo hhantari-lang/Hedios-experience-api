@@ -1,0 +1,17 @@
+[
+  {
+    "id": "003AY000008p6d8YAA",
+    "idAccount": "001AY00000BGtixYAD",
+    "idHedios": "189015",
+    "nom": "Risque PROFL",
+    "civilite": "Madame",
+    "isPersonAccount": true,
+    "segment": "Client GH | nil",
+    "isDeleted": false,
+    "attributes": {
+      "type": "Account",
+      "recordType": "Business",
+      "url": "/v1/contacts/003AY000008p6d8YAA"
+    }
+ }
+]

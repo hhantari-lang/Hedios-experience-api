@@ -1,0 +1,118 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un compte (Account)
+type: object
+properties:
+  id:
+    description: Identifiant unique de l'enregistrement
+    type: string
+  segment:
+    description: Segment du compte
+    enum:
+      - Prospect
+      - Client AV
+      - Client GH
+      - Client MGH
+      - Client Hors AV
+    example: Client GH
+    type: string
+  civilite:
+    description: Civilite du compte
+    type: string
+  prenom:
+    description: Prénom du compte
+    type: string
+  nom:
+    description: Nom du compte
+    type: string
+  nomDeNaissance:
+    description: Nom de naissance du compte
+    type: string
+  name:
+    description: Alias (Prénom NOM) du compte
+    type: string
+  nationalite:
+    description: Nationalité du compte
+    type: string | nil
+  dateNaissance:
+    description: Date de naissance du compte
+    type: date-only
+  villeNaissance:
+    description: Ville de naissance du compte
+    type: string
+  cpInseeNaissance:
+    description: Le code INSEE de la ville de naissance du compte
+    type: string | nil
+  departementDeNaissance:
+    description: Le département de naissance du compte
+    type: string
+  paysDeNaissance:
+    description: Le pays de naissance du compte
+    type: string
+  idContact:
+    description: ID Contact salesforce du compte
+    type: string
+  idConnexion:
+    description: L'email de connexion du compte
+    type: string
+  idHedios:
+    description: L'identifiant unique Hedios du compte
+    type: string
+  dcd:
+    description: Indique si le client est décédé
+    type: boolean
+  isBusinessAccount:
+    description: Indique si l'enregistrement est un business account salesforce
+    type: boolean
+  isPersonAccount:
+    description: Indique si l'enregistrement est un personAccount salesforce
+    type: boolean
+  owner:
+    description: Le owner (conseiller) du client
+    type: string
+  calendlyUrl:
+    description: L'url calendy du conseiller du client
+    type: string
+  kyc: !include kycsuravenir-format.raml
+  totalGainGH:
+    description: Total gains Gammes H réalisé par le client
+    type: number
+    format: float
+  trackRecord:
+    description: Le track record du client
+    type: number
+    format: float
+  detentionGammesHMoyen:
+    description: La durée moyenne de détention des supports Gammes H du client
+    type: number
+    format: float
+  nbrAppMobile:
+    description: Le nombre d'applications mobiles installées du client
+    type: number
+  popupAppMobile:
+    description: Indique si le client à ouvert ou pas le popup app mobile
+    type: boolean
+  isinGH3:
+    description: Code ISIN du support de l'offre spéciale
+    type: string
+  popupGH3:
+    description: Indique si le client à ouvert ou pas le popup Gammes H offre spéciale
+    type: boolean
+  isEligibleGH3:
+    description: Indique si le client est éligible à l'offre spéciale
+    type: boolean
+  isDeleted:
+    description: Indique compte a été supprimé sur salesforce
+    type: boolean
+  attributes:
+    type: object
+    properties:
+      type: 
+        description: Le nom API de l'objet
+        type: string
+      recordType: 
+        description: Le record type de l'enregistrement
+        type: string | nil
+      url: 
+        description: API URL pour le détail
+        type: string
+  

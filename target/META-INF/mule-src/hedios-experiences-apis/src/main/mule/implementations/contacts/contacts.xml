@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="getCollectionContactFlow" doc:id="1343cfe7-cc29-4f4a-8a3d-6ec719f73767" >
+		<logger level="INFO" doc:name="START" doc:id="08686fc0-4b5c-4d5e-81b5-52f02223fb88" message="---------- START GET COLLECTION CONTACT ---------- " />
+		<http:request method="GET" doc:name="getCollectionContact" doc:id="a0851ca6-0a91-47d9-b619-55bd5ef49868" config-ref="HTTP_Request_configuration" url='#["http://" ++ Mule::p("secure::request.host.salesforcesapi") ++ ":" ++ Mule::p("http.private.port") ++ attributes.requestUri]' />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="cbcc17ea-d0af-4356-baf5-013d972e72b6" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="8ecccba4-4f60-4e48-9ffb-d033ea115fe7" message="---------- END GET COLLECTION CONTACT ---------- " />
+	</sub-flow>
+	<sub-flow name="getSingleContactFlow" doc:id="05cdf009-ce1f-4ad9-8b9b-0d1d8c841b2a" >
+		<logger level="INFO" doc:name="START" doc:id="37e4fded-c10e-4a48-ae72-6a4fd5fb8c92" message="---------- START GET SINGLE CONTACT ---------- " />
+		<http:request method="GET" doc:name="getSingleContact" doc:id="9d615876-91d4-4c4b-9a4e-454c6dbb644d" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforcesapi}:${http.private.port}/v1/contacts/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	id : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="6e4db1c4-1a68-45e5-99e5-23b378f053db" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="dedb0525-4563-443e-9857-88226b90aaae" message="---------- END GET SINGLE CONTACT ---------- " />
+	</sub-flow>
+
+</mule>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="getCollectionDCVGHFlow" doc:id="56134ea4-4390-41ba-8f90-863e861f79a7" >
+		<logger level="INFO" doc:name="START" doc:id="8d80ddeb-6218-45bc-bdd5-99ff3d9a004c" message="---------- START GET COLLECTION PORTEFEUILLE GAMMES H ---------- " />
+		<http:request method="GET" doc:name="getCollectionDCV" doc:id="c521b100-1046-47a8-9eaf-3b8cc6742e66" config-ref="HTTP_Request_configuration" url='#["http://" ++ Mule::p("secure::request.host.salesforcesapi") ++ ":" ++ Mule::p("http.private.port") ++ attributes.requestUri]' />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="98e82f67-ac56-467e-9cf9-9a5d634e12d1" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="980f5a49-eb3a-48f2-9aed-bb26fbbbaed7" message="---------- END GET COLLECTION  PORTEFEUILLE GAMMES H ---------- " />
+	</sub-flow>
+	<sub-flow name="getSingleDCVFlow" doc:id="77395448-acad-4dff-8d07-bcacd1369807" >
+		<logger level="INFO" doc:name="START" doc:id="cf9e90fc-7ea5-4ce3-b54c-63e60abe8696" message="---------- START GET SINGLE  PORTEFEUILLE GAMMES H ---------- " />
+		<http:request method="GET" doc:name="getSingleDCV" doc:id="87d74a8d-cabc-47b7-a5cc-17d0ff0ea221" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforcesapi}:${http.private.port}/v1/portefeuille-gammes-h/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	id : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="c2e8000e-48d9-4dc6-98cc-30d8587e1002" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="658fd4d0-e6f0-4761-8c1e-208da3fa5350" message="---------- END GET SINGLE  PORTEFEUILLE GAMMES H ---------- " />
+	</sub-flow>
+
+</mule>

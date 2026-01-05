@@ -1,0 +1,2436 @@
+[
+    {
+        "villeNaissance": "Dakar",
+        "trackrecordInfo": {
+            "trackRecord": 29.393892233633011797079999298635400,
+            "nbGHRembourser6m": 0,
+            "nbGHRembourser": 7,
+            "nbGHInvestie6m": 0,
+            "nbGHInverstieTotal": 7,
+            "mttGHRembourser6m": 0,
+            "mttGHInverstie6m": 0,
+            "dtPremiereInvestie": "2019-03-29T00:00:00.000Z",
+            "detentionGammesHMoyen": 0.878505132531234010426709688458852
+        },
+        "trackRecord": 29.3938922336330117970799992986354,
+        "totalRembPotentiel": 87624.5811000000005,
+        "totalGainGH": 13913.97807,
+        "telephones": [
+            {
+                "type": "GSM",
+                "tel": "+33600000003",
+                "nom": "TEL-47951836",
+                "isPrincipal": false,
+                "id": "a10AY000001cJSTYA2",
+                "fauxNumero": false
+            },
+            {
+                "type": "GSM",
+                "tel": "+33600000000",
+                "nom": "TEL-47951864",
+                "isPrincipal": false,
+                "id": "a10AY000001rdfNYAQ",
+                "fauxNumero": false
+            },
+            {
+                "type": "GSM",
+                "tel": "+33647026796",
+                "nom": "TEL-47951866",
+                "isPrincipal": false,
+                "id": "a10AY000001rdnRYAQ",
+                "fauxNumero": false
+            },
+            {
+                "type": "GSM",
+                "tel": "+33647026791",
+                "nom": "TEL-47951314",
+                "isPrincipal": true,
+                "id": "a10MU000000WIHpYAO",
+                "fauxNumero": false
+            },
+            {
+                "type": "GSM",
+                "tel": "+33600000001",
+                "nom": "TEL-47951808",
+                "isPrincipal": false,
+                "id": "a10MU000000ydR2YAI",
+                "fauxNumero": false
+            },
+            {
+                "type": "GSM",
+                "tel": "+33600000002",
+                "nom": "TEL-47951810",
+                "isPrincipal": false,
+                "id": "a10MU000000ydR7YAI",
+                "fauxNumero": false
+            }
+        ],
+        "segment": "Client GH",
+        "prenom": "El-Hadji-Daouda",
+        "popupGH3": true,
+        "popupAppMobile": true,
+        "paysDeNaissance": "SENEGAL",
+        "owner": "Cyril DUTARTRE",
+        "nomDeNaissance": "DOUCOURE",
+        "nom": "DOUCOURE",
+        "nbrAppMobile": 34,
+        "nationalite": "FRANCE",
+        "name": "El-Hadji-Daouda DOUCOURE",
+        "liquidites": 0,
+        "kyc": {
+            "regleDeConformite": null,
+            "identifiantExterne": "84005471",
+            "gelule": "00",
+            "dateCertification": "2023-02-07"
+        },
+        "isPersonAccount": true,
+        "isLead": false,
+        "isinGH3": "FR1459AB1744",
+        "isEligibleGH3": false,
+        "isBusinessAccount": false,
+        "idContact": "0032p00002ZQkPtAAL",
+        "idConnexion": "doucouredave@hotmail.com",
+        "id": "0012p00002ZN8ZYAA1",
+        "emails": [
+            {
+                "nom": "Email-41800588",
+                "isPrincipal": false,
+                "id": "a0zAY0000004VwTYAU",
+                "email": "email2@gmail.com"
+            },
+            {
+                "nom": "Email-41800594",
+                "isPrincipal": false,
+                "id": "a0zAY0000004ifCYAQ",
+                "email": "email2_update1@gmail.com"
+            },
+            {
+                "nom": "Email-41800676",
+                "isPrincipal": false,
+                "id": "a0zAY0000005sqzYAA",
+                "email": "leon.damas@gmail.com"
+            },
+            {
+                "nom": "Email-41768397",
+                "isPrincipal": true,
+                "id": "a0zMU00000096I5YAI",
+                "email": "doucouredave@hotmail.com"
+            },
+            {
+                "nom": "Email-41800568",
+                "isPrincipal": false,
+                "id": "a0zMU000000MVSVYA4",
+                "email": "email1@gmail.com"
+            }
+        ],
+        "detentionGammesHMoyen": 0.878505132531234010426709688458852,
+        "departementDeNaissance": "99",
+        "dcd": false,
+        "dateNaissance": "1983-07-03",
+        "cpInseeNaissance": null,
+        "contratsVie": [
+            {
+                "volgaContratId": "a1Y2p000005G5YxEAK",
+                "versementsProg": [
+                    {
+                        "txFrais": 0.000000,
+                        "rum": "SURAV19358000000001822656",
+                        "periodicite": "M",
+                        "nom": "VPP374",
+                        "montantNet": 200.000000,
+                        "montantBrut": 0.000000,
+                        "modeRglmt": "Prélèvement",
+                        "id": "a1X2p00000GdfD8EAJ",
+                        "iban": "FR7610278061050002075750491",
+                        "frais": 0.000000,
+                        "dtProchainVP": "2023-03-05",
+                        "ajustement": false
+                    }
+                ],
+                "valeurRachat": 57413.55,
+                "typeGestion": "LIBRE",
+                "totalVersementBrut": 49000.00,
+                "totalRembPotentiel": 87624.5811000000005,
+                "totalRachatBrut": 0.00,
+                "stopLossRelatif": false,
+                "stopLoss": false,
+                "statutContrat": "0",
+                "souscritLe": "2019-03-27",
+                "sousCategorie": "ASSURANCE-VIE",
+                "soldeAvance": 0.00,
+                "securisationPlusValues": false,
+                "role": "ADH",
+                "refCtt": "5E 266642446",
+                "reequilibrageAutomatique": false,
+                "operationsEnLigne": {
+                    "transfert": {
+                        "uri": "",
+                        "libelle": "transfert",
+                        "activeFTunnel": false,
+                        "activeFMonCompte": false,
+                        "activeFApp": false,
+                        "active": false
+                    },
+                    "documents": {
+                        "uri": "",
+                        "libelle": "documents",
+                        "activeFTunnel": false,
+                        "activeFMonCompte": true,
+                        "activeFApp": false,
+                        "active": false
+                    },
+                    "rachat": {
+                        "uri": "souscrire/rachat/5E 266642446",
+                        "libelle": "rachat",
+                        "activeFTunnel": false,
+                        "activeFMonCompte": true,
+                        "activeFApp": true,
+                        "active": true
+                    },
+                    "mandat": {
+                        "uri": "souscrire/le-mandat-gammes-h/5E 266642446",
+                        "libelle": "mandat",
+                        "activeFTunnel": true,
+                        "activeFMonCompte": true,
+                        "activeFApp": false,
+                        "active": false
+                    },
+                    "versement": {
+                        "uri": "souscrire/versement/5E 266642446",
+                        "libelle": "versement",
+                        "activeFTunnel": true,
+                        "activeFMonCompte": true,
+                        "activeFApp": true,
+                        "active": true
+                    },
+                    "arbitrage": {
+                        "uri": "souscrire/arbitrage/5E 266642446",
+                        "libelle": "arbitrage",
+                        "activeFTunnel": true,
+                        "activeFMonCompte": true,
+                        "activeFApp": true,
+                        "active": true
+                    }
+                },
+                "nom": "5E 266642446 - Hedios Life",
+                "niveau5": "Hedios Life",
+                "montantFE": 1833.63,
+                "montant": 57409.01,
+                "mandat": null,
+                "liquidites": null,
+                "lazard": false,
+                "interetAvance": 0.00,
+                "id": "a0u2p00000SW6SDAA1",
+                "haveMandat": false,
+                "gammeshEnCoursDeRemb": [
+                    {
+                        "vlPart": 1255.4999419347346,
+                        "valorisation": 25.053469038852818735042260493985700,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Coupon bonus",
+                        "seuilDeRemboursementBase100": 110.00,
+                        "seuilDeRemboursement": 10.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 12103.266000000001,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 10811.11,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 44",
+                        "performanceNet": 0.00,
+                        "performance": 40.00,
+                        "objectifAnnuel": 40.00,
+                        "nombreDePart": 8.611000,
+                        "nom": "H PERFORMANCE 44",
+                        "montantInvesti": 8645.19,
+                        "montantDesinvesti": null,
+                        "manqueAGagner": 1292.156000000001,
+                        "isin": "FR00140099P1",
+                        "indice": {
+                            "nom": "Euro iStoxx® 50 Equal Weight NR Decrement 5 %",
+                            "niveauInitial": 523.56,
+                            "niveauDeclenchement": 575.92,
+                            "niveauActuel": 638.35,
+                            "evolution": 21.924898769959507983803193521277400,
+                            "dateNiveau": "2023-07-17T17:03:41.000Z",
+                            "dateDebut": "2012-10-29",
+                            "code": "221.10.00O5",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 366.49
+                        },
+                        "id": "a0vMU0000006k5NYAQ",
+                        "garant": "Citigroup",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 0.00,
+                        "evolutionIndiceReference": 23.34,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2034-07-03",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": "2023-03-21",
+                        "dateStrike": "2022-07-01",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 73.00,
+                                "dateRemboursement": "2034-07-11",
+                                "dateConst": "2034-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 70.00,
+                                "dateRemboursement": "2033-07-11",
+                                "dateConst": "2033-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 67.00,
+                                "dateRemboursement": "2032-07-09",
+                                "dateConst": "2032-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 64.00,
+                                "dateRemboursement": "2031-07-09",
+                                "dateConst": "2031-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 61.00,
+                                "dateRemboursement": "2030-07-09",
+                                "dateConst": "2030-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 58.00,
+                                "dateRemboursement": "2029-07-10",
+                                "dateConst": "2029-07-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 55.00,
+                                "dateRemboursement": "2028-07-11",
+                                "dateConst": "2028-07-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 52.00,
+                                "dateRemboursement": "2027-07-09",
+                                "dateConst": "2027-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 49.00,
+                                "dateRemboursement": "2026-07-08",
+                                "dateConst": "2026-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 46.00,
+                                "dateRemboursement": "2025-07-09",
+                                "dateConst": "2025-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 43.00,
+                                "dateRemboursement": "2024-07-09",
+                                "dateConst": "2024-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 40.00,
+                                "dateRemboursement": "2023-07-11",
+                                "dateConst": "2023-07-03",
+                                "coupon": "37|3"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2022-07-02",
+                        "dateFinArbitrageSE": "2022-06-30T19:45:00.000Z",
+                        "dateDesinvesti": null,
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": "2023-07-03",
+                        "dateCloture": "2023-07-11",
+                        "compteARebours": 26,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp44_brochure.pdf",
+                        "arbitrable": false
+                    }
+                ],
+                "gammeshClotures": [
+                    {
+                        "vlPart": 0.00,
+                        "valorisation": -100,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Effet mémoire plein",
+                        "seuilDeRemboursementBase100": 105.00,
+                        "seuilDeRemboursement": 5.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 0.00,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 0.00,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 23<br/>Les frais ne sont pas encore déduits",
+                        "performanceNet": 26.4878,
+                        "performance": 28.00,
+                        "objectifAnnuel": 14.00,
+                        "nombreDePart": 0.000000,
+                        "nom": "H PERFORMANCE 23",
+                        "montantInvesti": 1000.00,
+                        "montantDesinvesti": 1205.238,
+                        "manqueAGagner": 0,
+                        "isin": "FR0013386968",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 835.78,
+                            "niveauDeclenchement": 877.57,
+                            "niveauActuel": 944.82,
+                            "evolution": 13.046495489243580846634281748785600,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 585.05
+                        },
+                        "id": "a0vMU0000006k5DYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 264.878,
+                        "evolutionIndiceReference": 10.07,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2031-03-31",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": null,
+                        "dateStrike": "2019-03-29",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 138.00,
+                                "dateRemboursement": "2031-04-07",
+                                "dateConst": "2031-03-31",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 127.00,
+                                "dateRemboursement": "2030-04-08",
+                                "dateConst": "2030-03-29",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 116.00,
+                                "dateRemboursement": "2029-04-06",
+                                "dateConst": "2029-03-29",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 105.00,
+                                "dateRemboursement": "2028-04-06",
+                                "dateConst": "2028-03-29",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 94.00,
+                                "dateRemboursement": "2027-04-07",
+                                "dateConst": "2027-03-30",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 83.00,
+                                "dateRemboursement": "2026-04-07",
+                                "dateConst": "2026-03-30",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 72.00,
+                                "dateRemboursement": "2025-04-08",
+                                "dateConst": "2025-03-31",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 61.00,
+                                "dateRemboursement": "2024-04-10",
+                                "dateConst": "2024-04-02",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 50.00,
+                                "dateRemboursement": "2023-04-06",
+                                "dateConst": "2023-03-29",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 39.00,
+                                "dateRemboursement": "2022-04-06",
+                                "dateConst": "2022-03-29",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 28.00,
+                                "dateRemboursement": "2021-04-06",
+                                "dateConst": "2021-03-29",
+                                "coupon": "11"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 17.00,
+                                "dateRemboursement": "2020-04-07",
+                                "dateConst": "2020-03-30",
+                                "coupon": "6|11"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2019-03-29",
+                        "dateFinArbitrageSE": "2019-03-28T19:45:00.000Z",
+                        "dateDesinvesti": "2021-04-07",
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": null,
+                        "dateCloture": "2021-04-06",
+                        "compteARebours": null,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp23_brochure_1-0.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 0.00,
+                        "valorisation": -100,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Effet mémoire plein",
+                        "seuilDeRemboursementBase100": 95.00,
+                        "seuilDeRemboursement": -5.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 0.00,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 0.00,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Absolu 5<br/>Les frais ne sont pas encore déduits",
+                        "performanceNet": 14.376,
+                        "performance": 16.00,
+                        "objectifAnnuel": 8.00,
+                        "nombreDePart": 0.000000,
+                        "nom": "H ABSOLU 5",
+                        "montantInvesti": 100.00,
+                        "montantDesinvesti": 114.37599999999999,
+                        "manqueAGagner": 0,
+                        "isin": "FR0013396405",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 872.80,
+                            "niveauDeclenchement": 829.16,
+                            "niveauActuel": 944.82,
+                            "evolution": 8.2516040329972502291475710357470200,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 610.96
+                        },
+                        "id": "a0vMU0000006k5EYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H ABSOLU",
+                        "gain": 14.376,
+                        "evolutionIndiceReference": 7.44,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2031-04-30",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": null,
+                        "dateStrike": "2019-04-30",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 96.00,
+                                "dateRemboursement": "2031-05-07",
+                                "dateConst": "2031-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 88.00,
+                                "dateRemboursement": "2030-05-07",
+                                "dateConst": "2030-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 80.00,
+                                "dateRemboursement": "2029-05-07",
+                                "dateConst": "2029-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 72.00,
+                                "dateRemboursement": "2028-05-09",
+                                "dateConst": "2028-05-02",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 64.00,
+                                "dateRemboursement": "2027-05-07",
+                                "dateConst": "2027-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 56.00,
+                                "dateRemboursement": "2026-05-07",
+                                "dateConst": "2026-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 48.00,
+                                "dateRemboursement": "2025-05-07",
+                                "dateConst": "2025-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 40.00,
+                                "dateRemboursement": "2024-05-07",
+                                "dateConst": "2024-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 32.00,
+                                "dateRemboursement": "2023-05-09",
+                                "dateConst": "2023-05-02",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 24.00,
+                                "dateRemboursement": "2022-05-09",
+                                "dateConst": "2022-05-02",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 16.00,
+                                "dateRemboursement": "2021-05-07",
+                                "dateConst": "2021-04-30",
+                                "coupon": "8"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 8.00,
+                                "dateRemboursement": "2020-05-07",
+                                "dateConst": "2020-04-30",
+                                "coupon": "8"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2019-04-03",
+                        "dateFinArbitrageSE": "2019-04-29T19:45:00.000Z",
+                        "dateDesinvesti": "2021-05-15",
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": null,
+                        "dateCloture": "2021-05-07",
+                        "compteARebours": null,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/ha5_brochure_0-8.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 0.00,
+                        "valorisation": -100,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Coupon bonus",
+                        "seuilDeRemboursementBase100": 105.00,
+                        "seuilDeRemboursement": 5.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 0.00,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 0.00,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 29<br/>Les frais ne sont pas encore déduits",
+                        "performanceNet": 25.571935049505,
+                        "performance": 30.00,
+                        "objectifAnnuel": 30.00,
+                        "nombreDePart": 0.000000,
+                        "nom": "H PERFORMANCE 29",
+                        "montantInvesti": 10100.00,
+                        "montantDesinvesti": 12682.765439999997,
+                        "manqueAGagner": 0,
+                        "isin": "FR0013476843",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 672.56,
+                            "niveauDeclenchement": 706.20,
+                            "niveauActuel": 944.82,
+                            "evolution": 40.481146663494706791959081717616300,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 470.79
+                        },
+                        "id": "a0vMU0000006k5FYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 2582.76544,
+                        "evolutionIndiceReference": 38.00,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2032-05-04",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": null,
+                        "dateStrike": "2020-05-04",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 63.00,
+                                "dateRemboursement": "2032-05-11",
+                                "dateConst": "2032-05-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 60.00,
+                                "dateRemboursement": "2031-05-12",
+                                "dateConst": "2031-05-05",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 57.00,
+                                "dateRemboursement": "2030-05-13",
+                                "dateConst": "2030-05-06",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 54.00,
+                                "dateRemboursement": "2029-05-11",
+                                "dateConst": "2029-05-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 51.00,
+                                "dateRemboursement": "2028-05-11",
+                                "dateConst": "2028-05-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 48.00,
+                                "dateRemboursement": "2027-05-11",
+                                "dateConst": "2027-05-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 45.00,
+                                "dateRemboursement": "2026-05-11",
+                                "dateConst": "2026-05-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 42.00,
+                                "dateRemboursement": "2025-05-12",
+                                "dateConst": "2025-05-05",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 39.00,
+                                "dateRemboursement": "2024-05-13",
+                                "dateConst": "2024-05-06",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 36.00,
+                                "dateRemboursement": "2023-05-11",
+                                "dateConst": "2023-05-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 33.00,
+                                "dateRemboursement": "2022-05-11",
+                                "dateConst": "2022-05-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 30.00,
+                                "dateRemboursement": "2021-05-11",
+                                "dateConst": "2021-05-04",
+                                "coupon": "27|3"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2020-04-29",
+                        "dateFinArbitrageSE": "2020-04-30T19:45:00.000Z",
+                        "dateDesinvesti": "2020-12-01",
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": null,
+                        "dateCloture": "2021-05-11",
+                        "compteARebours": null,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp29_brochure_0-4.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 0.00,
+                        "valorisation": -100,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Coupon bonus",
+                        "seuilDeRemboursementBase100": 110.00,
+                        "seuilDeRemboursement": 10.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 0.00,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 0.00,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 33<br/>Les frais ne sont pas encore déduits",
+                        "performanceNet": 36.8328495,
+                        "performance": 41.00,
+                        "objectifAnnuel": 41.00,
+                        "nombreDePart": 0.000000,
+                        "nom": "H PERFORMANCE 33",
+                        "montantInvesti": 10000.00,
+                        "montantDesinvesti": 13683.284950000003,
+                        "manqueAGagner": 0,
+                        "isin": "FR0013523198",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 734.91,
+                            "niveauDeclenchement": 808.40,
+                            "niveauActuel": 944.82,
+                            "evolution": 28.562681144629954688329183165285500,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 514.44
+                        },
+                        "id": "a0vMU0000006k5GYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 3683.28495,
+                        "evolutionIndiceReference": 35.83,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2032-11-02",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": null,
+                        "dateStrike": "2020-11-02",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 74.00,
+                                "dateRemboursement": "2032-11-09",
+                                "dateConst": "2032-11-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 71.00,
+                                "dateRemboursement": "2031-11-10",
+                                "dateConst": "2031-11-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 68.00,
+                                "dateRemboursement": "2030-11-11",
+                                "dateConst": "2030-11-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 65.00,
+                                "dateRemboursement": "2029-11-09",
+                                "dateConst": "2029-11-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 62.00,
+                                "dateRemboursement": "2028-11-09",
+                                "dateConst": "2028-11-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 59.00,
+                                "dateRemboursement": "2027-11-09",
+                                "dateConst": "2027-11-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 56.00,
+                                "dateRemboursement": "2026-11-09",
+                                "dateConst": "2026-11-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 53.00,
+                                "dateRemboursement": "2025-11-10",
+                                "dateConst": "2025-11-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 50.00,
+                                "dateRemboursement": "2024-11-11",
+                                "dateConst": "2024-11-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 47.00,
+                                "dateRemboursement": "2023-11-09",
+                                "dateConst": "2023-11-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 44.00,
+                                "dateRemboursement": "2022-11-09",
+                                "dateConst": "2022-11-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 41.00,
+                                "dateRemboursement": "2021-11-09",
+                                "dateConst": "2021-11-02",
+                                "coupon": "38|3"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2020-10-30",
+                        "dateFinArbitrageSE": "2020-10-30T19:45:00.000Z",
+                        "dateDesinvesti": "2021-07-01",
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": null,
+                        "dateCloture": "2021-11-09",
+                        "compteARebours": null,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp33_brochure_2-0.ld_.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 0.00,
+                        "valorisation": -100,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Constatation semestrielle",
+                        "seuilDeRemboursementBase100": 105.00,
+                        "seuilDeRemboursement": 5.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 0.00,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 0.00,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 34<br/>Les frais ne sont pas encore déduits",
+                        "performanceNet": 11.314105672499,
+                        "performance": 12.00,
+                        "objectifAnnuel": 12.00,
+                        "nombreDePart": 0.000000,
+                        "nom": "H PERFORMANCE 34",
+                        "montantInvesti": 12682.77,
+                        "montantDesinvesti": 14117.712,
+                        "manqueAGagner": 0,
+                        "isin": "FR0013533668",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 856.21,
+                            "niveauDeclenchement": 899.03,
+                            "niveauActuel": 944.82,
+                            "evolution": 10.349096600133144906039406220436600,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 599.35
+                        },
+                        "id": "a0vMU0000006k5HYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 1434.942,
+                        "evolutionIndiceReference": 12.19,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2032-12-01",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": null,
+                        "dateStrike": "2020-12-01",
+                        "datesConstatations": [
+                            {
+                                "rang": 23,
+                                "gainPossible": 144.00,
+                                "dateRemboursement": "2032-12-08",
+                                "dateConst": "2032-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 22,
+                                "gainPossible": 138.00,
+                                "dateRemboursement": "2032-06-08",
+                                "dateConst": "2032-06-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 21,
+                                "gainPossible": 132.00,
+                                "dateRemboursement": "2031-12-08",
+                                "dateConst": "2031-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 20,
+                                "gainPossible": 126.00,
+                                "dateRemboursement": "2031-06-10",
+                                "dateConst": "2031-06-03",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 19,
+                                "gainPossible": 120.00,
+                                "dateRemboursement": "2030-12-09",
+                                "dateConst": "2030-12-02",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 18,
+                                "gainPossible": 114.00,
+                                "dateRemboursement": "2030-06-10",
+                                "dateConst": "2030-06-03",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 17,
+                                "gainPossible": 108.00,
+                                "dateRemboursement": "2029-12-10",
+                                "dateConst": "2029-12-03",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 16,
+                                "gainPossible": 102.00,
+                                "dateRemboursement": "2029-06-08",
+                                "dateConst": "2029-06-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 15,
+                                "gainPossible": 96.00,
+                                "dateRemboursement": "2028-12-08",
+                                "dateConst": "2028-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 14,
+                                "gainPossible": 90.00,
+                                "dateRemboursement": "2028-06-08",
+                                "dateConst": "2028-06-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 13,
+                                "gainPossible": 84.00,
+                                "dateRemboursement": "2027-12-08",
+                                "dateConst": "2027-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 12,
+                                "gainPossible": 78.00,
+                                "dateRemboursement": "2027-06-08",
+                                "dateConst": "2027-06-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 72.00,
+                                "dateRemboursement": "2026-12-08",
+                                "dateConst": "2026-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 66.00,
+                                "dateRemboursement": "2026-06-08",
+                                "dateConst": "2026-06-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 60.00,
+                                "dateRemboursement": "2025-12-09",
+                                "dateConst": "2025-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 54.00,
+                                "dateRemboursement": "2025-06-09",
+                                "dateConst": "2025-06-02",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 48.00,
+                                "dateRemboursement": "2024-12-09",
+                                "dateConst": "2024-12-02",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 42.00,
+                                "dateRemboursement": "2024-06-10",
+                                "dateConst": "2024-06-03",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 36.00,
+                                "dateRemboursement": "2023-12-08",
+                                "dateConst": "2023-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 30.00,
+                                "dateRemboursement": "2023-06-08",
+                                "dateConst": "2023-06-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 24.00,
+                                "dateRemboursement": "2022-12-08",
+                                "dateConst": "2022-12-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 18.00,
+                                "dateRemboursement": "2022-06-08",
+                                "dateConst": "2022-06-01",
+                                "coupon": "6"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 12.00,
+                                "dateRemboursement": "2021-12-08",
+                                "dateConst": "2021-12-01",
+                                "coupon": "12"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2020-12-01",
+                        "dateFinArbitrageSE": "2020-11-30T19:45:00.000Z",
+                        "dateDesinvesti": "2021-12-09",
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": null,
+                        "dateCloture": "2021-12-08",
+                        "compteARebours": null,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp34_brochure_0-7_ld.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 0.00,
+                        "valorisation": -100,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Coupon bonus",
+                        "seuilDeRemboursementBase100": 105.00,
+                        "seuilDeRemboursement": 5.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 0.00,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 0.00,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 35<br/>Les frais ne sont pas encore déduits",
+                        "performanceNet": 19.2572,
+                        "performance": 20.00,
+                        "objectifAnnuel": 20.00,
+                        "nombreDePart": 0.000000,
+                        "nom": "H PERFORMANCE 35",
+                        "montantInvesti": 10000.00,
+                        "montantDesinvesti": 11925.720000000001,
+                        "manqueAGagner": 0,
+                        "isin": "FR00140004A3",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 861.07,
+                            "niveauDeclenchement": 904.13,
+                            "niveauActuel": 944.82,
+                            "evolution": 9.7262708026060599022146863785754900,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 602.75
+                        },
+                        "id": "a0vMU0000006k5IYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 1925.72,
+                        "evolutionIndiceReference": 16.43,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2033-01-04",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": null,
+                        "dateStrike": "2021-01-04",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 53.00,
+                                "dateRemboursement": "2033-01-11",
+                                "dateConst": "2033-01-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 50.00,
+                                "dateRemboursement": "2032-01-12",
+                                "dateConst": "2032-01-05",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 47.00,
+                                "dateRemboursement": "2031-01-14",
+                                "dateConst": "2031-01-07",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 44.00,
+                                "dateRemboursement": "2030-01-11",
+                                "dateConst": "2030-01-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 41.00,
+                                "dateRemboursement": "2029-01-11",
+                                "dateConst": "2029-01-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 38.00,
+                                "dateRemboursement": "2028-01-11",
+                                "dateConst": "2028-01-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 35.00,
+                                "dateRemboursement": "2027-01-11",
+                                "dateConst": "2027-01-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 32.00,
+                                "dateRemboursement": "2026-01-12",
+                                "dateConst": "2026-01-05",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 29.00,
+                                "dateRemboursement": "2025-01-14",
+                                "dateConst": "2025-01-07",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 26.00,
+                                "dateRemboursement": "2024-01-11",
+                                "dateConst": "2024-01-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 23.00,
+                                "dateRemboursement": "2023-01-11",
+                                "dateConst": "2023-01-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 20.00,
+                                "dateRemboursement": "2022-01-11",
+                                "dateConst": "2022-01-04",
+                                "coupon": "17|3"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2020-12-31",
+                        "dateFinArbitrageSE": "2020-12-31T16:45:00.000Z",
+                        "dateDesinvesti": "2022-01-12",
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": null,
+                        "dateCloture": "2022-01-11",
+                        "compteARebours": null,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp35_brochure_0-5._1.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 0.00,
+                        "valorisation": -100,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Coupon bonus",
+                        "seuilDeRemboursementBase100": 110.00,
+                        "seuilDeRemboursement": 10.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 0.00,
+                        "prochainGainPotentielBase100": 0,
+                        "prochainGainPotentiel": null,
+                        "prixRevient": 0.00,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 31<br/>Les frais ne sont pas encore déduits",
+                        "performanceNet": 40.0801168,
+                        "performance": 44.00,
+                        "objectifAnnuel": 44.00,
+                        "nombreDePart": 0.000000,
+                        "nom": "H PERFORMANCE 31",
+                        "montantInvesti": 10000.00,
+                        "montantDesinvesti": 14008.011680000001,
+                        "manqueAGagner": 0,
+                        "isin": "FRSG000117G6",
+                        "indice": {
+                            "nom": "Euronext® Eurozone 40 EW Decrement 5 %",
+                            "niveauInitial": 634.59,
+                            "niveauDeclenchement": 698.05,
+                            "niveauActuel": 814.60,
+                            "evolution": 28.366346775083124537102696229061300,
+                            "dateNiveau": "2023-07-17T12:15:05.000Z",
+                            "dateDebut": "2018-04-05",
+                            "code": "211.10.EZ40",
+                            "barrierePercentage": 40.00,
+                            "barriereBase100": 60.00,
+                            "barriere": 380.75
+                        },
+                        "id": "a0vMU0000006k5OYAQ",
+                        "garant": "Société Générale",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 4008.01168,
+                        "evolutionIndiceReference": 24.13,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2032-08-03",
+                        "ecartEuro": null,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": null,
+                        "dateVL": null,
+                        "dateStrike": "2020-08-03",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 77.00,
+                                "dateRemboursement": "2032-08-10",
+                                "dateConst": "2032-08-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 74.00,
+                                "dateRemboursement": "2031-08-11",
+                                "dateConst": "2031-08-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 71.00,
+                                "dateRemboursement": "2030-08-12",
+                                "dateConst": "2030-08-05",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 68.00,
+                                "dateRemboursement": "2029-08-10",
+                                "dateConst": "2029-08-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 65.00,
+                                "dateRemboursement": "2028-08-10",
+                                "dateConst": "2028-08-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 62.00,
+                                "dateRemboursement": "2027-08-10",
+                                "dateConst": "2027-08-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 59.00,
+                                "dateRemboursement": "2026-08-10",
+                                "dateConst": "2026-08-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 56.00,
+                                "dateRemboursement": "2025-08-11",
+                                "dateConst": "2025-08-04",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 53.00,
+                                "dateRemboursement": "2024-08-12",
+                                "dateConst": "2024-08-05",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 50.00,
+                                "dateRemboursement": "2023-08-10",
+                                "dateConst": "2023-08-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 47.00,
+                                "dateRemboursement": "2022-08-10",
+                                "dateConst": "2022-08-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 44.00,
+                                "dateRemboursement": "2021-08-10",
+                                "dateConst": "2021-08-03",
+                                "coupon": "41|3"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": null,
+                        "dateInvesti": "2020-07-31",
+                        "dateFinArbitrageSE": "2020-07-31T19:45:00.000Z",
+                        "dateDesinvesti": "2021-07-01",
+                        "dateConstatationProchaine": null,
+                        "dateConstatation": null,
+                        "dateCloture": "2021-08-10",
+                        "compteARebours": null,
+                        "cloture": true,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp31_brochure_1-3.pdf",
+                        "arbitrable": false
+                    }
+                ],
+                "gammesh": [
+                    {
+                        "vlPart": 917.9993793317471,
+                        "valorisation": -9.1646996927221622860979808918631800,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Effet mémoire plein",
+                        "seuilDeRemboursementBase100": 100.00,
+                        "seuilDeRemboursement": 0.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 5715.2510999999995,
+                        "prochainGainPotentielBase100": 125.5000,
+                        "prochainGainPotentiel": 25.5000,
+                        "prixRevient": 4437.15,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Rendement 50",
+                        "performanceNet": 0.00,
+                        "performance": 0,
+                        "objectifAnnuel": null,
+                        "nombreDePart": 4.833500,
+                        "nom": "H RENDEMENT 50",
+                        "montantInvesti": 4884.83,
+                        "montantDesinvesti": null,
+                        "manqueAGagner": 1278.1010999999995,
+                        "isin": "FR0014001VG5",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 972.68,
+                            "niveauDeclenchement": 972.68,
+                            "niveauActuel": 944.82,
+                            "evolution": -2.8642513467944236542336636920672800,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 40.00,
+                            "barriereBase100": 60.00,
+                            "barriere": 583.61
+                        },
+                        "id": "a0vMU0000006k5JYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H RENDEMENT",
+                        "gain": 0.00,
+                        "evolutionIndiceReference": -5.71,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2033-06-01",
+                        "ecartEuro": -194,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": 2.95,
+                        "dateVL": "2023-03-21",
+                        "dateStrike": "2021-06-01",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 102.00,
+                                "dateRemboursement": "2033-06-08",
+                                "dateConst": "2033-06-01",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 93.50,
+                                "dateRemboursement": "2032-06-08",
+                                "dateConst": "2032-06-01",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 85.00,
+                                "dateRemboursement": "2031-06-10",
+                                "dateConst": "2031-06-03",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 76.50,
+                                "dateRemboursement": "2030-06-10",
+                                "dateConst": "2030-06-03",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 68.00,
+                                "dateRemboursement": "2029-06-08",
+                                "dateConst": "2029-06-01",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 59.50,
+                                "dateRemboursement": "2028-06-08",
+                                "dateConst": "2028-06-01",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 51.00,
+                                "dateRemboursement": "2027-06-08",
+                                "dateConst": "2027-06-01",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 42.55,
+                                "dateRemboursement": "2026-06-08",
+                                "dateConst": "2026-06-01",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 34.00,
+                                "dateRemboursement": "2025-06-09",
+                                "dateConst": "2025-06-02",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 25.50,
+                                "dateRemboursement": "2024-06-10",
+                                "dateConst": "2024-06-03",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 17.00,
+                                "dateRemboursement": "2023-06-08",
+                                "dateConst": "2023-06-01",
+                                "coupon": "8.5"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 8.50,
+                                "dateRemboursement": "2022-06-08",
+                                "dateConst": "2022-06-01",
+                                "coupon": "8.5"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": "2024-06-03",
+                        "dateInvesti": "2021-06-02",
+                        "dateFinArbitrageSE": "2021-05-31T19:45:00.000Z",
+                        "dateDesinvesti": null,
+                        "dateConstatationProchaine": "2024-06-03",
+                        "dateConstatation": "2023-06-01",
+                        "dateCloture": null,
+                        "compteARebours": 58,
+                        "cloture": false,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hr50_brochure_0-5web.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 778.7000463201048,
+                        "valorisation": -22.898788752708884273719281405813900,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Coupon bonus",
+                        "seuilDeRemboursementBase100": 115.00,
+                        "seuilDeRemboursement": 15.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 44306.064,
+                        "prochainGainPotentielBase100": 163.0000,
+                        "prochainGainPotentiel": 63.0000,
+                        "prixRevient": 21350.32,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 38",
+                        "performanceNet": 0.00,
+                        "performance": 0,
+                        "objectifAnnuel": 57.00,
+                        "nombreDePart": 27.417900,
+                        "nom": "H PERFORMANCE 38",
+                        "montantInvesti": 27691.29,
+                        "montantDesinvesti": null,
+                        "manqueAGagner": 22955.744,
+                        "isin": "FR0014002CM1",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 972.77,
+                            "niveauDeclenchement": 1118.68,
+                            "niveauActuel": 944.82,
+                            "evolution": -2.8732382783186159112637108463460000,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 680.94
+                        },
+                        "id": "a0vMU0000006k5KYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 0.00,
+                        "evolutionIndiceReference": -1.92,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2033-07-01",
+                        "ecartEuro": -759,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": 18.40,
+                        "dateVL": "2023-03-21",
+                        "dateStrike": "2021-07-01",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 90.00,
+                                "dateRemboursement": "2033-07-08",
+                                "dateConst": "2033-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 87.00,
+                                "dateRemboursement": "2032-07-08",
+                                "dateConst": "2032-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 84.00,
+                                "dateRemboursement": "2031-07-08",
+                                "dateConst": "2031-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 81.00,
+                                "dateRemboursement": "2030-07-08",
+                                "dateConst": "2030-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 78.00,
+                                "dateRemboursement": "2029-07-09",
+                                "dateConst": "2029-07-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 75.00,
+                                "dateRemboursement": "2028-07-10",
+                                "dateConst": "2028-07-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 72.00,
+                                "dateRemboursement": "2027-07-08",
+                                "dateConst": "2027-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 69.00,
+                                "dateRemboursement": "2026-07-08",
+                                "dateConst": "2026-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 66.00,
+                                "dateRemboursement": "2025-07-08",
+                                "dateConst": "2025-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 63.00,
+                                "dateRemboursement": "2024-07-08",
+                                "dateConst": "2024-07-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 60.00,
+                                "dateRemboursement": "2023-07-10",
+                                "dateConst": "2023-07-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 57.00,
+                                "dateRemboursement": "2022-07-08",
+                                "dateConst": "2022-07-01",
+                                "coupon": "54|3"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": "2024-07-01",
+                        "dateInvesti": "2021-07-01",
+                        "dateFinArbitrageSE": "2021-06-30T19:45:00.000Z",
+                        "dateDesinvesti": null,
+                        "dateConstatationProchaine": "2024-07-01",
+                        "dateConstatation": "2023-07-03",
+                        "dateCloture": null,
+                        "compteARebours": 26,
+                        "cloture": false,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp38_brochure_0-7.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 887.7000342196905,
+                        "valorisation": -11.799900,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Constatation semestrielle",
+                        "seuilDeRemboursementBase100": 105.00,
+                        "seuilDeRemboursement": 5.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 11500.00,
+                        "prochainGainPotentielBase100": 120.0000,
+                        "prochainGainPotentiel": 20.0000,
+                        "prixRevient": 8820.01,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Rendement 52",
+                        "performanceNet": 0.00,
+                        "performance": 0,
+                        "objectifAnnuel": 5.00,
+                        "nombreDePart": 9.935800,
+                        "nom": "H RENDEMENT 52",
+                        "montantInvesti": 10000.00,
+                        "montantDesinvesti": null,
+                        "manqueAGagner": 2679.99,
+                        "isin": "FR0014005W33",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 970.26,
+                            "niveauDeclenchement": 1018.77,
+                            "niveauActuel": 944.82,
+                            "evolution": -2.6219776142477274132706697173953400,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 679.18
+                        },
+                        "id": "a0vMU0000006k5LYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H RENDEMENT",
+                        "gain": 0.00,
+                        "evolutionIndiceReference": -1.16,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2034-02-06",
+                        "ecartEuro": -188,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": 7.83,
+                        "dateVL": "2023-03-21",
+                        "dateStrike": "2022-02-01",
+                        "datesConstatations": [
+                            {
+                                "rang": 23,
+                                "gainPossible": 120.00,
+                                "dateRemboursement": "2034-02-13",
+                                "dateConst": "2034-02-06",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 22,
+                                "gainPossible": 115.00,
+                                "dateRemboursement": "2033-08-08",
+                                "dateConst": "2033-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 21,
+                                "gainPossible": 110.00,
+                                "dateRemboursement": "2033-02-08",
+                                "dateConst": "2033-02-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 20,
+                                "gainPossible": 105.00,
+                                "dateRemboursement": "2032-08-09",
+                                "dateConst": "2032-08-02",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 19,
+                                "gainPossible": 100.00,
+                                "dateRemboursement": "2032-02-09",
+                                "dateConst": "2032-02-02",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 18,
+                                "gainPossible": 95.00,
+                                "dateRemboursement": "2031-08-08",
+                                "dateConst": "2031-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 17,
+                                "gainPossible": 90.00,
+                                "dateRemboursement": "2031-02-10",
+                                "dateConst": "2031-02-03",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 16,
+                                "gainPossible": 85.00,
+                                "dateRemboursement": "2030-08-08",
+                                "dateConst": "2030-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 15,
+                                "gainPossible": 80.00,
+                                "dateRemboursement": "2030-02-08",
+                                "dateConst": "2030-02-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 14,
+                                "gainPossible": 75.00,
+                                "dateRemboursement": "2029-08-08",
+                                "dateConst": "2029-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 13,
+                                "gainPossible": 70.00,
+                                "dateRemboursement": "2029-02-08",
+                                "dateConst": "2029-02-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 12,
+                                "gainPossible": 65.00,
+                                "dateRemboursement": "2028-08-08",
+                                "dateConst": "2028-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 60.00,
+                                "dateRemboursement": "2028-02-08",
+                                "dateConst": "2028-02-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 55.00,
+                                "dateRemboursement": "2027-08-09",
+                                "dateConst": "2027-08-02",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 50.00,
+                                "dateRemboursement": "2027-02-08",
+                                "dateConst": "2027-02-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 45.00,
+                                "dateRemboursement": "2026-08-10",
+                                "dateConst": "2026-08-03",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 40.00,
+                                "dateRemboursement": "2026-02-09",
+                                "dateConst": "2026-02-02",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 35.00,
+                                "dateRemboursement": "2025-08-08",
+                                "dateConst": "2025-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 30.00,
+                                "dateRemboursement": "2025-02-10",
+                                "dateConst": "2025-02-03",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 25.00,
+                                "dateRemboursement": "2024-08-08",
+                                "dateConst": "2024-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 20.00,
+                                "dateRemboursement": "2024-02-08",
+                                "dateConst": "2024-02-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 15.00,
+                                "dateRemboursement": "2023-08-08",
+                                "dateConst": "2023-08-01",
+                                "coupon": "5"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 10.00,
+                                "dateRemboursement": "2023-02-08",
+                                "dateConst": "2023-02-01",
+                                "coupon": "10"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": "2024-02-01",
+                        "dateInvesti": "2022-02-01",
+                        "dateFinArbitrageSE": "2022-01-31T19:45:00.000Z",
+                        "dateDesinvesti": null,
+                        "dateConstatationProchaine": "2024-02-01",
+                        "dateConstatation": "2023-08-01",
+                        "dateCloture": null,
+                        "compteARebours": -3,
+                        "cloture": false,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hr52_brochure.pdf",
+                        "arbitrable": false
+                    },
+                    {
+                        "vlPart": 1021.7995794810919,
+                        "valorisation": 1.567900,
+                        "valeurAirbagPoints": 0,
+                        "valeurAirbagBase100": 0,
+                        "valeurAirbag": null,
+                        "typesMecanisme": "Coupon bonus",
+                        "seuilDeRemboursementBase100": 110.00,
+                        "seuilDeRemboursement": 10.00,
+                        "refCtt": "5E 266642446",
+                        "prochainGainPotentielEuro": 14000.00,
+                        "prochainGainPotentielBase100": 143.0000,
+                        "prochainGainPotentiel": 43.0000,
+                        "prixRevient": 10156.79,
+                        "phraseManqueAGagner": "Hedios vous déconseille de revendre H Performance 42",
+                        "performanceNet": 0.00,
+                        "performance": 0,
+                        "objectifAnnuel": null,
+                        "nombreDePart": 9.940100,
+                        "nom": "H PERFORMANCE 42",
+                        "montantInvesti": 10000.00,
+                        "montantDesinvesti": null,
+                        "manqueAGagner": 3843.21,
+                        "isin": "FR0014006F74",
+                        "indice": {
+                            "nom": "S&P Euro 50 Equal Weight Synthetic 5 % Price",
+                            "niveauInitial": 859.19,
+                            "niveauDeclenchement": 945.11,
+                            "niveauActuel": 944.82,
+                            "evolution": 9.9663636681060068203773321384094300,
+                            "dateNiveau": "2023-07-17T12:43:59.000Z",
+                            "dateDebut": "2017-08-14",
+                            "code": "33.10.!SPEU50ES",
+                            "barrierePercentage": 30.00,
+                            "barriereBase100": 70.00,
+                            "barriere": 601.43
+                        },
+                        "id": "a0vMU0000006k5MYAQ",
+                        "garant": "BNP Paribas",
+                        "gamme": "H PERFORMANCE",
+                        "gain": 0.00,
+                        "evolutionIndiceReference": 6.43,
+                        "euroStox50ValMax": 5464.43,
+                        "euroStox50Val": 4248.01,
+                        "euroStox50Progress": 28.64,
+                        "euroStox50Nom": "Euro Stoxx 50®",
+                        "euroStox50DateValMax": "2000-03-06",
+                        "euroStox50DateVal": "2023-02-27",
+                        "euroStox50Code": "221.10.SX5E",
+                        "echeanceSupport": "2034-03-01",
+                        "ecartEuro": -182,
+                        "distanceDepassement": null,
+                        "distanceAParcourrir": 0.03,
+                        "dateVL": "2023-03-21",
+                        "dateStrike": "2022-03-01",
+                        "datesConstatations": [
+                            {
+                                "rang": 12,
+                                "gainPossible": 73.00,
+                                "dateRemboursement": "2034-03-08",
+                                "dateConst": "2034-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 11,
+                                "gainPossible": 70.00,
+                                "dateRemboursement": "2033-03-08",
+                                "dateConst": "2033-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 10,
+                                "gainPossible": 67.00,
+                                "dateRemboursement": "2032-03-08",
+                                "dateConst": "2032-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 9,
+                                "gainPossible": 64.00,
+                                "dateRemboursement": "2031-03-10",
+                                "dateConst": "2031-03-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 8,
+                                "gainPossible": 61.00,
+                                "dateRemboursement": "2030-03-08",
+                                "dateConst": "2030-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 7,
+                                "gainPossible": 58.00,
+                                "dateRemboursement": "2029-03-08",
+                                "dateConst": "2029-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 6,
+                                "gainPossible": 55.00,
+                                "dateRemboursement": "2028-03-08",
+                                "dateConst": "2028-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 5,
+                                "gainPossible": 52.00,
+                                "dateRemboursement": "2027-03-08",
+                                "dateConst": "2027-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 4,
+                                "gainPossible": 49.00,
+                                "dateRemboursement": "2026-03-09",
+                                "dateConst": "2026-03-02",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 3,
+                                "gainPossible": 46.00,
+                                "dateRemboursement": "2025-03-10",
+                                "dateConst": "2025-03-03",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 2,
+                                "gainPossible": 43.00,
+                                "dateRemboursement": "2024-03-08",
+                                "dateConst": "2024-03-01",
+                                "coupon": "3"
+                            },
+                            {
+                                "rang": 1,
+                                "gainPossible": 40.00,
+                                "dateRemboursement": "2023-03-08",
+                                "dateConst": "2023-03-01",
+                                "coupon": "37|3"
+                            }
+                        ],
+                        "dateProchaineSortiePossible": "2024-03-01",
+                        "dateInvesti": "2022-03-01",
+                        "dateFinArbitrageSE": "2022-02-28T19:45:00.000Z",
+                        "dateDesinvesti": null,
+                        "dateConstatationProchaine": "2024-03-01",
+                        "dateConstatation": "2023-03-01",
+                        "dateCloture": null,
+                        "compteARebours": 150,
+                        "cloture": false,
+                        "brochureUrl": "https://www.hedios.com/sites/default/files/brochures/medium_term/hp42_brochure.pdf",
+                        "arbitrable": false
+                    }
+                ],
+                "fondsEurosClotures": [],
+                "fondsEuros": [
+                    {
+                        "sousCategory": "FONDS EUROS",
+                        "solde": 1833.63,
+                        "nom": "FDS EUROS SURAVENIR RENDEMENT",
+                        "MontantInvesti": 35392.93000000001,
+                        "MontantDesinvesti": 33530.020000000004,
+                        "isin": "SUR000001767",
+                        "InvestiLe": "2020-01-01",
+                        "id": "a0vMU0000006k5PYAQ",
+                        "Gains": null,
+                        "DesinvestiLe": "2022-07-02",
+                        "category": "FONDS EUROS"
+                    }
+                ],
+                "dynamisationPlusValues": false,
+                "dateValo": "2023-03-21",
+                "coherence": true,
+                "clauseMineure": false,
+                "clauseLibreTexte": "Mon conjoint, non séparé de corps, ou la personne avec laquelle j'ai conclu un pacte civile de solidarité en vigueur à la date du décès, à défaut mes enfants nés ou à naître, vivants ou représentés par part égales, à défaut mes héritiers en proportion de leurs parts héréditaires y compris les légataires universels",
+                "clauseLibre": false,
+                "clauseGenerale": true,
+                "clauseDesignee": false,
+                "blocageSESuravenir": true,
+                "autresSupportsClotures": [],
+                "autresSupports": []
+            }
+        ],
+        "coherence": true,
+        "civilite": "Monsieur",
+        "calendlyUrl": "https://calendly.com/cdutartre-hedios/rdv-cyril-dutartre?utm_source=ws",
+        "adresses": [
+            {
+                "ville": "LIMEIL BREVANNES",
+                "type": "Mon adresse principale",
+                "refuse": false,
+                "pays": "FRANCE",
+                "npai": "0",
+                "nom": "a11MU000000DQsJ",
+                "mailing": true,
+                "isPrincipal": true,
+                "id": "a11MU000000DQsJYAW",
+                "fiscale": false,
+                "cpInsee": "94044",
+                "cp": "94450",
+                "complementAdresse": null,
+                "bp": null,
+                "ancienne": false,
+                "adresse": "2 rue des Perdrix"
+            },
+            {
+                "ville": "PARIS",
+                "type": "Adresse professionnelle",
+                "refuse": false,
+                "pays": "FRANCE",
+                "npai": "0",
+                "nom": "a11AY0000005b3l",
+                "mailing": false,
+                "isPrincipal": false,
+                "id": "a11AY0000005b3lYAA",
+                "fiscale": false,
+                "cpInsee": null,
+                "cp": "75015",
+                "complementAdresse": null,
+                "bp": null,
+                "ancienne": false,
+                "adresse": "14 rue bausset"
+            },
+            {
+                "ville": "PARIS",
+                "type": "Adresse professionnelle",
+                "refuse": false,
+                "pays": "FRANCE",
+                "npai": "0",
+                "nom": "a11AY0000005qqn",
+                "mailing": false,
+                "isPrincipal": false,
+                "id": "a11AY0000005qqnYAA",
+                "fiscale": false,
+                "cpInsee": "75115",
+                "cp": "75015",
+                "complementAdresse": null,
+                "bp": null,
+                "ancienne": false,
+                "adresse": "14 rue bausset"
+            },
+            {
+                "ville": "PARIS",
+                "type": "Autre adresse",
+                "refuse": false,
+                "pays": "FRANCE",
+                "npai": "0",
+                "nom": "a11AY0000009ky5",
+                "mailing": true,
+                "isPrincipal": false,
+                "id": "a11AY0000009ky5YAA",
+                "fiscale": false,
+                "cpInsee": "75102",
+                "cp": "75002",
+                "complementAdresse": "6 eme étage droite",
+                "bp": null,
+                "ancienne": false,
+                "adresse": "7 rue de la bourse"
+            },
+            {
+                "ville": "DAKAR",
+                "type": "Autre adresse",
+                "refuse": false,
+                "pays": "SENEGAL",
+                "npai": "0",
+                "nom": "a11AY0000009kzh",
+                "mailing": true,
+                "isPrincipal": false,
+                "id": "a11AY0000009kzhYAA",
+                "fiscale": false,
+                "cpInsee": null,
+                "cp": "12345",
+                "complementAdresse": null,
+                "bp": null,
+                "ancienne": false,
+                "adresse": "5077 M Sicap Liberté 4"
+            },
+            {
+                "ville": "PARIS",
+                "type": "Autre adresse",
+                "refuse": false,
+                "pays": "FRANCE",
+                "npai": "0",
+                "nom": "a11AY0000009l1J",
+                "mailing": true,
+                "isPrincipal": false,
+                "id": "a11AY0000009l1JYAQ",
+                "fiscale": false,
+                "cpInsee": "75102",
+                "cp": "75002",
+                "complementAdresse": null,
+                "bp": null,
+                "ancienne": false,
+                "adresse": "7 rue de la bourse"
+            },
+            {
+                "ville": "PARIS",
+                "type": "Autre adresse",
+                "refuse": false,
+                "pays": null,
+                "npai": "0",
+                "nom": "a11AY0000009l2v",
+                "mailing": true,
+                "isPrincipal": false,
+                "id": "a11AY0000009l2vYAA",
+                "fiscale": false,
+                "cpInsee": "75102",
+                "cp": "75002",
+                "complementAdresse": "6 eme étage droite",
+                "bp": null,
+                "ancienne": false,
+                "adresse": "7 rue de la bourse"
+            },
+            {
+                "ville": null,
+                "type": "Autre adresse",
+                "refuse": false,
+                "pays": "FRANCE",
+                "npai": "0",
+                "nom": "a11AY0000009l4X",
+                "mailing": true,
+                "isPrincipal": false,
+                "id": "a11AY0000009l4XYAQ",
+                "fiscale": false,
+                "cpInsee": "75102",
+                "cp": "75002",
+                "complementAdresse": "6 eme étage droite",
+                "bp": null,
+                "ancienne": false,
+                "adresse": "7 rue de la bourse"
+            },
+            {
+                "ville": "PARIS",
+                "type": "Autre adresse",
+                "refuse": false,
+                "pays": "FRANCE",
+                "npai": "0",
+                "nom": "a11AY0000009l69",
+                "mailing": true,
+                "isPrincipal": false,
+                "id": "a11AY0000009l69YAA",
+                "fiscale": false,
+                "cpInsee": "75102",
+                "cp": null,
+                "complementAdresse": "6 eme étage droite",
+                "bp": null,
+                "ancienne": false,
+                "adresse": "7 rue de la bourse"
+            },
+            {
+                "ville": "DAKAR",
+                "type": "Adresse professionnelle",
+                "refuse": false,
+                "pays": "SENEGAL",
+                "npai": "0",
+                "nom": "a11MU000000Di2z",
+                "mailing": false,
+                "isPrincipal": false,
+                "id": "a11MU000000Di2zYAC",
+                "fiscale": false,
+                "cpInsee": null,
+                "cp": null,
+                "complementAdresse": "upsert FR to Etrangère",
+                "bp": null,
+                "ancienne": false,
+                "adresse": "5077 M Sicap Liberté 4"
+            }
+        ]
+    }
+]

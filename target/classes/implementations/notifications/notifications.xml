@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getAllNotificationsFlow" doc:id="65d8057a-18d6-4233-b6c0-4af0b242aac7" >
+		<logger level="INFO" doc:name="START" doc:id="3996f801-d185-4f25-934a-cf416f2d38bc" message="---------- START GET ALL NOTIFICATIONS ---------- " />
+		<http:request method="GET" doc:name="getAllNotifications" doc:id="9dc938b0-2d2a-4c75-9d20-21a763c4b914" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.notifications}:${http.private.port}/v1/notifications" >
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Authorization" : "Value"
+}]]]></http:headers>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="007cf31d-6409-41b5-bd0b-7000edc28940" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="bcd7971d-48fa-4f08-9263-19808f811f39" message="---------- END GET ALL NOTIFICATIONS ---------- " />
+	</sub-flow>
+	<sub-flow name="getNotificationsByContactIdFlow" doc:id="173965b7-2b86-4dd1-8f8c-dbd3f295bb4e" >
+		<logger level="INFO" doc:name="START" doc:id="f06893d6-e9df-4fdb-a17c-9699030778f1" message="---------- START GET NOTIFICATIONS BY SF ID CONTACT ---------- " />
+		<http:request method="GET" doc:name="getAllNotificationsByIdContact" doc:id="b5196106-0c79-490c-87c7-3b564398c2a1" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.notifications}:${http.private.port}/v1/notifications/{id}" >
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Authorization" : "Value"
+}]]]></http:headers>
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="13cac90d-6e86-4736-85e0-08a35dd22fe5" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="69bf170d-14ff-4767-8574-cfa8eb3c0595" message="---------- END GET NOTIFICATIONS BY SF ID CONTACT ---------- " />
+	</sub-flow>
+
+</mule>

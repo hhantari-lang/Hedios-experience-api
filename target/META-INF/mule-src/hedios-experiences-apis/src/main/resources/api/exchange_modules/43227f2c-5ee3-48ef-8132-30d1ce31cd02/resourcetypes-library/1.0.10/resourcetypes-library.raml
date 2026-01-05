@@ -1,0 +1,61 @@
+#%RAML 1.0 Library
+traits:
+  pagination: !include /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/pagination/1.0.3/pagination.raml
+
+securitySchemes:
+  clientSecurity: !include  /exchange_modules/43227f2c-5ee3-48ef-8132-30d1ce31cd02/hediossecurityscheme/1.0.1/hediossecurityscheme.raml
+
+resourceTypes:
+  SingleGet:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: <<item>>
+  Collection:
+    get:
+      description: Permet de récupérer un ensemble d'objets de type <<item>>
+      is: [pagination]
+      responses:
+        200:
+          body:
+            application/json:
+              type: <<item>>[]
+    post:
+      description: Permet d'enregistrer des objets de type <<item>>
+      body:
+        application/json:
+          type: <<itemPost>>[]
+      responses:
+        201:
+          body:
+            example: {"id":"a0z5t000006IZbkAAG","success":true,"errors":[]}
+    put:
+      description: Permet de mettre à jour  ou de créer des enregistrements de type <<item>>
+      body:
+        application/json:
+          type: <<itemPut>>[]
+      responses:
+        200:
+        204:
+        201:
+  Single:
+    get:
+      description: Permet de récupérer un enregistrement de type <<item>>
+      responses:
+        200:
+          body:
+            application/json:
+              type: <<item>>
+    patch:
+      description: Permet de mettre à jour un enregistrement de type <<item>>
+      body:
+        application/json:
+          type: <<itemPatch>>
+      responses:
+        204:
+    delete:
+      description: Permet de supprimer un enregistrement de type <<item>>
+      responses:
+        200:

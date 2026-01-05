@@ -1,0 +1,32 @@
+#%RAML 1.0 DataType
+
+usage: Définition de la structure d'un représentant légal
+type: object
+properties:
+  nom:
+    description: Nom du représentant légal
+    example: COPAIN
+    type: string
+  prenom:
+    description: Prénom du représentant légal
+    example: Serge
+    type: string
+  adresse:
+    description: Adresse du représentant légal
+    example: 10 rue de l'exemple
+    type: string
+  departement:
+    description: Département du représentant légal
+    example: "94"
+    type: string
+  pays:
+    description: Pays du représentant légal
+    example: FRANCE
+    type: string
+  villeEtrangere:
+    description: Ville pays hors France du représentant légal
+    example: Londres
+    type: string
+  codePostal:
+    description: Code postal du représentant légal
+    type: string

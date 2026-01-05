@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'un KYC Suravenir
+type: object
+properties:
+  gelule:
+    description: 'Le type de gelule KYC Suravenir (10: rouge,05:jaune, 00: vert)'
+    type: string
+    example: '00'
+  identifiantExterne:
+    description: L'identifiant unique Suravenir
+    type: string
+    example: '84005471'
+  dateCertification:
+    description: La date de certification Suravenir
+    type: date-only
+    example: 2022-03-31
+  regleDeConformite:
+    description: Les règles de conformité Suravenir
+    type: string
+    required: false

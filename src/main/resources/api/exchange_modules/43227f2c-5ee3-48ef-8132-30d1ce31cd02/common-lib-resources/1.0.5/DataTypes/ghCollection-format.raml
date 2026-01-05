@@ -1,0 +1,47 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  id:
+    description: Identifiant unique salesforce du detail contrat vie Gammes H
+    type: string
+  idHedios:
+    description: Identifiant unique Hedios de la Gammes H
+    type: string | nil
+  nom:
+    description: Le nom du detail contrat vie Gammes H
+    type: string
+  sousCategorie:
+    description: La Gamme du détail contrat vie Gammes H
+    type: string
+  refctt:
+    description: La référence du cadre d'investissement de la Gammes H
+    type: string
+  nbParts:
+    description: Le nombre de part du détail contrat vie Gammes H
+    type: number
+    format: float
+  montantInvesti:
+    description: Le montant investi sur le support detail contrat vie
+    type: number
+  isDeleted:
+    description: Indique si le support detail contrat vie a été supprimé
+    type: boolean
+  isEnCours:
+    description: Indique si le support detail contrat vie est en cours de vie
+    type: boolean
+  isEnCoursDeRemb:
+    description: Indique si le support detail contrat vie est en cours de remboursement
+    type: boolean
+  isClosed:
+    description: Indique si le support detail contrat vie est clôturé
+    type: boolean
+  attributes:
+    type: object
+    properties:
+      type: 
+        description: Le nom API de l'objet
+        type: string
+      url: 
+        description: API URL pour le détail du detail contrat vie
+        type: string

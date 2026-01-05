@@ -1,0 +1,255 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un Lead en GET par idfc
+type: object
+properties:
+  id:
+    description: Identifiant unique de l'enregistrement
+    example: 00QMU000001bB3L2AU
+    type: string
+  name:
+    description: Alias (Prénom NOM) du lead
+    example: SERGE COPAIN
+    type: string
+  segment:
+    description: Segment du lead
+    enum:
+      - Prospect
+      - Client AV
+      - Client GH
+      - Client MGH
+      - Client Hors AV
+    example: Client GH
+    type: string
+  civilite:
+    description: Civilite du lead
+    example: Monsieur
+    type: string
+  nom:
+    description: Nom du lead
+    example: COPAIN
+    type: string
+  prenom:
+    description: Prénom du lead
+    example: Serge
+    type: string
+  nomDeNaissance:
+    description: Nom de naissance du lead
+    example: COPAIN
+    type: string
+  nationalite:
+    description: Nationalité du lead
+    example: FRANCE
+    type: string | nil
+  idConnexion:
+    description: L'email de connexion du lead
+    example: doucouredave@hotmail.com
+    type: string
+  dateNaissance:
+    description: Date de naissance du lead
+    example: 1983-07-03
+    type: date-only
+  villeNaissance:
+    description: Ville de naissance du lead
+    example: PARIS
+    type: string
+  dcd:
+    description: Indique si le lead est décédé
+    example: false
+    type: boolean
+  cpInseeNaissance:
+    description: Le code INSEE de la ville de naissance du lead
+    example: null
+    type: string | nil
+  departementDeNaissance:
+    description: Le département de naissance du lead
+    example: "99"
+    type: string
+  paysDeNaissance:
+    description: Le pays de naissance du lead
+    example: SENEGAL
+    type: string
+  owner:
+    description: Le owner (conseiller) du lead
+    example: Cyril DUTARTRE
+    type: string
+  calendlyUrl:
+    description: L'url calendy du conseiller du lead
+    example: "https://calendly.com/cdutartre-hedios/rdv-cyril-dutartre?utm_source=ws"
+    type: string
+  kyc: !include kycsuravenir-format.raml
+  totalGainGH:
+    description: Total gains Gammes H réalisé par le lead
+    example: 13913.97807
+    type: number
+    format: float
+  trackRecord:
+    description: Le track record du lead
+    example: 29.3938922336330117970799992986354
+    type: number
+    format: float
+  detentionGammesHMoyen:
+    description: La durée moyenne de détention des supports Gammes H par le lead
+    example: 0.878505132531234010426709688458852
+    type: number
+    format: float
+  nbrAppMobile:
+    description: Le nombre d'applications mobiles installées par le lead
+    example: 3
+    type: number
+  popupAppMobile:
+    description: Indique si le lead à ouvert ou pas le popup app mobile
+    example: true
+    type: boolean
+  isinGH3:
+    description: Code ISIN du support de l'offre spéciale
+    example: FR1459AB1744
+    type: string
+  popupGH3:
+    description: Indique si le lead à ouvert ou pas le popup Gammes H offre spéciale
+    example: true
+    type: boolean
+  isEligibleGH3:
+    description: Indique si le lead est éligible à l'offre spéciale
+    example: false
+    type: boolean
+  telephones:
+    description: Liste des numéros de téléphones du lead
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          description: L'identifiant salesforce du numéro de téléphone
+          example: null
+          type: string | nil
+        nom:
+          description: Le nom du numéro de téléphone
+          example: null
+          type: string | nil
+        type:
+          description: Le type du numéro de téléphone
+          example: GSM
+          type: string
+        tel:
+          description: Le numéro de téléphone
+          example: "+33600000000"
+          type: string
+        isPrincipal:
+          description: Indique si c'est le numéro de téléphone principal
+          example: true
+          type: boolean
+        fauxNumero:
+          description: Indique si c'est un faux numéro de téléphone
+          example: false
+          type: boolean
+  emails:
+    description: Liste des adresses e-mail du lead
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          description: L'identifiant salesforce de l'adresse e-mail
+          example: null
+          type: string | nil
+        nom:
+          description: Le nom de l'adresse e-mail
+          example: null
+          type: string | nil
+        email:
+          description: L'adresse e-mail
+          example: adresse@e-mail.com
+          type: string
+        isPrincipal:
+          description: Indique si c'est l'adresse e-mail principale
+          example: true
+          type: boolean
+  adresses:
+    description: Liste des adresses postales du lead
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          description: L'identifiant salesforce de l'adresse postale
+          example: null
+          type: string | nil
+        nom:
+          description: Le nom de l'adresse postale
+          example: null
+          type: string | nil
+        type:
+          description: Le type de l'adresse postale
+          example: Mon adresse principale
+          type: string
+        adresse:
+          description: L'adressse postale
+          example: 7 rue de la bourse
+          type: string | nil
+        complementAdresse:
+          description: Le complément de l'adresse postale
+          example: 6 eme étage
+          type: string | nil
+        cp:
+          description: Le code postale de l'adresse postale
+          example: "75002"
+          type: string
+        bp:
+          description: La boite postale de l'adresse postale
+          example: null
+          type: string | nil
+        pays:
+          description: Le pays de l'adresse postale
+          example: FRANCE
+          type: string
+        ville:
+          description: La ville de l'adresse postale
+          example: PARIS
+          type: string
+        cpInsee:
+          description: Le code INSEE de l'adresse postale
+          example: null
+          type: string | nil
+        refuse:
+          description: refuse
+          example: false
+          type: boolean | nil
+        mailing:
+          description: mailing
+          example: false
+          type: boolean | nil
+        fiscale:
+          description: L'adresse e-mail
+          example: false
+          type: boolean | nil
+        isPrincipal:
+          description: Indique si c'est l'adresse postale principale
+          example: true
+          type: boolean
+        ancienne:
+          description: Indique si c'est une ancienne adresse postale
+          example: false
+          type: boolean | nil
+        npai:
+          description: npai
+          example: false
+          type: boolean | nil
+  isDeleted:
+    description: Indique si le lead a été supprimé sur salesforce
+    example: false
+    type: boolean
+  attributes:
+    type: object
+    properties:
+      type: 
+        description: Le nom API de l'objet
+        type: string
+        example: Lead
+      recordType: 
+        description: Le record type de l'enregistrement
+        type: string | nil
+        example: Business
+      url: 
+        description: API URL pour le détail
+        type: string
+        example: /v1/prospects/00QMU000001bB3L2AU

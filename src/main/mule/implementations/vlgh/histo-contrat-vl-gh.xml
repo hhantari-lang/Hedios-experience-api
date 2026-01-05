@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getHistoContratVLFlow" doc:id="f2d586a0-9f67-4d0f-a0fe-fb1eb6299092" >
+		<logger level="INFO" doc:name="START" doc:id="5e263d15-9a92-45bd-bde0-e01170cca148" message="---------- START GET HISTO CONTRAT VL GH ---------- " />
+		<set-variable value="#[%dw 2.0&#10;output application/json&#10;&#10;var calculatedLimit = if(!isBlank(attributes.queryParams.limit)) &#10;(&#10;	if(sizeOf(attributes.queryParams.limit) &gt; 0) (&#10;		if(attributes.queryParams.limit &gt; 50) 50&#10;		else attributes.queryParams.limit&#10;	)&#10;	else ''&#10;) &#10;else ''&#10;&#10;---&#10;{&#10;	refctt: attributes.queryParams.refctt default '',&#10;	contactId: attributes.queryParams.contactId default '',&#10;	startDate: attributes.queryParams.startDate default '',&#10;	endDate: attributes.queryParams.endDate default '',&#10;	offset: attributes.queryParams.offset default 0,&#10;	limit: if(isBlank(attributes.queryParams.startDate) and isBlank(calculatedLimit)) 10 else calculatedLimit&#10;} filterObject((v, k) -&gt; v != '')]" doc:name="queryParamsHistoVL" doc:id="8af0971e-36a2-435a-87c9-2d3f8ec0aae9" variableName="queryParamsHistoVL" />
+		<http:request method="GET" doc:name="getHistoContratVLGH" doc:id="161faf2c-cce1-492d-b2a7-c8ce5b3de1c0" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.heroku}:${http.private.port}/histo-vl/{isin}" >
+			<http:uri-params ><![CDATA[#[%dw 2.0
+import * from dw::core::URL
+output application/java
+---
+{
+	"isin" : encodeURI(attributes.uriParams.isin)
+}]]]></http:uri-params>
+			<http:query-params ><![CDATA[#[output application/java
+---
+vars.queryParamsHistoVL]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="20f17705-1739-47f5-b886-990f616c20df" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="ceba87f9-5664-4a74-8219-e8df05e90927" message="---------- END GET  HISTO CONTRAT VL GH ---------- " />
+	</sub-flow>
+
+</mule>

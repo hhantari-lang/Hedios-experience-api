@@ -1,0 +1,101 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'une opération
+type: object
+properties:
+  id:
+    description: Identifiant unique d'une opération
+    type: string
+  nom:
+    description: Le nom d'une opération
+    type: string
+  idHedios:
+    description: L'identifiant unique d'une opération dans la base SI Hedios
+    type: string
+  idSouscription:
+    description: L'identifiant d'une opération dans la base SI Hedios
+    type: string
+  clauseBeneficiaire:
+    description: La clause bénéficiaire d'une 'opération
+    type: string | nil
+    enum:
+      - general
+      - designated
+      - free
+  dateSignature:
+    description: La date de signature d'une opération
+    type: date-only | nil
+  detailsSupports:
+    description: Le tableau de détail des supports (désinvestis, investis) d'un opération
+    type: string | nil
+  etatSouscription:
+    description: L'état (statut) d'une opération
+    type: string
+    enum:
+      - "0"
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
+      - "7"
+      - "8"
+      - "9"
+  idGammesh1:
+    description: L'identifiant unique du premier support Gammes H d'une opération
+    type: string | nil
+  gammesh1:
+    description: Le nom du premier support Gammes H d'une opération
+    type: string | nil
+  gammesh1ISIN:
+    description: Le code ISIN du premier support Gammes H d'une opération
+    type: string | nil
+  montantGammesh1:
+    description: Le montant du premier support Gammes H d'une opération
+    type: number | nil
+  idGammesh2:
+    description: L'identifiant unique du deuxième support Gammes H d'une opération
+    type: string | nil
+  gammesH2:
+    description: Le nom du deuxième support Gammes H d'une opération
+    type: string | nil
+  gammesh2ISIN:
+    description: Le code ISIN du deuxieme support Gammes H d'une opération
+    type: string | nil
+  montantGammesh2:
+    description: Le montant du deuxieme support Gammes H d'une opération
+    type: number | nil
+  montantTotalGammesh:
+    description: Le montant total des Gammes H d'une opération
+    type: number | nil
+  montantSouscrit:
+    description: Le montant total d'une opération
+    type: number
+    format: float
+  refCtt:
+    description: Le numéro de contrat d'une opération
+    type: string | nil
+  typeActe:
+    description: Le type d'une opération
+    type: string
+  urlDocument:
+    description: L'url du document d'une opération
+    type: string | nil
+  couponPremiereAnnee:
+    description: Le coupon de la première année du premier support Gammes H de l'opération
+    type: number | nil
+  dateFin:
+    description: La date de fin de commercialisation du premier support Gammes H de l'opération
+    type: date-only | nil
+  isOpMGHAValider:
+    description: Indique si c'est une opération mandat Gammes H à valider
+    type: boolean
+  isOpAValider:
+    description: Indique si c'est une opération à valider
+    type: boolean
+  isOpValideesChezHedios:
+    description: Indique si c'est une opération validée chez Hedios
+    type: boolean
+  isOpEnCoursDeValidation:
+    description: Indique si c'est une opération en cours de validation
+    type: boolean

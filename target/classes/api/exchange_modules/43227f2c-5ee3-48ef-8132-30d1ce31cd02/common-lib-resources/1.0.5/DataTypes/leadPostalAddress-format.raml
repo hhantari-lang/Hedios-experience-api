@@ -1,0 +1,27 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  address:
+    description: L'adresse postale du prospect qui effectue la création de compte
+    type: string
+    minLength: 0
+    maxLength: 32
+  additionalAddress?:
+    description: Complément de l'adresse postale du prospect qui effectue la création de compte
+    type: string
+    minLength: 2
+    maxLength: 32
+    required: false
+  country:
+    description: Le pays de l'adresse postale du prospect qui effectue la création de compte
+    type: string
+  city:
+    description: La ville de l'adresse postale du prospect qui effectue la création de compte
+    type: string
+  postalCode?:
+    description: Le code postale de la ville du prospect qui effectue la création de compte
+    type: string
+  inseeCode?:
+    description: Le code insee de la ville du prospect qui effectue la création de compte
+    type: string

@@ -1,0 +1,267 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un mouvement
+type: object
+properties:
+  id:
+    description: Identifiant unique d'un mouvement
+    type: integer
+    example: 1154769
+  isMvtDuMois:
+    description: Désigne si le mouvement a été effectué dans les 30 derniers jours
+    default: false
+    type: boolean
+    example: true
+  acte:
+    description: Type de d'acte de l'opération (SOUSCRIPTION, ARBITRAGE, ...) calculé via le typeCRO.
+    type: string
+    example: ARBITRAGE
+  assiete:
+    description: "Assiette : Correspond au montant net de revalorisation du fonds en euros."
+    type: number
+    format: float
+    example: 0
+  mttAvance:
+    description: "Avances à rembourser : Correspond au solde brut des avances."
+    type: number
+    format: float
+    example: 0
+  isin:
+    description: "TODO"
+    type: string | nil
+    example: null
+  isinSppDistri:
+    description: "Code ISIN support distribué : Code ISIN du support à l'origine de la distribution."
+    type: string | nil
+    example: null
+  nomSppDistri:
+    description: "Nom du support distribué : Nom du support à l'origine de la distribution."
+    type: string | nil
+    example: null
+  cdMvt:
+    description: "Code mouvement : Code du mouvement de frais (Frais de gestion, Frais de garantie)"
+    type: string | nil
+    example: "671"
+  cdOrigTec:
+    description: "Code origine technique : Indique l'origine du déclenchement du mouvement."
+    enum:
+      - null
+      - B
+      - V
+      - D
+      - N
+      - P
+      - H
+      - T
+      - S
+      - R
+      - E
+      - U
+      - A
+      - C
+      - O
+      - M
+      - L
+    type: string | nil
+    example: "T"
+  profilInvest:
+    description: "code profil conseil investissement : indique le code profil investisseur au moment de la transaction."
+    type: string | nil
+    example: "0000"
+  dtEff:
+    description: "Date d'effet : Date à laquelle le mouvement prend effet."
+    type: date-only
+    example: 2022-08-11
+  dateExtraction:
+    description: "Date d'extraction : Indique la date d'extraction des données du SI de l'assureur. "
+    type: date-only
+    example: 2022-08-10
+  dtOpe:
+    description: "Date d'opération : Date de saisie ou date saisie lors de l'opération."
+    type: date-only
+    example: 2022-08-10
+  dtPrlv:
+    description: "Date du prélèvement des frais: Date à laquelle le mouvement de frais a été inscrit sur le contrat."
+    type: date-only | nil
+    example: null
+  etat:
+    description: "Etat du mouvement : Statut dans lequel se trouve le mouvement."
+    enum:
+      - null
+      - ATS
+      - ANN
+      - ATT
+      - IMP
+      - COU
+      - OUV
+      - TRT
+    type: string | nil
+    example: COU
+  mttFG:
+    description: "Frais de gestion : Correspond aux frais de gestion prélevés sur la sortie (contrats avec vidage total d'au moins un support)."
+    type: number
+    format: float
+    example: 0
+  iban:
+    description: "IBAN : Indique le n° d'IBAN vers lequel les fonds sortis ont été virés"
+    type: string | nil
+    example: null
+  synchro:
+    description: "Indicateur de synchronisation : Indique si le mouvement est à resynchroniser"
+    default: false
+    type: boolean
+    example: false
+  interets:
+    description: "Intérêts de l'année : Correspond aux intérêts générés par le(s) fond(s) en euros depuis le 01/01 de l'année en cours (en cas de sortie totale d'au moins un fonds en euros)."
+    type: number
+    format: float
+    example: 0
+  interetAvance:
+    description: "Intérés et frais sur avances : Correspond aux intérêts sur avances calculés depuis le 01/01 de l'année en cours."
+    type: number
+    format: float
+    example: 0
+  modeRglmt:
+    description: |-
+      Mode de règlement : Indique le mode de règlement utilisé lors de la transaction.
+      - P : Prélèvement
+      - C : Chèque
+      - E : Virement
+    enum:
+      - P
+      - C
+      - E
+      - null
+    type: string | nil
+    example: null
+  mtt:
+    description: |-
+      Montant indicatif du mouvement de frais (Contrats avec mouvements de frais mensuels)
+      - Frais de gestion (contrats avec UC)
+      - Frais de garantie (contrats avec garantie hors garantie plancher)
+    type: number
+    format: float
+    example: 0
+  mttBrut:
+    description: "Montant brut : Indique le montant brut du mouvement."
+    type: number
+    format: float
+    example: 4500
+  frais:
+    description: "Montant frais : Indique le montant de frais calculé sur le mouvement d'entrée (taux de frais * Montant brut)."
+    type: number
+    format: float
+    example: 0
+  fraisGtie:
+    description: "Montant Frais de garantie : Indique le montant de frais de garantie calculé sur le(s) fond(s) en euros."
+    type: number
+    format: float
+    example: 0
+  ps:
+    description: "Montant global PS : Montant des prélévements sociaux au titre de la revalorisation annuelle du fonds en euros."
+    type: number
+    format: float
+    example: 0
+  interetsMini:
+    description: "Montant intérêts minimum : Indique le montant d'intérêts minimum calculé sur le(s) fond(s) en euros."
+    type: number
+    format: float
+    example: 0
+  mttNet:
+    description: "Montant net : Indique le montant net du mouvement."
+    type: number
+    format: float
+    example: 0
+  pab:
+    description: "Montant PAB : Indique le montant de PAB calculé sur le(s) fond(s) en euros."
+    type: number
+    format: float
+    example: 0
+  prime:
+    description: "Montant prime : Indique le montant de la prime exceptionnelle appliquée sur le(s) fond(s) en euros."
+    type: number
+    format: float
+    example: 0
+  prlvt:
+    description: "Prélèvements : Correspond aux prélèvements calculés sur la sortie (prélèvements sociaux, restitution et fiscaux )."
+    type: number
+    format: float
+    example: 0
+  mtDem:
+    description: |-
+      Montant demandé : Correspond au montant de rachat :
+      -rachat partiel = Montant demandé par le client (avant prélèvements...)
+      -rachat total = Montant net versé
+    type: number | nil
+    example: null
+  mttTotal:
+    description: "Montant total à réinvestir : Montant prévu à investir lors de la mise en place de l'option (Contrats ayant au moins une option de gestion en cours IVT)"
+    type: number
+    format: float
+    example: 0
+  rum:
+    description: "N° RUM : Indique le n° RUM du mandat SEPA lors d'une entrée de fonds réalisée par prélèvement."
+    type: string | nil
+    example: null
+  optionFiscale:
+    description: "Option Fiscale : Indique la fiscalité appliquée lors d'une sortie de fonds."
+    type: string | nil
+    example: null
+  partsDetenues:
+    description: "Parts détenues : Correspond au taux de frais saisi lors de l'arbitrage (Distribution)."
+    type: number
+    format: float
+    example: 0.0
+  pfl:
+    description: "Prélèvement libératoire : Correspond au montant du prélèvement Forfaitaire Libératoire prélevé sur le rachat en cas d'option fiscale PFL."
+    type: number
+    format: float
+    example: 0
+  prlvts:
+    description: "Prélèvements : Correspond aux prélèvements calculés sur la sortie (prélèvements sociaux, restitution et fiscaux)."
+    type: number
+    format: float
+    example: 0
+  pvFiscale:
+    description: "PV fiscale : Correspond à la plus ou moins value imposable du rachat."
+    type: number
+    format: float
+    example: 0
+  refusConseilInvest:
+    description: "refus conseil investissement : indique si le devoir de conseil est suivi durant la transaction (si connaissance client gérée par Suravenir)."
+    type: boolean
+    example: false
+  restitution:
+    description: "Restitution : Correspond à la restitution calculée sur la sortie."
+    type: number | nil
+    example: null
+  refExterne:
+    description: "Référence unique de mouvement : Indique la référence du mouvement chez le partenaire."
+    type: string | nil
+    example: arbitrage-45630
+  refMvt:
+    description: Référence mouvement Suravenir.
+    type: string
+    example: "3760135471739012022081010123240001"
+  txFrais:
+    description: "Taux de frais arbitrage : Correspond au taux de frais saisi lors de l'arbitrage."
+    type: number
+    format: float
+    example: 0
+  typeCRO:
+    description: "Code type CRO : Le CRO est un élément à 3 chiffres afin de permettre de différencier chaque mouvement"
+    type: number
+    format: int
+    example: 400
+  type:
+    description: "Le type de mouvement."
+    type: string
+    example: detailMouvementArbitrage
+  coupon:
+    description: "Valeur du coupon : Montant distribué pour une part détenue."
+    type: number
+    format: float
+    example: 00000
+  mvtSupports:
+    description: Liste des mouvements supports.
+    type: array
+    items: !include mouvementsupport-format.raml

@@ -1,0 +1,19 @@
+sapi:
+  client_id: "![9GiuHma6IBtpawVvs3fYTRzEXSIQLPXFq5tSroADsgn6b/7oVwsnkplFltye1pah]"
+  client_secret: "![joj3CsxJfDJn6XHqAb5mPCR6c8GisikWRQhDFlX7egBbJjt5/bSZxD2Rj2trAsGw]"
+  
+request:
+  port: "![A68lcZynRgTHkJjfOueGCQ==]"
+  host:
+    salesforce: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+whLXuB/6eNzMt4wtiTbFAYKGOO12wlx3RyqFTuMQ5WCdGQE7bZvRV7JlAWhNZTEF5k=]"
+    #coordonnes: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+whLXuB/6eNzMt4wtiTbFAYKGOO12wlx3RyqFTuMQ5WCdGQE7bZvRV7JlAWhNZTEF5k=]"
+    #lead: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+whLXuB/6eNzMt4wtiTbFAYKGOO12wlx3RyqFTuMQ5WCdGQE7bZvRV7JlAWhNZTEF5k=]"
+    #flowtrigger: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+whLXuB/6eNzMt4wtiTbFAYKGOO12wlx3RyqFTuMQ5WCdGQE7bZvRV7JlAWhNZTEF5k=]"
+    #mvts: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+wgC2OQsFxsvfLHlfsNX/mRPKLH+xEgYgL5MbftdaAeFHJ5ky5s0TAf/SQVajO7ov7o=]"
+    #histovl: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+wgC2OQsFxsvfLHlfsNX/mRPKLH+xEgYgL5MbftdaAeFHJ5ky5s0TAf/SQVajO7ov7o=]"
+    notifications: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+wiEARFEmy/Re0I6fF+Cbysqwpp7Sp4/wVyFXoX4Qvy8CwIZbnpWnFLgaGf/FekC98k=]"
+    heroku: "![bc3WW+liw79IpQcSwg/45eaheymRuEd/Bxjyvs50+wgC2OQsFxsvfLHlfsNX/mRPKLH+xEgYgL5MbftdaAeFHJ5ky5s0TAf/SQVajO7ov7o=]"
+    vc: ""
+    tunnel: ""
+    operation: ""
+    salesforcesapi: "" 

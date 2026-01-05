@@ -1,0 +1,37 @@
+#%RAML 1.0 SecurityScheme
+type: x-custom-security
+description: Custom Security Headers
+describedBy:
+  headers:
+    client_id:
+      description: Client Id for Authentication
+      type: string
+      example: xxxxxxxxxxxxxxxxxxxxxxxx
+    client_secret:
+      description: Client Secret for Authentication
+      type: string
+      example: yyyyyyyyyyyyyyyyyyyyyyyy
+    Authorization: 
+      description: Client seucrity key
+      type: string
+      example: Hedios QAXQx6FEBWG86DtgkBEwoycMhX-J2qYr_5FdQaLQgsY
+    x-csrf-token:
+      description: Token d'accès aux service de validation de la session
+      type: string
+      example: wdlned89bbTIlA6u_f6slIOrcqPuQyV61yQjlLFLMuY
+    x-id-fc:
+      description: Identifiant fiche contact de l'utilisateur connecté
+      type: number
+      example: 100001
+    x-sessid:
+      description: identifiant de session valide
+      type: string
+      example: szv3AF5T4hZz1-pQzw4F4dZ72exBwpa4K5-RsfeToS4
+  
+  responses:
+    "401":
+      description: Unautorized or invalid client application credentials or invalid session
+    "405":
+      description: Method Not Allowed
+    "500":
+      description: Bad response from authorization server

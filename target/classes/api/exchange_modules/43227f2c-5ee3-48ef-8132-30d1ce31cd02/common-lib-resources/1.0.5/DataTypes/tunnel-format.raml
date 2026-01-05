@@ -1,0 +1,76 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un tunnel
+type: object
+properties:
+  id:
+    description: Identifiant unique salesforce d'un tunnel
+    type: string
+  name:
+    description: Le nom de l'enregistrement
+    type: string
+  dateInterruption:
+    description: La date d'interruption d'un tunnel
+    type: datetime
+  dateDebut:
+    description: La date de début d'un tunnel
+    type: datetime
+  etapeInterruption:
+    description: L'étape d'interruption d'un tunnel
+    type: string
+  etape:
+    description: L'étape du tunnel
+    type: string
+  etat:
+    description: L'état d'un tunnel
+    type: string
+    enum:
+      - Interrompue
+      - Finalisé
+  idHedios:
+    description: L'identifiant d'un tunnel dans la base SI Hedios
+    type: string
+  modeDeReglement:
+    description: Le mode de réglement d'un tunnel
+    type: string | nil
+  montantGH:
+    description: Montant total des Gammes H d'un tunnel
+    type: number | nil
+  montantTotal:
+    description: Montant total d'un tunnel
+    type: number | nil
+  dateFin:
+    description: La date de finalisation d'un tunnel
+    type: datetime | nil
+  typeActe:
+    description: Le type d'acte d'un tunnel
+    type: string
+  typeActeSF:
+    description: Le type d'acte du tunnel dans salesforce
+    type: string
+  typeSignature:
+    description: Le type de signature d'un tunnel
+    type: string | nil
+  idGammesh1:
+    description: L'identifiant unique du premier support Gammes H d'un tunnel
+    type: string | nil
+  gammesH1:
+    description: Le nom du premier support Gammes H d'un tunnel
+    type: string | nil
+  montantGammesH1:
+    description: Le montant du premier Gammes H du tunnel
+    type: number | nil
+  idGammesh2:
+    description: L'identifiant unique du deuxième support Gammes H d'un tunnel
+    type: string | nil
+  gammesH2:
+    description: Le nom du deuxième support Gammes H d'un tunnel
+    type: string | nil
+  montantGammesH2:
+    description: Le montant du deuxieme Gammes H du tunnel
+    type: number | nil
+  urlReprise:
+    description: L'url de reprise d'un tunnel
+    type: string
+  urlSuppression:
+    description: L'url de suppression d'un tunnel
+    type: string

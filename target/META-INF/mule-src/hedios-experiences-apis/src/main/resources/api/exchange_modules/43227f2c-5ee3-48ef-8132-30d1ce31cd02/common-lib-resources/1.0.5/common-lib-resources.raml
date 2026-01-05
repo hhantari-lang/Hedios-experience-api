@@ -1,0 +1,73 @@
+#%RAML 1.0 Library
+usage: Common OK/KO responses
+
+types:
+  generic-error-message-format: !include DataTypes/generic-error-message-format.raml
+  generic-success-message-format: !include DataTypes/generic-success-message-format.raml
+  coordonnees-format: !include DataTypes/coordonnees-format.raml
+  leadEmail-format: !include DataTypes/leadEmail-format.raml
+  leadPhone-format: !include DataTypes/leadPhone-format.raml
+  leadPostalAddress-format: !include DataTypes/leadPostalAddress-format.raml
+  personAccount-format: !include DataTypes/personAccount-format.raml
+  convertResult-format: !include DataTypes/convertResult-format.raml
+  histocontratvlgh-format: !include DataTypes/histocontratvlgh-format.raml
+  histoMouvements-format: !include DataTypes/histoMouvements-format.raml
+  mouvement-format: !include DataTypes/mouvement-format.raml
+  cadreInvestCollection-format: !include DataTypes/cadreInvestCollection-format.raml
+  cadreInvest-format: !include DataTypes/cadreInvest-format.raml
+  compteCollection-format: !include DataTypes/compteCollection-format.raml
+  compte-format: !include DataTypes/compte-format.raml
+  contactCollection-format: !include DataTypes/contactCollection-format.raml
+  contact-format: !include DataTypes/contact-format.raml
+  leadCreate-format: !include DataTypes/leadCreate-format.raml
+  leadgetbyidfcdatatype-format: !include DataTypes/leadgetbyidfcdatatype-format.raml
+  leadCollection-format: !include DataTypes/leadCollection-format.raml
+  inAppNotification-format: !include DataTypes/inAppNotification-format.raml
+  businessAccount-format: !include DataTypes/businessAccount-format.raml
+  operation-format: !include DataTypes/operation-format.raml
+  tunnel-format: !include DataTypes/tunnel-format.raml
+  adresseEmail-format: !include DataTypes/adresseEmail-format.raml
+  adressePostale-format: !include DataTypes/adressePostale-format.raml
+  telephone-format: !include DataTypes/telephone-format.raml
+  demande-format: !include DataTypes/demande-format.raml
+  ghCollection-format: !include DataTypes/ghCollection-format.raml
+  vousConnaitreCollection-format: !include DataTypes/vousConnaitreCollection-format.raml
+
+
+
+uses:
+  generic-error-message-example: !include Examples/generic-error-message-example.raml
+  generic-success-message-example: !include Examples/generic-success-message-example.raml
+  coordonnees-example: !include Examples/coordonnees-example.json
+  leadEmail-example: !include Examples/leadEmail-example.json
+  leadPhone-example: !include Examples/leadPhone-example.json
+  leadPostalAddress-example: !include Examples/leadPostalAddress-example.json
+  personAccount-example: !include Examples/personAccount-example.json
+  convertResult-example: !include Examples/convertResult-example.json
+  histocontratvlgh-example: !include Examples/histocontratvlgh-example.json
+  histoMouvements-example: !include Examples/histoMouvements-example.raml
+  mouvement-example: !include Examples/mouvement-example.raml
+  cadreInvestCollection-example: !include Examples/cadreInvestCollection-example.json
+  cadreInvest-example: !include Examples/cadreInvest-example.json
+  compteCollection-example: !include Examples/compteCollection-example.json
+  compte-example: !include Examples/compte-example.json
+  contactCollection-example: !include Examples/contactCollection-example.json
+  contact-example: !include Examples/contact-example.json
+  operation-example: !include Examples/operation-example.json
+  tunnel-example: !include Examples/tunnel-example.json
+  singleleadexample: !include Examples/singleleadexample.json
+  leadCollection-example: !include Examples/leadCollection-example.json
+  detailcontratviegammesh-example: !include Examples/detailcontratviegammesh-example.json
+  ghCollection-example: !include Examples/ghCollection-example.json
+  donnees-perso: !include Examples/donnees-perso.json
+  contact: !include Examples/contact.json
+  account: !include Examples/account.json
+  vousConnaitreCollection-example: !include Examples/vousConnaitreCollection-example.json
+
+
+
+traits:
+  clientIdEnforcement: !include Traits/clientidenforcement.raml
+  error-responses: !include Traits/CommonErrorResponses.raml
+  pagination: !include Traits/pagination.raml
+

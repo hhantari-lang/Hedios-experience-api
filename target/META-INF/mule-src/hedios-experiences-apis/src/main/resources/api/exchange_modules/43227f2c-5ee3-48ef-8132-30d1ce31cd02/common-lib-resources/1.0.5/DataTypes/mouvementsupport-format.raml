@@ -1,0 +1,60 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un mouvement support
+type: object
+properties:
+  id:
+    description: Identifiant unique d'un mouvement support
+    type: integer
+    example: 1
+  nom:
+    description: "Designation : nom du support."
+    type: string
+    example: H RENDEMENT 50
+  societeDeGestion:
+    description: La société de gestion du support
+    type: string
+    example: BNP PARIBAS ARBITRAGE
+  isin:
+    description: "Code ISIN : Indique le code ISIN des supports désinvestis ou investis."
+    type: string
+    example: FR0014001VG5
+  sens:
+    description: "Code sens : Indique le sens du mouvement."
+    enum:
+      - E
+      - S
+    type: string
+    example: S
+  nbPart:
+    description: "Nombre de parts : Indique le nombre de parts sur les supports sur lesquels sont déinvestis ou investis les fonds."
+    type: number
+    format: float
+    example: 0.002200
+  mttVL:
+    description: "VL : Indique la valeur liquidative prise en compte pour le calcul du montant investi ou désinvesti."
+    type: number
+    format: float
+    example: 869.000000
+  dtVL:
+    description: "Date VL : Date de la valeur liquidative du support prise en compte dans le mouvement."
+    type: date-only
+    example: 2022-02-28
+  partFG:
+    description: "Frais de gestion : Indique le nombre de parts de frais de gestion prélevés sur le support au moment de la sortie."
+    type: number
+    format: float
+    example: 0.002200
+  mttSortie:
+    description: "Montant en sortie : Indique le montant brut désinvesti."
+    type: number
+    format: float
+    example: 1.910000
+  repartition:
+    description: "Pourcentage de répartition : Indique la part du support par rapport au montant global de l'opération."
+    type: number
+    format: float
+    example: 33.333300
+  compartiment:
+    description: "Compartiment : Indique la poche du support (libre ou mandat)."
+    type: string | nil
+    example: null

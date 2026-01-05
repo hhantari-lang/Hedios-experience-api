@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getCollectionLeadFlow" doc:id="6f4bda2a-99a2-4328-bddf-755dee098464" >
+		<logger level="INFO" doc:name="START" doc:id="5ae8f198-53e6-4979-8b45-8e614323d4ef" message="---------- START GET COLLECTION LEAD ---------- " />
+		<http:request method="GET" doc:name="getCollectionLead" doc:id="cd4ccecb-11fc-4dbb-929e-680263c2ba4a" config-ref="HTTP_Request_configuration" url='#["http://" ++ Mule::p("secure::request.host.salesforce") ++ ":" ++ Mule::p("http.private.port") ++ attributes.requestUri]' />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="4b26ae51-592d-4356-b99a-c27ef26cf4d1" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="a8921d29-05cf-4361-bf2a-56ff6a196200" message="---------- END GET COLLECTION LEAD ---------- " />
+	</sub-flow>
+	<sub-flow name="getSingleLeadFlow" doc:id="cf75cf59-75bd-4223-8705-491bc256ed6b" >
+		<logger level="INFO" doc:name="START" doc:id="2c6c88bd-9b91-4269-b3a0-cab2eb53c55f" message="---------- START GET SINGLE LEAD ---------- " />
+		<http:request method="GET" doc:name="getSingleLead" doc:id="1dcfc70a-1075-4f5e-ac29-ba88c9beed01" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/prospects/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	id : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="77b008d2-644b-4a01-ab5e-4225dbfded8a" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="29cdfbe7-4219-436e-a3b9-6eb0d9b26406" message="---------- END GET SINGLE LEAD ---------- " />
+	</sub-flow>
+	<sub-flow name="postLeadFlow" doc:id="ccc16d8d-6f85-4e71-b3ee-ed32fe7e5290" >
+		<logger level="INFO" doc:name="START" doc:id="6f2e6d54-b896-4994-b117-c17219c46fc8" message="---------- START POST LEAD ---------- " />
+		<http:request method="POST" doc:name="postLead" doc:id="0faa645f-1b90-419a-ad83-23ad56d7cd7c" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/prospects" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="08b75cbe-e914-483b-b52b-06d55ad5b0d5" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="9ec64bc9-2271-4df5-9a95-e0a4e6371bfa" message="---------- END POST LEAD ---------- " />
+	</sub-flow>
+	<sub-flow name="putLeadEmailFlow" doc:id="74e7574f-e41e-43ed-b529-c2630c34fca8" >
+		<logger level="INFO" doc:name="START" doc:id="16c8f5ab-6639-4be3-abd1-1e826aaeee9f" message="---------- START PUT LEAD EMAIL ---------- " />
+		<http:request method="PUT" doc:name="putLeadEmail" doc:id="3f423ccd-fa42-4879-81d2-64b755fedeee" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/prospects/{id}/emails" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="48d284c2-8d9e-4d00-b64c-6d7d57f91a0a" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="d6822149-04f7-4784-b60d-c8539dd0d556" message="---------- END PUT LEAD EMAIL ---------- " />
+	</sub-flow>
+	<sub-flow name="putLeadAdresseFlow" doc:id="caaf57c3-7f66-42bb-8481-e6e065e7ff67" >
+		<logger level="INFO" doc:name="START" doc:id="f54bce6a-c318-4251-820a-53355070477f" message="---------- START PUT LEAD ADRESSE POSTALE ---------- " />
+		<http:request method="PUT" doc:name="putLeadAdressePostale" doc:id="5ac382a7-5f91-4c53-9b3a-3af8eb9a048e" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/prospects/{id}/adresses" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="a0fb639d-c6e6-4b8f-bbdb-9326ff9b1572" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="c58bcaf0-686f-49ce-89a0-60a8980accd9" message="---------- END PUT LEAD ADRESSE POSTALE ---------- " />
+	</sub-flow>
+	<sub-flow name="putLeadTelephoneFlow" doc:id="bb905646-51cb-4c61-8e7f-b00d8f9c0a68" >
+		<logger level="INFO" doc:name="START" doc:id="eac8fd62-0609-4d30-b5f6-bfc290b3eec7" message="---------- START PUT LEAD TELEPHONE ---------- " />
+		<http:request method="PUT" doc:name="putLeadTelephone" doc:id="7bcae3e1-b989-4cfb-9ab3-da9178394095" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/prospects/{id}/telephones" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="035b7922-0b3a-4d69-baae-40ff46f3908b" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="f879ab3d-05ac-413a-9805-35d44ee756d2" message="---------- END PUT LEAD TELEPHONE ---------- " />
+	</sub-flow>
+	<sub-flow name="postLeadConvertFlow" doc:id="4ce898b1-8b7c-4b9c-8ca9-e0543b717bb9" >
+		<logger level="INFO" doc:name="START" doc:id="25d1d182-cdfb-4060-9fd6-eed7426e8515" message="---------- START POST LEAD CONVERT ---------- " />
+		<http:request method="POST" doc:name="postLeadConvert" doc:id="89b80072-00e5-4330-b92f-eabd62f9124d" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/prospects/{id}/convert" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="712591bc-e1cd-48bc-91f3-d820c5c994e4" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="077de19a-18cd-451e-a2b8-a8d30a3afb54" message="---------- END POST LEAD CONVERT ---------- " />
+	</sub-flow>
+
+</mule>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="queryParams" format="json">
+      <types:shape format="weave" example="examples/vc-queryParams.json"><![CDATA[%dw 2.0
+
+type queryParams = {|
+  offset: Number {"typeId": "int"}, 
+  limit: Number {"typeId": "int"}, 
+  startDate: String, 
+  endDate: String, 
+  contact: String, 
+  tunnel: String, 
+  operation: String
+|} {"example": "{\\\"offset\\\":0,\\\"limit\\\":10,\\\"startDate\\\":\\\"2022-10-24\\\",\\\"endDate\\\":\\\"2023-10-24\\\",\\\"contact\\\":\\\"0032p00002sxXmxAAE\\\",\\\"tunnel\\\":\\\"a0x5t0000014w8gAAA\\\",\\\"operation\\\":\\\"a0y5t000000K4aJAAS\\\"}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#0c828d01-fd42-40bf-b143-fd1a2f767d38"/>
+  <types:enrichment select="#a953e32b-85f2-4e34-921a-130345bd7d06">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:variables>
+          <types:variable name="queryParams" type="queryParams"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

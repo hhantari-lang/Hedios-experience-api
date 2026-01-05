@@ -1,0 +1,63 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'une adresse email
+type: object
+properties:
+  id:
+    description: identifiant unique de l'adresse email
+    type: string
+    example: a0z2p000019oM3gAAE
+    required: false
+  nom:
+    description: Le nom de l'adresse email
+    type: string
+    example: Email-33899291
+    required: false
+  email:
+    description: L'adresse email
+    type: string
+    pattern: ^([a-zA-Z0-9_.+-]+)@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}$
+    example: adresseemail@domaine.com
+  isPrincipal:
+    description: Definit le numéro de téléphone principal
+    type: boolean
+    example: true
+  ancien:
+    description: Indique si l'adresse email est ancienne
+    type: boolean
+    example: false
+    required: false
+  desinscription:
+    description: Indique si l'adresse email a été désinscrite des mailings
+    type: boolean
+    example: false
+    required: false
+  mailerDaemon:
+    description: Indique si l'adresse email est un mailer daemon
+    type: boolean
+    example: false
+    required: false
+  contact:
+    description: identifiant unique du contact rattaché
+    type: string
+    example: 0032p00002ZQk7uAAD
+    required: false
+  compte:
+    description: identifiant unique du compte rattaché
+    type: string
+    example: 0012p00002ZN8ZYAA1
+    required: false
+  idHedios:
+    description: identifiant custom Hedios du numéro de téléphone
+    type: string
+    example: a112p00000WNp2IAAT
+    required: false
+  branche:
+    description: La branche de l'enregistrement
+    type: string
+    example: HEDFR
+    required: false
+  origin:
+    description: Source de création / modification de la donnée
+    type: string
+    example: KYC
+    required: false

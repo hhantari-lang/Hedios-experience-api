@@ -1,0 +1,99 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'une adresse postale
+type: object
+properties:
+  id:
+    description: identifiant unique salesforce de l'adresse postale
+    type: string
+    example: a112p00000WNp2IAAT
+    required: false
+  nom:
+    description: Le nom de l'adresse postale
+    type: string
+    example: a112p00000WNp2I
+    required: false
+  type?:
+    description: Le type de l'adresse postale
+    type: string
+    example: Mon domicile
+  isPrincipal:
+    description: Definit le numéro de téléphone principal
+    type: boolean
+    example: true
+  adresse:
+    description: L'adresse postale
+    type: string
+    example: 7 rue de la bourse
+  complementAdresse?:
+    description: Complément de l'adresse postale
+    type: string
+    example: 6 eme étage droite
+  cp:
+    description: Le code postale de l'adresse postale
+    type: string
+    example: "75002"
+  cpInsee:
+    description: Le code insee de l'adresse postale
+    type: string
+    example: "75002"
+  bp?:
+    description: La boite postale de l'adresse postale
+    type: string
+  pays:
+    description: Le pays de l'adresse postale
+    type: string
+    example: FRANCE
+  ville:
+    description: La ville de l'adresse postale
+    type: string
+    example: PARIS
+  refuse?:
+    description: Indique si les courriers sont refusés pour cette adresse postale
+    type: boolean
+    example: false
+  mailing?:
+    description: Indique si le client ne veut plus recevoir les courriers à cette adresse postale
+    type: boolean
+    example: false
+  fiscale?:
+    description: Indique si c'est une adresse fiscale
+    type: boolean
+    example: true
+  ancienne?:
+    description: Indique si l'adresse postale est ancienne
+    type: boolean
+    example: false
+  npai?:
+    description: Indique le nombre de NPAI sur cette adresse postale
+    type: string
+    required: false
+    enum:
+      - "0"
+      - "1"
+      - "2"
+      - "3"
+  contact:
+    description: identifiant unique du contact rattaché
+    type: string
+    example: 0032p00002ZQk7uAAD
+    required: false
+  compte:
+    description: identifiant unique du compte rattaché
+    type: string
+    example: 0012p00002ZN8ZYAA1
+    required: false
+  idHedios:
+    description: identifiant custom Hedios du numéro de téléphone
+    type: string
+    example: a112p00000WNp2IAAT
+    required: false
+  branche:
+    description: La branche de l'enregistrement
+    type: string
+    example: HEDFR
+    required: false
+  origin:
+    description: Source de création / modification de la donnée
+    type: string
+    example: KYC
+    required: false

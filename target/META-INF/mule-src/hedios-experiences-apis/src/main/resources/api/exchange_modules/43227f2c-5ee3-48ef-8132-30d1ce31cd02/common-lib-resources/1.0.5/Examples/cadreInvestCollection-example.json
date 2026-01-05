@@ -1,0 +1,15 @@
+[
+  {
+    "id": "a0uAY0000002vJyYAI",
+    "nom": "B8 270721993 - Suravenir PER",
+    "sousCategorie": "RETRAITE",
+    "nomDuContrat": "Suravenir PER",
+    "refctt": "B8 270721993",
+    "isDeleted": false,
+    "statutContrat": "0",
+    "attributes": {
+      "type": "Contrat_Vie__c",
+      "url": "/v1/cadre-invest/a0uAY0000002vJyYAI"
+    }
+  }
+]

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd  http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+    <http:listener-config name="hediosexperiencesapi-httpListenerConfig">
+        <http:listener-connection host="0.0.0.0" port="8091" readTimeout="60000" />
+    </http:listener-config>
+    <apikit:config name="hediosexperiencesapi-config" api="api\hediosexperiencesapi.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="9de9c496-aba2-46f5-bd80-f31290c5b009" file="${env}-configs.yaml" key="${secure.expKey}" />
+    <http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="ba7aa07e-4f3d-4c7c-87fc-1b43cf307c4b" enableCookies="false" responseTimeout="60000">
+        <http:request-connection connectionIdleTimeout="60000" port="8092">
+            <reconnection>
+                <reconnect />
+            </reconnection>
+        </http:request-connection>
+        <http:default-headers>
+            <http:default-header key="client_id" value="${secure::sapi.client_id}" />
+            <http:default-header key="client_secret" value="${secure::sapi.client_secret}" />
+        </http:default-headers>
+        <http:response-validator>
+            <http:success-status-code-validator values="200..299" />
+        </http:response-validator>
+    </http:request-config>
+    <api-gateway:autodiscovery apiId="${proxy.expId}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="af27e226-05b2-45b0-baa3-18dbab3b3f43" flowRef="hediosexperiencesapi-main" />
+    <configuration doc:name="Configuration" doc:id="4924682b-3a12-47c0-a60b-9b03e1af8f7b" defaultErrorHandler-ref="global-error-handler" />
+</mule>

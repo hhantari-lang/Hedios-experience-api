@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="getCollectionCadreInvestFlow" doc:id="6d1a8cd5-4924-4055-8fc9-04341e4882fb" >
+		<logger level="INFO" doc:name="START" doc:id="4f82f6f0-e5ff-4210-ad63-edd4d6348516" message="---------- START GET COLLECTION CADRE INVEST ---------- " />
+		<set-variable value='#[%dw 2.0&#10;import * from dw::core::URL&#10;---&#10;encodeURI("http://" ++ Mule::p("secure::request.host.salesforcesapi") ++ ":" ++ Mule::p("http.private.port") ++ attributes.requestUri)]' doc:name="encodedURL" doc:id="e1ad27c1-00e3-48af-8292-239a7de803d3" variableName="encodedURL" />
+		<http:request method="GET" doc:name="getCollectionCadreInvest" doc:id="cf7ba913-a40d-4b6c-ab7b-d5b449b399bd" config-ref="HTTP_Request_configuration" url="#[vars.encodedURL]" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="8cfe9abb-1c5a-4905-9735-472ba769cbea" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="1df1c270-b9f6-4778-9de6-6e5f19664ed8" message="---------- END GET COLLECTION CADRE INVEST ---------- " />
+	</sub-flow>
+	<sub-flow name="getSingleCadreInvestFlow" doc:id="1c01d923-f9fc-4b62-89b6-ed10c93c15d6" >
+		<logger level="INFO" doc:name="START" doc:id="a8bffd30-61ee-4e6b-aaf4-a8cbb6a96a32" message="---------- START GET SINGLE CADRE INVEST ---------- " />
+		<http:request method="GET" doc:name="getSingleCadreInvest" doc:id="4fec3ff4-5adc-4230-932a-f79963079666" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforcesapi}:${http.private.port}/v1/cadres-invests/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	id : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="1b10f29e-dd49-44d2-8bbf-df309435485e" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="0584ebf3-e968-4417-a074-b443e20db995" message="---------- END GET SINGLE CADRE INVEST ---------- " />
+	</sub-flow>
+
+</mule>

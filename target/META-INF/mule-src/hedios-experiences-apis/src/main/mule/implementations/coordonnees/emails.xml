@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="getEmailsCollectionFlow" doc:id="ea53ab63-d0ff-490a-abd5-8e58ab387afe" >
+		<logger level="INFO" doc:name="START" doc:id="ade12c58-ec87-42cb-af9a-254ee33cd6e5" message="---------- START GET COLLECTION ADRESSES EMAILS  ----------" />
+		<flow-ref doc:name="manageVarsFlow" doc:id="d7ac493a-ebe3-40b0-b2fe-c1feaa261cb0" name="manageVarsFlow" />
+		<choice doc:name="Choice" doc:id="aa3f390a-9f6f-400b-92de-6b3bbc9ae3b5" >
+			<when expression="#[vars.idfc &gt; 0]" >
+				<http:request method="GET" doc:name="getByIDFC" doc:id="3dbfe752-ed6b-4fee-977c-d6d201e1fdc8" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"idfc" : vars.idfc,
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+				</http:request>
+			</when>
+			<otherwise >
+				<http:request method="GET" doc:name="getCollection" doc:id="b3bd861b-7945-4c87-ad88-1750793e2d68" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+				</http:request>
+			</otherwise>
+		</choice>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="833b8902-97ef-4ea6-b7f7-2e2a6eaf3f32" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="6d52eb93-1e19-463d-828e-633dc5da3141" message="---------- END GET COLLECTION ADRESSES EMAILS ----------" />
+	</sub-flow>
+	<sub-flow name="postEmailsFlow" doc:id="9c30e7db-1c74-4a12-b077-4627c4f61278" >
+		<logger level="INFO" doc:name="START" doc:id="f87ce0eb-ed49-4ee5-ba6e-a3e7f866f9ca" message="---------- START CREATE ADRESSES EMAILS  ----------" />
+		<http:request method="POST" doc:name="createAdressesEmails" doc:id="2f5129fb-88ec-4a21-af5f-28356d2aa140" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="cc9db672-89b0-40e7-b2be-f028cfcc0c81" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="c14ae8dd-99f5-4549-b026-12804bdff236" message="---------- END CREATE ADRESSES EMAILS ----------" />
+	</sub-flow>
+	<sub-flow name="patchEmailFlow" doc:id="cc128319-3780-4a73-9b9c-099d6a3e54e7" >
+		<logger level="INFO" doc:name="START" doc:id="203284f8-7268-4fd6-872d-88946c4d3b7b" message="---------- START UPDATE ADRESSE EMAIL  ----------" />
+		<http:request method="PATCH" doc:name="updateAdresseEmail" doc:id="1e5fe67d-b43f-4cec-a9e8-0b5268e50066" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="5f9f5a54-2afd-49bb-b002-21e3b09ef045" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="27e23de2-f527-49a8-baa6-d95352085b49" message="---------- END UPDATE ADRESSE EMAIL ----------" />
+	</sub-flow>
+	<sub-flow name="putEmailFlow" doc:id="008268e5-1c42-42cf-838b-d6711832fa12" >
+		<logger level="INFO" doc:name="START" doc:id="26a72385-f0ec-4c41-9774-7f3c9ac7cefc" message="---------- START UPSERT ADRESSES EMAILS  ----------" />
+		<http:request method="PUT" doc:name="upsertAdressesEmails" doc:id="dfcf8aa0-c6cd-4969-b3ab-fc08d945abc7" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="8ce4e1bb-a0f7-4f54-9601-f45b902782d3" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="00a434ee-56e3-4ef5-922d-33bbdec1c4fe" message="---------- END UPSERT ADRESSES EMAILS ----------" />
+	</sub-flow>
+	<flow name="deleteEmailFlow-" doc:id="d555be11-5775-4194-ae29-b3150b73e719" >
+		<logger level="INFO" doc:name="START" doc:id="334e7393-a966-401a-bb60-c182399d8442" message="---------- START DELETE ADRESSE EMAIL  ----------" />
+		<http:request method="DELETE" doc:name="deleteAdresseEmail" doc:id="856c7334-cfca-4dec-9716-d2f22c74352b" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="6827bccb-1371-424a-a115-26657de86f9b" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="d9786c3b-356d-444d-be9d-3e1fbd33ccd9" message="---------- END DELETE ADRESSE EMAIL ----------" />
+	</flow>
+	<sub-flow name="deleteEmailFlow" doc:id="d4f3de7f-9697-4757-a257-8131ea414b63" >
+		<logger level="INFO" doc:name="START" doc:id="f771d3f6-60b6-416e-b814-3efd2894fdac" message="---------- START DELETE ADRESSE EMAIL  ----------" />
+		<http:request method="DELETE" doc:name="deleteAdresseEmail" doc:id="a9bd191b-d3ed-4843-99cc-02a3e41a6f0b" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="dd8dce65-88aa-4fdc-9089-9d95fd9cb96e" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="d4e70cec-1901-45ea-8f03-86df86fbce39" message="---------- END DELETE ADRESSE EMAIL ----------" />
+	</sub-flow>
+	<sub-flow name="getSingleEmailFlow" doc:id="b6dc29df-0969-40ad-a2bd-e84dfb691ac3" >
+		<logger level="INFO" doc:name="START" doc:id="1dfb5fd6-ffab-4617-90b5-767e69d4d0bf" message="---------- START GET SINGLE ADRESSE EMAIL  ----------" />
+		<http:request method="GET" doc:name="getSingleAdresseEmail" doc:id="53155252-888c-48cb-88f8-820fa262572e" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/emails/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	id : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="86bcca2a-6199-45dd-bc6e-b4391de5aba4" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="4ce25a79-a39f-4eec-a7ac-64283f20ffe9" message="---------- END GET SINGLE ADRESSE EMAIL ----------" />
+	</sub-flow>
+
+</mule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getCollectionAccountFlow" doc:id="577c6b08-3c71-4417-ab5d-4e70da6c1de2" >
+		<logger level="INFO" doc:name="START" doc:id="cf89f507-08f2-456d-86a4-47ecee8cd133" message="---------- START GET COLLECTION ACCOUNT ---------- " />
+		<http:request method="GET" doc:name="getCollectionAccount" doc:id="6c1e3190-d629-4243-b1f6-57005ce52016" config-ref="HTTP_Request_configuration" url='#["http://" ++ Mule::p("secure::request.host.salesforcesapi") ++ ":" ++ Mule::p("http.private.port") ++ attributes.requestUri]' />
+		<logger level="INFO" doc:name="END" doc:id="7b9106ef-d402-4089-a810-86d64d3fc0da" message="---------- END GET COLLECTION ACCOUNT ---------- " />
+	</sub-flow>
+	<sub-flow name="getSingleAccountFlow" doc:id="12681b6c-db25-45ad-bceb-b6afd93da506" >
+		<logger level="INFO" doc:name="START" doc:id="2bd26bbf-2bc7-46f6-bbb7-123d8fea0cb7" message="---------- START GET SINGLE ACCOUNT ---------- " />
+		<http:request method="GET" doc:name="getSingleAccount" doc:id="37870c0d-5b92-4a35-804d-28fb757db8bb" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforcesapi}:${http.private.port}/v1/accounts/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	id : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="END" doc:id="e1dff7db-a854-4e5f-a8dd-cb0943b3eb21" message="---------- END GET SINGLE ACCOUNT ---------- " />
+	</sub-flow>
+
+</mule>

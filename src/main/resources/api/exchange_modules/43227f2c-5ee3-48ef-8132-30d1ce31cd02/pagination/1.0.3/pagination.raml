@@ -1,0 +1,17 @@
+#%RAML 1.0 Trait
+queryParameters:
+  offset:
+    description: Numéro de page à récupérer
+    type: integer
+    minimum: 0
+    default: 0
+    required: false
+    example: 0
+  limit:
+    description: Nombre d'instances récupérées par page
+    type: integer
+    minimum: 1
+    maximum: 50
+    default: 10
+    required: false
+    example: 10

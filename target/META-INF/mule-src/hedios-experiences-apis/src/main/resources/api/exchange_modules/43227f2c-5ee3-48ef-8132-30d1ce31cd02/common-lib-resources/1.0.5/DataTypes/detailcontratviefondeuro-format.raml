@@ -1,0 +1,54 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un détail contrat vie de type fond en euro
+type: object
+properties:
+  id:
+    description: Identifiant unique d'un détail contrat vie de type fond en euro
+    type: string
+    example: a0v2p00000PjQ22AAF
+  nom:
+    description: Le nom du détail contrat vie de type fond en euro
+    type: string
+    example: FDS EUROS SURAVENIR RENDEMENT
+  isin:
+    description: Le code isin du détail contrat vie de type fond en euro
+    type: string
+    example: SUR000001767
+  category:
+    description: Le category du détail contrat vie de type fond en euro
+    type: string
+    example: FONDS EUROS
+  sousCategory:
+    description: Le category du détail contrat vie de type fond en euro
+    type: string
+    example: FONDS EUROS
+  MontantInvesti:
+    description: Le montant investi sur le détail contrat vie de type fond en euro
+    type: number
+    format: float
+    example: 32876.27
+  InvestiLe:
+    description: La date d'investissement sur le détail contrat vie de type fond en euro
+    type: date-only
+    example: 2021-12-09
+  MontantDesinvesti:
+    description: Le montant désinvesti sur le détail contrat vie de type fond en euro
+    type: number
+    format: float
+    example: 24884.83
+  DesinvestiLe:
+    description: La date désinvestissement sur le détail contrat vie de type fond en euro
+    type: date-only | nil
+    example: 2022-02-01
+  Gains:
+    description: Le gain sur le détail contrat vie de type fond en euro
+    type: number | nil
+  solde:
+    description: Le solde du détail contrat vie de type fond en euro
+    type: number
+    format: float
+    example: 7982.22
+  refCtt:
+    description: Le numéro de contrat d'un détail contrat vie de type Gammes H
+    example: I7 269658572
+    type: string

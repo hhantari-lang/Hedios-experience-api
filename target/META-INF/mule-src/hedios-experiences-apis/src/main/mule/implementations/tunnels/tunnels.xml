@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="getTunnelCollectionFlow" doc:id="65e8b545-2bf2-4018-a538-cd188299594e" >
+		<logger level="INFO" doc:name="START" doc:id="3401054b-0c7e-4c89-a6c1-820888a6199d" message="---------- START GET COLLECTION TUNNEL EXPERIENCE ----------" />
+		<http:request method="GET" doc:name="getTunnelCollection" doc:id="ad067601-b381-43c5-8779-c95c7e5660a2" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.tunnel}:${http.private.port}/v1/tunnels" >
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	("idfc": attributes.queryParams.idfc) if(attributes.queryParams.idfc != null),
+	("acte": attributes.queryParams.acte) if(attributes.queryParams.acte != null),
+	("status" : attributes.queryParams.status) if(attributes.queryParams.status != null),
+	("offset" : attributes.queryParams.offset) if(attributes.queryParams.offset != null),
+	("limit" : attributes.queryParams.limit) if(attributes.queryParams.limit != null),
+}]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="END" doc:id="dee21b9e-df3a-460c-943d-e60109036081" message="---------- END GET COLLECTION TUNNEL EXPERIENCE ----------" />
+	</sub-flow>
+	<sub-flow name="getTunnelFlow" doc:id="75c85bd9-840e-45b1-a88f-0b5052bb7be4" >
+		<logger level="INFO" doc:name="START" doc:id="a78acce9-23a3-4078-a391-cd290145a7a0" message="---------- START GET TUNNEL EXPERIENCE ----------" />
+		<http:request method="GET" doc:name="getTunnel" doc:id="498352a3-f115-4075-9046-110d6d990dad" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.tunnel}:${http.private.port}/v1/tunnels/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="END" doc:id="16fd1963-795c-4621-95d8-a2e9b07fc5a8" message="---------- END GET TUNNEL EXPERIENCE ----------" />
+	</sub-flow>
+	<sub-flow name="patchTunnelFlow" doc:id="62a1a376-efbb-4bcc-9fdb-1824c69716d5" >
+		<logger level="INFO" doc:name="START" doc:id="b5dcb71e-0acc-46c9-a9cf-df9747886b48" message="---------- START PATCH TUNNEL EXPERIENCE ----------" />
+		<http:request method="PATCH" doc:name="patchTunnel" doc:id="84eaef4f-817f-44b4-96ff-1a966bc4244a" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.tunnel}:${http.private.port}/v1/tunnels/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="END" doc:id="9835bf73-c465-46a0-b46f-6a70a7e403be" message="---------- END PATCH TUNNEL EXPERIENCE ----------" />
+	</sub-flow>
+
+</mule>

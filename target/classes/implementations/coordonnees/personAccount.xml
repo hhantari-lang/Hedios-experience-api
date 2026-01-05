@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="patchPersonAccountFlow" doc:id="e06ca875-9f07-4416-8726-78a56852c4b5" >
+		<logger level="INFO" doc:name="START" doc:id="136a6069-e8ed-4471-b446-dcf69d438d25" message="---------- START UPDATE PERSON ACCOUNT  ----------" />
+		<http:request method="PATCH" doc:name="updatePersonAccount" doc:id="26758d0d-2539-41ce-ab83-cc3dfcc0346e" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/person-account/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="e4cb3f8a-cd4e-48c9-9e10-3d08b8ed6c14" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="5afc8cb7-0f7c-4b46-9050-196d7cae666a" message="---------- END UPDATE UPDATE PERSON ACCOUNT ----------" />
+	</sub-flow>
+
+</mule>

@@ -1,0 +1,25 @@
+#%RAML 1.0 SecurityScheme
+type: x-custom-security
+description: Custom Security Headers
+describedBy:
+  headers:
+    x-csrf-token:
+      description: Token d'accès aux service de validation de la session
+      type: string
+      example: wdlned89bbTIlA6u_f6slIOrcqPuQyV61yQjlLFLMuY
+    x-id-fc:
+      description: Identifiant fiche contact de l'utilisateur connecté
+      type: number
+      example: 100001
+    x-sessid:
+      description: identifiant de session valide
+      type: string
+      example: szv3AF5T4hZz1-pQzw4F4dZ72exBwpa4K5-RsfeToS4
+  
+  responses:
+    "401":
+      description: Unautorized or invalid client application credentials or invalid session
+    "405":
+      description: Method Not Allowed
+    "500":
+      description: Bad response from authorization server

@@ -1,0 +1,34 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  id:
+    description: Identifiant unique salesforce du cadre d'investissement
+    type: string
+  nom:
+    description: Le nom salesforce du cadre d'investissement
+    type: string
+  sousCategorie:
+    description: La catégorie (Niveau 4) du cadre d'investissement
+    type: string
+  nomDuContrat:
+    description: Le nom du cadre d'investissement
+    type: string
+  refctt:
+    description: Le numéro de contrat du cadre d'investissement
+    type: string
+  isDeleted:
+    description: Indique si le cadre d'investissement a été supprimé
+    type: boolean
+  statutContrat:
+    description: Le statut du cadre d'investissement
+    type: string
+  attributes:
+    type: object
+    properties:
+      type: 
+        description: Le nom API de l'objet
+        type: string
+      url: 
+        description: API URL pour le détail du cadre d'investissement 
+        type: string

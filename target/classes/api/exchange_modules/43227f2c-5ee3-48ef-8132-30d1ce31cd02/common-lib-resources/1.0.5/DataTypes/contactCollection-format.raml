@@ -1,0 +1,40 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  id:
+    description: Identifiant unique salesforce du contact
+    type: string
+  idAccount:
+    description: Identifiant unique salesforce du compte associé
+    type: string
+  idHedios:
+    description: Identifiant unique Hedios
+    type: string
+  nom:
+    description: L'alias salesforce du compte
+    type: string
+  civilite:
+    description: La civilité salesforce du compte
+    type: string
+  isPersonAccount:
+    description: Indique si le account est un compte personnel
+    type: boolean
+  segment:
+    description: Le segment salesforce du compte
+    type: string
+  isDeleted:
+    description: Indique si le compte a été supprimé
+    type: boolean
+  attributes:
+    type: object
+    properties:
+      type: 
+        description: Le nom API de l'objet
+        type: string
+      recordType: 
+        description: Le record type de l'enregistrement
+        type: string | nil
+      url: 
+        description: API URL pour le détail
+        type: string

@@ -1,0 +1,84 @@
+{
+  "LeadCollectionExample": [
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001asDU2AY"
+      },
+      "Id": "00QMU000001asDU2AY",
+      "Name": "DAMAS 2023-09-12 10:04:06, Léon"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00Q2p00001FrPwzEAF"
+      },
+      "Id": "00Q2p00001FrPwzEAF",
+      "Name": "O’CARROLL, Anna"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001br3N2AQ"
+      },
+      "Id": "00QMU000001br3N2AQ",
+      "Name": "RUSCICA, Guillaume"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001e5yg2AA"
+      },
+      "Id": "00QMU000001e5yg2AA",
+      "Name": "DAMAS 2023-10-05 3:57:37, Léon"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001biqM2AQ"
+      },
+      "Id": "00QMU000001biqM2AQ",
+      "Name": "DOUCOURE, El-Hadji-Daouda"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001brWs2AI"
+      },
+      "Id": "00QMU000001brWs2AI",
+      "Name": "DAMAS, Léon"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001cg9P2AQ"
+      },
+      "Id": "00QMU000001cg9P2AQ",
+      "Name": "KOVACS_Support, HA16"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001brAw2AI"
+      },
+      "Id": "00QMU000001brAw2AI",
+      "Name": "DAMAS, Léon"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001c7g22AA"
+      },
+      "Id": "00QMU000001c7g22AA",
+      "Name": "DAMAS 2023-09-21 12:15:49, Léon"
+    },
+    {
+      "attributes": {
+        "type": "Lead",
+        "url": "/services/data/v58.0/sobjects/Lead/00QMU000001c7Tr2AI"
+      },
+      "Id": "00QMU000001c7Tr2AI",
+      "Name": "DAMAS 2023-09-21 11:39:37, Léon"
+    }
+  ]
+}

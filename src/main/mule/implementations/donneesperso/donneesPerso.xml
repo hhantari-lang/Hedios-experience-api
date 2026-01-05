@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="getDonneesPersoFlow" doc:id="70303d9a-9405-4c39-bd8b-43f1a93d3f37" >
+		<logger level="INFO" doc:name="START" doc:id="0df30150-5ada-4b15-b27e-0ddb71a0085c" message="---------- START GET DONNEES PERSO ---------- " />
+		<logger level="INFO" doc:name="REQUEST" doc:id="fcd422f9-bb03-4a37-91f2-974da821d483" />
+		<set-variable value="#[attributes.uriParams.idfc as String]" doc:name="idfc" doc:id="dfa1b03d-bd2f-45b6-8996-a6a576c4ea18" variableName="idfc" />
+		<http:request method="GET" doc:name="accounts" doc:id="7f08146e-7996-41b9-bb04-50e5d3f2f36a" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforcesapi}:${http.private.port}/v1/accounts" target="accounts" >
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"idfc" : vars.idfc
+}]]]></http:query-params>
+		</http:request>
+		<choice doc:name="Choice" doc:id="6c0e0f5a-2427-4d26-a453-c85633ba6d61" >
+			<when expression="#[isEmpty(vars.accounts)]" >
+				<flow-ref doc:name="leadFlow" doc:id="01027e0e-0530-4b56-89b1-1074866309cf" name="leadFlow" />
+			</when>
+			<otherwise >
+				<flow-ref doc:name="accountFlow" doc:id="1e3f8afd-a381-4bfc-8d4f-d12a35353587" name="accountFlow" />
+			</otherwise>
+		</choice>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="11b234e4-4f5d-42ef-9659-2177a773c068" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="681d0ab8-8aae-4ef0-81ac-5f14e7855f42" message="---------- END GET DONNEES PERSO ---------- " />
+	</sub-flow>
+	<sub-flow name="accountFlow" doc:id="376bd8e5-190a-40cd-9ba4-649f94bdf55b" >
+		<scatter-gather doc:name="Scatter-Gather" doc:id="196cc1c5-cae3-469c-9b30-706780f485bb" >
+			<route >
+				<set-variable value='#[[&#10;      {&#10;        "ville": "LIMEIL BREVANNES",&#10;        "type": "Mon adresse principale",&#10;        "refuse": false,&#10;        "pays": "FRANCE",&#10;        "npai": "0",&#10;        "mailing": true,&#10;        "isPrincipal": true,&#10;        "id": "a11MU000000DQsJYAW",&#10;        "fiscale": false,&#10;        "cpInsee": "94044",&#10;        "cp": "94450",&#10;        "complementAdresse": null,&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "2 rue des Perdrix"&#10;      },&#10;      {&#10;        "ville": "PARIS",&#10;        "type": "Adresse professionnelle",&#10;        "refuse": false,&#10;        "pays": "FRANCE",&#10;        "npai": "0",&#10;        "nom": "a11AY0000005b3l",&#10;        "mailing": false,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000005b3lYAA",&#10;        "fiscale": false,&#10;        "cpInsee": null,&#10;        "cp": "75015",&#10;        "complementAdresse": null,&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "14 rue bausset"&#10;      },&#10;      {&#10;        "ville": "PARIS",&#10;        "type": "Adresse professionnelle",&#10;        "refuse": false,&#10;        "pays": "FRANCE",&#10;        "npai": "0",&#10;        "nom": "a11AY0000005qqn",&#10;        "mailing": false,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000005qqnYAA",&#10;        "fiscale": false,&#10;        "cpInsee": "75115",&#10;        "cp": "75015",&#10;        "complementAdresse": null,&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "14 rue bausset"&#10;      },&#10;      {&#10;        "ville": "PARIS",&#10;        "type": "Autre adresse",&#10;        "refuse": false,&#10;        "pays": "FRANCE",&#10;        "npai": "0",&#10;        "nom": "a11AY0000009ky5",&#10;        "mailing": true,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000009ky5YAA",&#10;        "fiscale": false,&#10;        "cpInsee": "75102",&#10;        "cp": "75002",&#10;        "complementAdresse": "6 eme étage droite",&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "7 rue de la bourse"&#10;      },&#10;      {&#10;        "ville": "DAKAR",&#10;        "type": "Autre adresse",&#10;        "refuse": false,&#10;        "pays": "SENEGAL",&#10;        "npai": "0",&#10;        "nom": "a11AY0000009kzh",&#10;        "mailing": true,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000009kzhYAA",&#10;        "fiscale": false,&#10;        "cpInsee": null,&#10;        "cp": "12345",&#10;        "complementAdresse": null,&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "5077 M Sicap Liberté 4"&#10;      },&#10;      {&#10;        "ville": "PARIS",&#10;        "type": "Autre adresse",&#10;        "refuse": false,&#10;        "pays": "FRANCE",&#10;        "npai": "0",&#10;        "nom": "a11AY0000009l1J",&#10;        "mailing": true,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000009l1JYAQ",&#10;        "fiscale": false,&#10;        "cpInsee": "75102",&#10;        "cp": "75002",&#10;        "complementAdresse": null,&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "7 rue de la bourse"&#10;      },&#10;      {&#10;        "ville": "PARIS",&#10;        "type": "Autre adresse",&#10;        "refuse": false,&#10;        "pays": null,&#10;        "npai": "0",&#10;        "nom": "a11AY0000009l2v",&#10;        "mailing": true,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000009l2vYAA",&#10;        "fiscale": false,&#10;        "cpInsee": "75102",&#10;        "cp": "75002",&#10;        "complementAdresse": "6 eme étage droite",&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "7 rue de la bourse"&#10;      },&#10;      {&#10;        "ville": null,&#10;        "type": "Autre adresse",&#10;        "refuse": false,&#10;        "pays": "FRANCE",&#10;        "npai": "0",&#10;        "nom": "a11AY0000009l4X",&#10;        "mailing": true,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000009l4XYAQ",&#10;        "fiscale": false,&#10;        "cpInsee": "75102",&#10;        "cp": "75002",&#10;        "complementAdresse": "6 eme étage droite",&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "7 rue de la bourse"&#10;      },&#10;      {&#10;        "ville": "PARIS",&#10;        "type": "Autre adresse",&#10;        "refuse": false,&#10;        "pays": "FRANCE",&#10;        "npai": "0",&#10;        "nom": "a11AY0000009l69",&#10;        "mailing": true,&#10;        "isPrincipal": false,&#10;        "id": "a11AY0000009l69YAA",&#10;        "fiscale": false,&#10;        "cpInsee": "75102",&#10;        "cp": null,&#10;        "complementAdresse": "6 eme étage droite",&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "7 rue de la bourse"&#10;      },&#10;      {&#10;        "ville": "DAKAR",&#10;        "type": "Adresse professionnelle",&#10;        "refuse": false,&#10;        "pays": "SENEGAL",&#10;        "npai": "0",&#10;        "nom": "a11MU000000Di2z",&#10;        "mailing": false,&#10;        "isPrincipal": false,&#10;        "id": "a11MU000000Di2zYAC",&#10;        "fiscale": false,&#10;        "cpInsee": null,&#10;        "cp": null,&#10;        "complementAdresse": "upsert FR to Etrangère",&#10;        "bp": null,&#10;        "ancienne": false,&#10;        "adresse": "5077 M Sicap Liberté 4"&#10;      }&#10;    ]]' doc:name="adresses" doc:id="b8c07d04-b1c3-412b-a846-ea9ce031e600" variableName="adresses" />
+			</route>
+			<route >
+				<set-variable value='#[[&#10;      {&#10;        "nom": "Email-41800588",&#10;        "isPrincipal": false,&#10;        "id": "a0zAY0000004VwTYAU",&#10;        "email": "email2@gmail.com"&#10;      },&#10;      {&#10;        "nom": "Email-41800594",&#10;        "isPrincipal": false,&#10;        "id": "a0zAY0000004ifCYAQ",&#10;        "email": "email2_update1@gmail.com"&#10;      },&#10;      {&#10;        "nom": "Email-41800676",&#10;        "isPrincipal": false,&#10;        "id": "a0zAY0000005sqzYAA",&#10;        "email": "leon.damas@gmail.com"&#10;      },&#10;      {&#10;        "nom": "Email-41768397",&#10;        "isPrincipal": true,&#10;        "id": "a0zMU00000096I5YAI",&#10;        "email": "doucouredave@hotmail.com"&#10;      },&#10;      {&#10;        "nom": "Email-41800568",&#10;        "isPrincipal": false,&#10;        "id": "a0zMU000000MVSVYA4",&#10;        "email": "email1@gmail.com"&#10;      }&#10;    ]]' doc:name="emails" doc:id="7955b4d7-9e9c-40bc-9559-e640840eedb3" variableName="emails" />
+			</route>
+			<route >
+				<http:request method="GET" doc:name="cadres-invests" doc:id="a5d9a4b5-fcd9-45f5-95e7-204ab16fdef7" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforcesapi}:${http.private.port}/v1/cadres-invests" target="cadresInvests" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"idfc" : vars.idfc
+}]]]></http:query-params>
+				</http:request>
+			</route>
+			<route >
+				<set-variable value='#[[&#10;      {&#10;        "type": "GSM",&#10;        "tel": "+33600000003",&#10;        "nom": "TEL-47951836",&#10;        "isPrincipal": false,&#10;        "id": "a10AY000001cJSTYA2",&#10;        "fauxNumero": false&#10;      },&#10;      {&#10;        "type": "GSM",&#10;        "tel": "+33600000000",&#10;        "nom": "TEL-47951864",&#10;        "isPrincipal": false,&#10;        "id": "a10AY000001rdfNYAQ",&#10;        "fauxNumero": false&#10;      },&#10;      {&#10;        "type": "GSM",&#10;        "tel": "+33647026796",&#10;        "nom": "TEL-47951866",&#10;        "isPrincipal": false,&#10;        "id": "a10AY000001rdnRYAQ",&#10;        "fauxNumero": false&#10;      },&#10;      {&#10;        "type": "GSM",&#10;        "tel": "+33647026791",&#10;        "nom": "TEL-47951314",&#10;        "isPrincipal": true,&#10;        "id": "a10MU000000WIHpYAO",&#10;        "fauxNumero": false&#10;      },&#10;      {&#10;        "type": "GSM",&#10;        "tel": "+33600000001",&#10;        "nom": "TEL-47951808",&#10;        "isPrincipal": false,&#10;        "id": "a10MU000000ydR2YAI",&#10;        "fauxNumero": false&#10;      },&#10;      {&#10;        "type": "GSM",&#10;        "tel": "+33600000002",&#10;        "nom": "TEL-47951810",&#10;        "isPrincipal": false,&#10;        "id": "a10MU000000ydR7YAI",&#10;        "fauxNumero": false&#10;      }&#10;    ]]' doc:name="telephones" doc:id="b38765ff-9c7f-4401-adf9-12990c4d262c" variableName="telephones" />
+			</route>
+		</scatter-gather>
+		<ee:transform doc:name="Transform Message" doc:id="0e9cb49b-1e0e-4668-a6c9-65ac31750e7a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+import * from dw::core::Arrays
+output application/json
+---
+
+vars.accounts map ((item, index) -> ( 
+    ((item) - "attributes") - "isDeleted") ++ 
+    {
+        isLead: false,
+        liquidites: sumBy(vars.cadresInvests, (el) -> el.liquidites default 0),
+        totalRembPotentiel: sumBy(vars.cadresInvests, (el) -> el.totalRembPotentiel default 0),
+        contratsVie: vars.cadresInvests,
+        emails: vars.emails,
+        telephones: vars.telephones,
+        adresses: vars.adresses
+    }
+)]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</sub-flow>
+	<sub-flow name="leadFlow" doc:id="12f500fc-fefc-49d9-80fc-e8001366d3e2" >
+		<ee:transform doc:name="Transform Message" doc:id="e43fbb46-74ed-4639-b4cc-cd1d338570d6" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	message: "leadFlow"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</sub-flow>
+
+</mule>

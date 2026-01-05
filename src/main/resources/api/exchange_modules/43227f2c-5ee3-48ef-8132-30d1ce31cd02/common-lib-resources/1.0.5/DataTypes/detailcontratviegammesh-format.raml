@@ -1,0 +1,177 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'un détail contrat vie de type Gammes H
+type: object
+properties:
+  id:
+    description: Identifiant unique d'un détail contrat vie de type Gammes H
+    type: string
+  isin:
+    description: Le code isin d'un détail contrat vie de type Gammes H
+    type: string
+  nom:
+    description: Le nom d'un détail contrat vie de type Gammes H
+    type: string
+  gamme:
+    description: La gamme d'un détail contrat vie de type Gammes H
+    type: string
+  montantInvesti:
+    description: Le montant investi sur un détail contrat vie de type Gammes H
+    type: number
+    format: float
+  montantDesinvesti:
+    description: Le montant désinvesti sur un détail contrat vie de type Gammes H
+    type: number | nil
+  dateInvesti:
+    description: La date d'investissement d'un détail contrat vie de type Gammes H
+    type: date-only
+  dateDesinvesti:
+    description: La date de désinvestissement d'un détail contrat vie de type Gammes H
+    type: date-only | nil
+  objectifAnnuel:
+    description: L'objectif annuel du support Gammes H
+    type: number | nil
+  prochainGainPotentiel:
+    description: Le prochain gain potentiel en % du support Gammes H
+    type: number
+  prochainGainPotentielEuro:
+    description: Le prochain gain potentiel en euros pour une part du support Gammes H
+    type: number
+  compteARebours:
+    description: Le compte à rebours d'un détail contrat vie de type Gammes H
+    type: number
+  dateConstatation:
+    description: La prochaine date de constatation du support Gammes H
+    type: date-only
+  dateVL:
+    description: La date de valorisation d'un détail contrat vie de type Gammes H
+    type: date-only
+  vlPart:
+    description: La valeur liquidative de la part d'un détail contrat vie de type Gammes H
+    type: number
+    format: float
+  vlGH:
+    description: La valeur liquidative de la Gammes H
+    type: number
+    format: float
+  nombreDePart:
+    description: Le nombre de part détenues d'un détail contrat vie de type Gammes H
+    type: number
+    format: float
+  prixRevient:
+    description: Le solde estimé d'un détail contrat vie de type Gammes H
+    type: number
+    format: float
+  refCtt:
+    description: Le numéro de contrat d'un détail contrat vie de type Gammes H
+    type: string
+  distanceDepassement:
+    description: La distance en cas de dépassement du seuil de remboursement d'un détail contrat vie de type Gammes H
+    type: number | nil
+  distanceAParcourrir:
+    description: La distance à parcourir pour atteindre le seuil de remboursement d'un détail contrat vie de type Gammes H
+    type: number | nil
+  seuilDeRemboursement:
+    description: Le seuil de remboursement d'un détail contrat vie de type Gammes H
+    type: number
+  gain:
+    description: Les gains obtenus sur un détail contrat vie de type Gammes H
+    type: number
+    format: float
+  arbitrable:
+    description: Indique si Hedios préconise d'arbitrer le détail contrat vie de type Gammes H
+    type: boolean
+  cloture:
+    description: Indique si le support Gammes H est cloturé
+    type: boolean
+  dateCloture:
+    description: Indique la date de cloture si le support Gammes H est cloturé
+    type: date-only | nil
+  dateFinArbitrageSE:
+    description: Indique la date fin arbitrage avec signature électronique du support Gammes H
+    type: datetime
+  ecartEuro:
+    description: Ecart en euro du support Gammes H
+    type: number
+  performance:
+    description: La performance d'un détail contrat vie de type Gammes H
+    type: number | nil
+  performanceNet:
+    description: La performance net d'un détail contrat vie de type Gammes H
+    type: number
+  valorisation:
+    description: La valorisation d'un détail contrat vie de type Gammes H [((prixRevient - montantInvesti) / montantInvesti) * 100]
+    type: number
+  valeurAirbagPoints:
+    description: La valeur de l'airbag en points du support
+    type: number
+  valeurAirbagBase100:
+    description: La valeur de l'airbag en base 100 du support
+    type: number
+  valeurAirbag:
+    description: La valeur de l'airbag en pourcentage du support
+    type: number
+  typesMecanisme:
+    description: Le type de méchanisme du support
+    type: string
+  seuilDeRemboursementBase100:
+    description: La valeur du seuil de remboursement en base 100 du support
+    type: number
+  prochainGainPotentielBase100:
+    description: Le prochain gain potentiel en base 100 du support
+    type: number
+  phraseManqueAGagner:
+    description: La phrase à afficher pour le manque à gagner du support
+    type: string
+  manqueAGagner:
+    description: Le manque à gagner du support
+    type: number
+  garant:
+    description: Le garant de la formule de remboursement du support
+    type: string
+  echeanceSupport:
+    description: La date d'échéance du support
+    type: date-only
+  dateStrike:
+    description: La date de strike du support
+    type: date-only
+  dateProchaineSortiePossible:
+    description: La date de prochaine sortie possible du support
+    type: date-only
+  dateConstatationProchaine:
+    description: La prochaine date de constatation du support
+    type: date-only
+  brochureUrl:
+    description: L'url de la brochure du support
+    type: string
+  euroStox50Code:
+    description: La code de l'indice Euro stoxx 50
+    type: string
+  euroStox50Nom:
+    description: La nom de l'indice Euro stoxx 50
+    type: string
+  euroStox50ValMax:
+    description: La valeur max de l'indice Euro stoxx 50
+    type: number
+    format: float
+  euroStox50DateValMax:
+    description: La date de la valeur max de l'indice Euro stoxx 50
+    type: date-only
+  euroStox50Progress:
+    description: La distance en % pour atteindre la valeur max de l'indice Euro stoxx 50
+    type: number
+    format: float
+  euroStox50Val:
+    description: La valeur actuelle de l'indice Euro stoxx 50
+    type: number
+    format: float
+  euroStox50DateVal:
+    description: La date de la valeur actuelle de l'indice Euro stoxx 50
+    type: date-only
+  evolutionIndiceReference:
+    description: L'évolution de l'indice de référence
+    type: number
+  indice: !include indice-format.raml
+  datesConstatations:
+    description: Liste des dates de constation
+    type: array
+    items: !include dateconstatation-format.raml

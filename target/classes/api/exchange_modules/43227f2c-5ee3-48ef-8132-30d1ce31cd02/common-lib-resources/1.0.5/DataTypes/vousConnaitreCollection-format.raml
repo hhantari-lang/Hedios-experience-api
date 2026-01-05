@@ -1,0 +1,135 @@
+#%RAML 1.0 DataType
+
+description: Définition de la structure d'un élément Vous Connaitre
+type: object
+properties:
+  id:
+    description: Identifiant unique de l'enregistrement
+    example: 0012p00002ZN8ZYAA1
+    type: string
+  situationFamiliale:
+    description: Situation familiale
+    type: !include  listeselectionobjet-datatype.raml
+  regimeMatrimonial:
+    description: Régime matrimonial
+    type: !include  listeselectionobjet-datatype.raml
+  statutPro:
+    description: Statut professionel
+    type: !include  listeselectionobjet-datatype.raml
+  csp:
+    description: Catégorie socio-professionnelle
+    type: !include  listeselectionobjet-datatype.raml
+  enfantsACharge:
+    description: Le nombre d'enfants en charge
+    example: 2
+    type: integer
+  capaciteJuridique:
+    description: Capacité juridique
+    type: !include  listeselectionobjet-datatype.raml
+  trancheRevenu:
+    description: Tranche de revenu annuel par foyer fiscal
+    type: !include  listeselectionobjet-datatype.raml
+  patrimoineFinancier:
+    description: Patrimoine financier
+    type: number
+    format: float
+  patrimoineImmobilier:
+    description: Patrimoine immobilier
+    type: number
+    format: float
+  patrimoineFoyer:
+    description: Patrimoine du foyer
+    type: !include  listeselectionobjet-datatype.raml
+  partGlobalRisqueeAvecGH:
+    description: Part globale risquée avec GH
+    type: number
+    format: float
+  partGlobalRisqueeHorsGH:
+    description: Part globale risquée hors GH
+    type: number
+    format: float
+  typePlacementRecherche:
+    description: Type de placement recherché
+    type: !include  listeselectionobjet-datatype.raml
+  horizonInvest:
+    description: Horizon d'investissement
+    type: !include  listeselectionobjet-datatype.raml
+  variationALaBaisse:
+    description: Variation à la baisse
+    type: !include  listeselectionobjet-datatype.raml
+  souscritPlacementStructure:
+    description: Souscrit placements structurés
+    type: !include  listeselectionobjet-datatype.raml
+  objectifs:
+    description: objectifs d'investissement
+    type: !include vcobjectif-datatype.raml
+  representantsLegaux:
+    description: Représentants légaux
+    type: array
+    items: !include representantlegal-datatype.raml
+  nvighp:
+    description: Valeur nominale détenue en GH non remboursées
+    type: number
+    format: float
+  nvihp:
+    description: Valeur nominale détenue en GH Performance non remboursées
+    type: number
+    format: float
+  nvihr:
+    description: Valeur nominale détenue en GH Rendement non remboursées
+    type: number
+    format: float
+  nviha:
+    description: Valeur nominale détenue en GH Absolu non remboursées
+    type: number
+    format: float
+  nvihc:
+    description: Valeur nominale détenue en GH Capital non remboursées
+    type: number
+    format: float
+  tvhp:
+    description: Valeur totale du portefeuille Hedios
+    type: number
+    format: float
+  vuihp:
+    description: Valeur des placements ni garantis ni protégés au sein du portefeuille Hedios
+    type: number
+    format: float
+  efhp:
+    description: Encours Fond en euro
+    type: number
+    format: float
+  voc1:
+    description: Valeur des placements garantis hors Hedios
+    type: number
+    format: float
+  tvsi:
+    description: Valeur totale des placements ganrantis
+    type: number
+    format: float
+  vof:
+    description: Valeur absolue des autres placements ni garantis, ni protégés hors Hedios
+    type: number
+    format: float
+  tvui:
+    description: Valeur totale des placements ni ganrantis ni protégés
+    type: number
+    format: float
+  hc:
+    description: Nombre de personne composant le foyer
+    type: integer
+  contact:
+    description: identifiant du contact
+    type: string
+  tunnel:
+    description: identifiant du tunnel
+    type: string
+  operation:
+    description: identifiant de l'opération
+    type: string
+  origine:
+    description: Type de placement recherché
+    type: !include  listeselectionobjet-datatype.raml
+  typeEnreg:
+    description: Type d'enregistrement
+    type: string

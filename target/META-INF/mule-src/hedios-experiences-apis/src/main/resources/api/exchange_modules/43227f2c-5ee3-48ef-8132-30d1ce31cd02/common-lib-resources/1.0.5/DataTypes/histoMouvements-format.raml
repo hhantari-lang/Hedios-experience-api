@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+usage: Définition de la structure d'une liste de mouvements
+type: object
+properties:
+  totalMvts:
+    description: Le nombre total des mouvements du client
+    type: integer
+    example: 92
+  mvts:
+    description: Liste de mouvements
+    type: array
+    items: !include mouvement-format.raml

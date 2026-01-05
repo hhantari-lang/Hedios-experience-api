@@ -1,0 +1,36 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'un Business Account
+type: object
+properties:
+  uid:
+    description: L'uid drupal
+    type: integer
+    example: 1567
+  idFicheContact:
+    description: L'IDFC unique du Business Account
+    type: integer
+    example: 184433
+  codeParrain:
+    description: Le code parrain du Business Account
+    type: integer
+    example: 61
+  name:
+    description: Le nom de la société du Business Account
+    type: string
+    example: SCI Azerty
+    minLength: 2
+    maxLength: 32
+  mail:
+    description: L'adresse e-mail du Business Account
+    type: string
+    example: leon.damas@gmail.com
+    minLength: 6
+    maxLength: 50
+  siren:
+    description: Le numéro siren du Business Account
+    type: string
+    example: '123 568 941'
+  passwordCreationUrl:
+    description: L'url temporaire de création de mot de passe
+    type: string
+    example: "https://www.hedios.com/user/2000/edit?pass-reset-token=2z5c82em_wbfJvNO5OSWp6lE-S6yclryzMqnYclKZUQ"

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<sub-flow name="postBusinessAccountFlow" doc:id="d01a33a9-a379-41db-aef0-7c99c80eba59" >
+		<logger level="INFO" doc:name="START" doc:id="f3fd4c1e-b326-4f0d-b5cb-ba892dc50e46" message="---------- START POST BUSINESS ACCOUNT ---------- " />
+		<http:request method="POST" doc:name="postBusinessAccount" doc:id="3ad7f3fe-3a86-4d87-97a9-e6cba82690ef" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/business-account" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="b06c3456-ed2f-443b-ba0f-1598f25d2c78" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="5efd284c-0e56-4b1b-a809-ad4c361d8832" message="---------- END POST BUSINESS ACCOUNT ---------- " />
+	</sub-flow>
+	<sub-flow name="postDemandeFlow" doc:id="d7fb3826-6238-42fc-8496-2d75e21c49e8" >
+		<logger level="INFO" doc:name="START" doc:id="fcd70ef0-1ffa-4cb1-b0f8-2f4a2d1eb6e3" message="---------- START POST DEMANDES ---------- " />
+		<http:request method="POST" doc:name="postDemandes" doc:id="ffd42b65-e207-4431-89b6-90deceb56c97" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/demandes" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="026ad928-28b2-4f7d-848a-bd99341c2719" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="68a6e3d9-8acb-418d-8c4a-213905bb9551" message="---------- END POST DEMANDES ---------- " />
+	</sub-flow>
+	<sub-flow name="postIDFCFlow" doc:id="31e6cd7d-e5eb-4034-b442-2fa7a66ddb4b" >
+		<logger level="INFO" doc:name="START" doc:id="7f631a1c-426b-4d75-b07e-6c4450c16b17" message="---------- START POST IDFC ---------- " />
+		<http:request method="POST" doc:name="postIDFC" doc:id="b61b673c-c9bf-4898-b662-9cf2603ab41d" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/idfc" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="4c27a71d-9d41-4dd7-840b-a973d9bc8eef" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="1cded664-1c07-433c-9140-90167a9ea459" message="---------- END POST IDFC ---------- " />
+	</sub-flow>
+
+</mule>

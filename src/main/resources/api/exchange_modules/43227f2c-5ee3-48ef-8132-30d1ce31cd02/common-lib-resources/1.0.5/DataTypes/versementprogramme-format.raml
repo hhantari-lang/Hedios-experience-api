@@ -1,0 +1,67 @@
+#%RAML 1.0 DataType
+description: Définition de la structure d'un versement programmé
+type: object
+properties:
+  id:
+    description: Identifiant unique d'un versement programmé
+    type: integer
+    example: 1
+  nom:
+    description: Nom du versement programmé
+    type: string
+    example: VPP374
+  ajustement:
+    description: Indique si le versement programmé fait l'objet d'un ajustement annuel de son montant
+    type: boolean
+    example: false
+  dtProchainVP:
+    description: Date à laquelle se déclenchera le prochain versement programmé
+    type: date-only
+    example: 2022-08-05
+  iban:
+    description: Indique le numéro d'IBAN sur lequel est prélevé le versement programmé
+    type: string
+    example: FR7630001007941234567890185
+  modeRglmt:
+    description: Indique le mode de règlement du versement programmé (Prélèvement systématiquement)
+    type: string
+    example: Prélèvement
+    enum:
+    - Prélèvement
+  montantBrut:
+    description: Indique le montant brut du versement programmé en cours
+    type: number
+    format: float
+    example: 300
+  frais:
+    description: Indique les frais appliqués au versement programmé (en montant)
+    type: number
+    format: float
+    example: 0
+  montantNet:
+    description: Indique le montant net du versement programmé en cours
+    type: number
+    format: float
+    example: 300
+  rum:
+    description: Référence Unique de Mandat rattachée au mandat mis en place dans le cadre de ce versement programmé
+    type: string
+    example: SURAV18029000000001455902
+  periodicite:
+    description: Indique la périodicité renseignée lors de la mise en place du versement programmé
+    type: string
+    example: M
+    enum:
+      - M
+      - T
+      - S
+      - A
+  txFrais:
+    description: Indique les frais appliqués au versement programmé (en pourcentage)
+    type: number
+    format: float
+    example: 0
+  refCtt:
+    description: La référence du contrat
+    type: string
+    example: 5E 266642446

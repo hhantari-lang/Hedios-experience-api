@@ -1,0 +1,26 @@
+#%RAML 1.0 DataType
+
+usage: Définition de la structure d'un enregistrement d'historisation vl Gammes H
+type: object
+properties:
+  id:
+    description: L'identifiant unique de l'enregistrement
+    type: number
+    format: int
+  dtVL:
+    description: La date de valorisation
+    type: string
+  nbPartsObtenues:
+    description: Le nombre de parts obtenues
+    type: number | nil
+  nbPartsVendues:
+    description: Le nombre de parts vendues
+    type: number | nil
+  nbParts:
+    description: Le nombre de parts détenues
+    type: number
+    format: float
+  vl:
+    description: La valeur liquidative de la part
+    type: number
+    format: float

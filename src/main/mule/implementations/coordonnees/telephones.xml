@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="getTelephonesCollectionFlow" doc:id="bcb4f36b-ade6-4345-b574-dd827dde2b32" >
+		<logger level="INFO" doc:name="START" doc:id="32e7d6b9-cfb6-486a-87ed-dbe72253b0dd" message="---------- START GET COLLECTION TELEPHONES  ----------" />
+		<flow-ref doc:name="manageVarsFlow" doc:id="aed95106-f551-4f32-a6cf-3e2429227e79" name="manageVarsFlow" />
+		<choice doc:name="Choice" doc:id="06acd0a2-b6f9-496b-9368-ed84973f16e8" >
+			<when expression="#[vars.idfc &gt; 0]" >
+				<http:request method="GET" doc:name="getByIDFC" doc:id="68d76061-4b37-4b0d-9d8d-0a565d2c6c17" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"idfc" : vars.idfc,
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+				</http:request>
+			</when>
+			<otherwise >
+				<http:request method="GET" doc:name="getCollection" doc:id="73d085b4-4892-4cef-a79e-40cceb08d39b" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones" >
+					<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"offset" : vars.offset,
+	"limit": vars.limit
+}]]]></http:query-params>
+				</http:request>
+			</otherwise>
+		</choice>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="95c10041-844a-4734-aa6b-e548e9381c5f" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="0677f1a0-a65d-428f-b167-3622211777c3" message="---------- END GET COLLECTION TELEPHONES ----------" />
+	</sub-flow>
+	<!-- [STUDIO:"postTelephonesFlow-"]<flow name="postTelephonesFlow-" doc:id="04d56095-2a86-4b5c-882e-6891aae10750" >
+		<logger level="INFO" doc:name="START" doc:id="2dcca20f-63e9-4ef5-984b-30bd230427a3" message="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; START CREATE TELEPHONES  &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;" />
+		<http:request method="POST" doc:name="createTelephones" doc:id="e56d30a7-1934-4cf8-b7c7-cc75befd8fe4" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="dfe780cf-36fe-44db-a32c-caf7c594b0ee" message="#[payload&#93;" />
+		<logger level="INFO" doc:name="END" doc:id="cf040792-8423-44a1-8e8d-810ecc14936f" message="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; END CREATE TELEPHONES &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;" />
+	</flow> [STUDIO] -->
+	<sub-flow name="postTelephonesFlow" doc:id="6709870d-6dca-4008-8834-e0df96dcb803" >
+		<logger level="INFO" doc:name="START" doc:id="65ee5ed4-6b6b-4c34-9fe2-eedb5639b26a" message="---------- START CREATE TELEPHONES  ----------" />
+		<http:request method="POST" doc:name="createTelephones" doc:id="37fa3534-caf6-4722-855d-63262afc932e" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="595aaafb-ea2f-4414-9a25-cdfba01bbcf9" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="56b54f53-4903-47ed-abb4-9fbde05b0bfd" message="---------- END CREATE TELEPHONES ----------" />
+	</sub-flow>
+	<sub-flow name="patchTelephoneFlow" doc:id="47fca5ff-f06a-4f1d-912c-c2f66ffd0e42" >
+		<logger level="INFO" doc:name="START" doc:id="ea937902-e256-4eb9-8930-ccee00022d95" message="---------- START UPDATE TELEPHONE  ----------" />
+		<http:request method="PATCH" doc:name="updateTelephone" doc:id="fb50cd67-8fe6-403d-b772-b0682ecb6e11" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="51268b4b-d358-46aa-b825-c4f36e3ccb83" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="dcd3aa5a-7d7d-48f8-857d-1e7225c131f2" message="---------- END UPDATE TELEPHONE ----------" />
+	</sub-flow>
+	<sub-flow name="putTelephoneFlow" doc:id="66aa0e8b-50a5-43b0-a3fb-bef5a2e0f30c" >
+		<logger level="INFO" doc:name="START" doc:id="1a97e984-b228-44b8-b855-6b9c5b44fbe9" message="---------- START UPSERT TELEPHONES  ----------" />
+		<http:request method="PUT" doc:name="upsertTelephones" doc:id="c9a8ee34-b057-47b7-9c93-0c78de50a2dc" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones" />
+		<logger level="INFO" doc:name="RESPONSE" doc:id="de658543-7261-47b3-9067-a4776df36d39" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="d2a5372f-0029-42f4-b252-6bc2e10445f0" message="---------- END UPSERT TELEPHONES ----------" />
+	</sub-flow>
+	<sub-flow name="deleteTelephoneFlow" doc:id="9360b602-2601-42e0-87b2-65057c83c708" >
+		<logger level="INFO" doc:name="START" doc:id="bad51f8c-56cb-4996-8b28-946864ce375c" message="---------- START DELETE TELEPHONE  ----------" />
+		<http:request method="DELETE" doc:name="deleteTelephone" doc:id="4e042acc-c46d-4ac1-8ee2-c014297c5c9f" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"id" : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="f85b202a-d785-438d-b0be-484ffcf89056" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="afefe3a2-bd6a-4f8d-9d53-352955da0214" message="---------- END DELETE TELEPHONE ----------" />
+	</sub-flow>
+	<sub-flow name="getSingleTelephoneFlow" doc:id="0a5496a0-f450-4f93-8fad-5098695a8c84" >
+		<logger level="INFO" doc:name="START" doc:id="8c20e70d-736e-41a8-b535-196c5d15faf3" message="---------- START GET SINGLE TELEPHONE  ----------" />
+		<http:request method="GET" doc:name="getSingleTelephone" doc:id="d9ed689b-72a4-435c-bc61-2b029c574039" config-ref="HTTP_Request_configuration" url="http://${secure::request.host.salesforce}:${http.private.port}/v1/telephones/{id}" >
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	id : attributes.uriParams.id
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="RESPONSE" doc:id="9505f39b-c5da-4fd7-a58f-a0eeca68cf14" message="#[payload]" />
+		<logger level="INFO" doc:name="END" doc:id="fa23c702-92c2-4831-9c64-6180c4f3e3cc" message="---------- END GET SINGLE TELEPHONE ----------" />
+	</sub-flow>
+
+</mule>

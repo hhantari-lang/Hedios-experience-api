@@ -44,7 +44,7 @@
 			            <environment>${env}</environment>
             			<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<server>Repository</server>
-			            <applicationName>${env}-${project.name}</applicationName>
+			            <applicationName>test-experience-draft</applicationName>
 			            <javaVersion>${javaVersion}</javaVersion>
 			            <workerType>MICRO</workerType>
 			            <workers>1</workers>

@@ -17,9 +17,12 @@
 		<app.runtime>4.4.0-20230123</app.runtime>
 		<mule.maven.plugin.version>4.5.3</mule.maven.plugin.version>
 		
+<<<<<<< HEAD
 		<env>dev</env>
         <javaVersion>17</javaVersion>
         <serverId>Repository</serverId>
+=======
+>>>>>>> e4995dfbb9f394eec53332484ba0ee4e53aa3a9d
 		<tags/>
 		<categories>[]</categories>
 		<fields>[]</fields>

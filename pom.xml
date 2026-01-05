@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>hedios-experiences-apis</name>
+	<name>hedios-experiences-api</name>
 
 	<description/>
 	<properties>
@@ -16,6 +16,11 @@
 
 		<app.runtime>4.4.0-20230123</app.runtime>
 		<mule.maven.plugin.version>4.5.3</mule.maven.plugin.version>
+		
+		<env>dev</env>
+        <javaVersion>17</javaVersion>
+        <serverId>Repository</serverId>
+		
 		<tags/>
 		<categories>[]</categories>
 		<fields>[]</fields>
@@ -35,6 +40,27 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
+					<cloudHubDeployment>
+			            <uri>https://eu1.anypoint.mulesoft.com</uri>
+			            <environment>${env}</environment>
+            			<connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<server>Repository</server>
+			            <applicationName>${env}-${project.name}</applicationName>
+			            <javaVersion>${javaVersion}</javaVersion>
+			            <workerType>MICRO</workerType>
+			            <workers>1</workers>
+			            <region>eu-central-1</region>
+			            <properties>
+							<secure.key>${decryption.key}</secure.key>
+							<anypoint.platform.client_id>98ea43b83c054f50a4df3376d8b824ff</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>398CB0Ce65a54979a6C6F1F4d6CFe472</anypoint.platform.client_secret>
+							<env>${env}</env>
+							<anypoint.platform.base_uri>https://eu1.anypoint.mulesoft.com/</anypoint.platform.base_uri>
+							<anypoint.platform.analytics_base_uri>https://analytics-ingest.eu1.anypoint.mulesoft.com/</anypoint.platform.analytics_base_uri>
+							<anypoint.platform.config.analytics.agent.enabled>false</anypoint.platform.config.analytics.agent.enabled>
+							<anypoint.platform.visualizer.layer>System</anypoint.platform.visualizer.layer>
+						</properties>
+			        </cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>

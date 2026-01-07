@@ -89,6 +89,7 @@ jobs:
         ANYPOINT_ID: ${{ secrets.CONNECTED_APP_CLIENT_ID }}
         ANYPOINT_SECRET: ${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
         SECURE_KEY: ${{ secrets.SECURE_KEY_DEV_EAPI }}
+        PROXY_expId:  ${{ secrets.proxy_expId }}          
       run: |
         artifactName=$(ls *.jar | head -1)
         echo "Deploying: $artifactName"
@@ -96,4 +97,5 @@ jobs:
          -Dmule.artifact=$artifactName \
          -Dserver=Repository \
          "-Ddecryption.key= $SECURE_KEY" \
-         --settings .maven/settings.xml
+         --settings .maven/settings.xml \
+         -Dproxy.expId=$PROXY_expId

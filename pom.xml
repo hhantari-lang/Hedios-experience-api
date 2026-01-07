@@ -7,14 +7,14 @@
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>hedios-experiences-api</name>
+	<name>api-hedios-experiences-apis</name>
 
 	<description/>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.4.0-20230123</app.runtime>
+		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>4.5.3</mule.maven.plugin.version>
 		
 		<env>dev</env>
@@ -23,6 +23,7 @@
 		<tags/>
 		<categories>[]</categories>
 		<fields>[]</fields>
+		
 	</properties>
 
 	<build>
@@ -44,13 +45,14 @@
 			            <environment>${env}</environment>
             			<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<server>Repository</server>
-			            <applicationName>test-experience-draft</applicationName>
+			            <applicationName>${env}-${project.name}</applicationName>
 			            <javaVersion>${javaVersion}</javaVersion>
 			            <workerType>MICRO</workerType>
 			            <workers>1</workers>
 			            <region>eu-central-1</region>
 			            <properties>
-							<secure.key>${decryption.key}</secure.key>
+							<secure.expKey>${decryption.key}</secure.expKey>
+							<proxy.expId>${proxy.expId}</proxy.expId>
 							<anypoint.platform.client_id>98ea43b83c054f50a4df3376d8b824ff</anypoint.platform.client_id>
 							<anypoint.platform.client_secret>398CB0Ce65a54979a6C6F1F4d6CFe472</anypoint.platform.client_secret>
 							<env>${env}</env>

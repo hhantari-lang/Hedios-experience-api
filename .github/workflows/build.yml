@@ -96,7 +96,7 @@ jobs:
         mvn deploy -DskipMunitTests -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Dserver=Repository \
-         "-Ddecryption.key= $SECURE_KEY" \
+         "-Ddecryption.key=$SECURE_KEY" \
          --settings .maven/settings.xml \
          -Dproxy.expId=$PROXY_expId \
          -Denv=uat

@@ -98,4 +98,5 @@ jobs:
          -Dserver=Repository \
          "-Ddecryption.key= $SECURE_KEY" \
          --settings .maven/settings.xml \
-         -Dproxy.expId=$PROXY_expId
+         -Dproxy.expId=$PROXY_expId \
+         -Dmule.application.env=uat

@@ -56,6 +56,9 @@ jobs:
         java-version: 17
     - name: Build with Maven
       run: mvn -B package -U --file pom.xml -DskipMunitTests -Dmule.attachMuleSources=true
+    - name: Verify secure file in jar
+      run: |
+        jar tf target/*.jar | grep uat-configs.yaml
     - name: Stamp artifact file name with commit hash
       run: |
         artifactName1=$(ls target/*.jar | head -1)

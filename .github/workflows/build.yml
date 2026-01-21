@@ -55,7 +55,7 @@ jobs:
         distribution: 'zulu'
         java-version: 17
     - name: Build with Maven
-      run: mvn -B package -U --file pom.xml -DskipMunitTests -Dmule.attachMuleSources=true
+      run: mvn clean install -DskipTests -Dmule.attachMuleSources=true
     - name: Stamp artifact file name with commit hash
       run: |
         artifactName1=$(ls target/*.jar | head -1)
@@ -98,5 +98,4 @@ jobs:
          -Dserver=Repository \
          "-Ddecryption.key= $SECURE_KEY" \
          --settings .maven/settings.xml \
-         -Dproxy.expId=$PROXY_expId \
-         -Dmule.application.env=uat
+         -Dproxy.expId=$PROXY_expId 

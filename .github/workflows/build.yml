@@ -96,6 +96,7 @@ jobs:
       run: |
         artifactName=$(ls *.jar | head -1)
         echo "Deploying: $artifactName"
+        echo "$SECURE_KEY"
         mvn deploy -DskipMunitTests -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Dserver=Repository \

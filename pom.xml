@@ -40,6 +40,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
+					<attachMuleSources>true</attachMuleSources>
 					<cloudHubDeployment>
 			            <uri>https://eu1.anypoint.mulesoft.com</uri>
 			            <environment>${env}</environment>

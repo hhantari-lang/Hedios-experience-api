@@ -55,7 +55,7 @@ jobs:
         distribution: 'zulu'
         java-version: 17
     - name: Build with Maven
-      run: mvn -B package -U --file pom.xml -DskipMunitTests
+      run: mvn -B package -U --file pom.xml -DskipMunitTests -Dmule.attachMuleSources=true
     - name: Stamp artifact file name with commit hash
       run: |
         artifactName1=$(ls target/*.jar | head -1)

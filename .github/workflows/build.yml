@@ -1,4 +1,3 @@
-
 name: Build and Deploy to dev env
 
 on:
@@ -92,7 +91,7 @@ jobs:
         ANYPOINT_ID: ${{ secrets.CONNECTED_APP_CLIENT_ID }}
         ANYPOINT_SECRET: ${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
         SECURE_KEY: ${{ secrets.SECURE_KEY_DEV_EAPI }}
-        PROXY_expId:  ${{ secrets.proxy_expId }}          
+        PROXY_expId:  ${{ secrets.PROXY_EXPID_UAT }}          
       run: |
         artifactName=$(ls *.jar | head -1)
         echo "Deploying: $artifactName"

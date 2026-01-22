@@ -19,6 +19,6 @@
             <http:success-status-code-validator values="200..299" />
         </http:response-validator>
     </http:request-config>
-    <api-gateway:autodiscovery apiId="${proxy.expId}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="af27e226-05b2-45b0-baa3-18dbab3b3f43" flowRef="hediosexperiencesapi-main" />
+  <!--  <api-gateway:autodiscovery apiId="${proxy.expId}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="af27e226-05b2-45b0-baa3-18dbab3b3f43" flowRef="hediosexperiencesapi-main" /> -->
     <configuration doc:name="Configuration" doc:id="4924682b-3a12-47c0-a60b-9b03e1af8f7b" defaultErrorHandler-ref="global-error-handler" />
 </mule>

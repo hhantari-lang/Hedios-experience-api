@@ -48,7 +48,7 @@
 						<server>Repository</server>
 			            <applicationName>salesforce-testt</applicationName>
 			            <javaVersion>${javaVersion}</javaVersion>
-			            <workerType>SMALL</workerType>
+			            <workerType>MICRO</workerType>
 			            <workers>1</workers>
 			            <region>eu-central-1</region>
 			            <properties>

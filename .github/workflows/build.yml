@@ -1,4 +1,4 @@
-name: Build and Deploy to dev env
+name: Build and Deploy to uat env
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
         distribution: 'zulu'
         java-version: 17
     - name: Build with Maven
-      run: mvn clean package -DskipTests
+      run: mvn -B package -U --file pom.xml -DskipMunitTests
     - name: Verify secure file in jar
       run: |
         jar tf target/*.jar | grep uat-configs.yaml
@@ -91,7 +91,7 @@ jobs:
         ANYPOINT_ID: ${{ secrets.CONNECTED_APP_CLIENT_ID }}
         ANYPOINT_SECRET: ${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
         SECURE_KEY: ${{ secrets.SECURE_KEY_DEV_EAPI }}
-        PROXY_expId:  ${{ secrets.PROXY_EXPID_UAT }}          
+        PROXY_expId:  ${{ secrets.PROXY_EXPID }}          
       run: |
         artifactName=$(ls *.jar | head -1)
         echo "Deploying: $artifactName"
@@ -99,7 +99,6 @@ jobs:
         mvn deploy -DskipMunitTests -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Dserver=Repository \
-         "-Ddecryption.key=r4u7x!A%D*G-KaPd" \
+         "-Ddecryption.key=$SECURE_KEY" \
          --settings .maven/settings.xml \
-         -Dproxy.expId=$PROXY_expId \
-         -Denv=uat
+         -Dproxy.expId=$PROXY_expId 

@@ -54,7 +54,7 @@ jobs:
         distribution: 'zulu'
         java-version: 17
     - name: Build with Maven
-      run: mvn -B package -U --file pom.xml -DskipMunitTests
+      run: mvn -B clean package -U --file pom.xml -DskipMunitTests
     - name: Verify secure file in jar
       run: |
         jar tf target/*.jar | grep uat-configs.yaml

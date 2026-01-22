@@ -95,10 +95,10 @@ jobs:
       run: |
         artifactName=$(ls *.jar | head -1)
         echo "Deploying: $artifactName"
-        echo "$SECURE_KEY"
-        mvn deploy -DskipMunitTests -DmuleDeploy \
+        mvn mule:deploy -DskipMunitTests -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Dserver=Repository \
+         -Dcloudhub.timeout=600000 \
          "-Ddecryption.key=$SECURE_KEY" \
          --settings .maven/settings.xml \
          -Dproxy.expId=$PROXY_expId 
